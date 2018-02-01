@@ -1,0 +1,53 @@
+1. Namn: 
+	hits.se
+
+2. Miljö:
+	Ramverk: React js, scss, mySQL, REST API, express, socket.io? ajax?
+	Teknik: ?
+
+3.Innehåll:
+	Inloggning/Registrering
+	- Olika rättigheter:
+		0-blockerad: Inga rättigheter,
+		1-användare: Normala rättigheter,
+		2-admin: Normala rättigheter + kunna ta bort kannaler, meddelanden, användare, samt kunna banna och avbanna(ändra rättigheter på användare)
+	-Glömt lösenord? Få ett nytt genererat lösenord skickat till din mail(alt om admin ändrar lösenord)
+	
+	- Bara admin kan skapa nya användare
+	
+	Chat
+	-En standard chat (General)
+	-Som användare kunna lägga till kanal(er), admin kan ta bort kanaler (epic - användare kan ta bort sina tillagda kanaler)
+	-Användare kan skicka textmeddelanden till kanal
+	-Användare kan skicka privata meddelanden (skapa privat kanal med person(er))
+	-Användare kan skicka bilder som visas i rätt skala i kanal(importera/länka,visa)
+	-Användare kan skicka klipp som visas i kanal(importera/länka,visa)
+	-Användare kan skicka filer till kanal(importera,ladda ner)
+	-Användare kan skicka kod snippets i kanal(kod format)
+	-Visa alla användare i en flik eller kanske sidebar(epic-kunna söka bland användare)
+	-Få notifications när någon skrivit specifikt till dig, visa på något sätt att någon har skrivit något i kanal
+	-Som användare som skickat meddelande, kunna ta bort sina meddelanden.
+	-som användare som skickat meddelande, kunna editera sitt skickade meddelande.
+	-Kunna rapportera ett meddelande/användare till admin
+	-Lägg till/ta bort användare som favorit, alt dem man senast skrivit till hamnar längst upp i privatmeddelande kategorin
+
+	----Emojis knapp
+
+	-I feed när en användare skriver ser man användarnamn, (om man är konsult, var man är), timestamp, meddelande
+
+	Profil
+	-Visa användarnamn,namn,mail,profilbild,konsult?(var),avdelning/grupp?
+	-Som användare vill jag kunna editera användarnamn,namn,mail,profilbild och lösenord, konsult?(var),avdelning/grupp
+	-Ta bort sitt konto
+	-Logga ut
+
+4. Delmål.
+	1. Till den 9/2
+		Skapat en react app, scss installerat, fixa mySQL databas till chat, fixat med rest api och kunna göra enkel text input i standardkanal.
+	2. Till den 16/2
+		Kunna registrera användare(användarnamn, namn, mail,grupp och lösenord(username och lösen är ett måste och man loggar in med det, email är också ett måste, resten är optional)),
+		logga in med det och kunna skriva som den här användaren i chat.
+	3. Till den 23/2
+		Slipa på inloggning, password salt, skapa profilsida för användarna(där användare kan editera sina profiler), 
+	4. Till den 2/3
+		Skapa admin sida, bara admin ska kunna skapa användare, typiska admin rättigheter(ta bort användare, kanaler, ändra rättigheter på användare(0,1,2)), passwordgenerator via mail för dem som glömt sina lösenord
