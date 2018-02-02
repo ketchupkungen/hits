@@ -43,7 +43,7 @@
 
 4. Delmål.
 	1. Till den 9/2
-		Skapat en react app, scss installerat, fixa mySQL databas till chat, fixat med rest api och kunna göra enkel text input i standardkanal.
+		Skapat en react app, scss installerat, fixa mySQL databas till chat, prioritera backend till en början och fixat med rest api och kunna göra enkel text input i standardkanal.
 	2. Till den 16/2
 		Kunna registrera användare(användarnamn, namn, mail,grupp och lösenord(username och lösen är ett måste och man loggar in med det, email är också ett måste, resten är optional)),
 		logga in med det och kunna skriva som den här användaren i chat.
