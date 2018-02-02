@@ -1,12 +1,14 @@
-const express = require('express');
-const pm = require('promisemaker');
-const mysql = require('mysql');
+const express = require('express'),
+      pm = require('promisemaker'),
+      mysql = require('mysql'),
+      devPassword = require('./dev-password');
+
 
 const db = pm(
   mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
-    password: "Password94",
+    password: devPassword.unique(), // Edit to YOUR password in the file dev-password.js. Otherwise it will not work.
     database: "hits"
   }),
   {
@@ -28,6 +30,6 @@ async function allUsers() {
   console.log(users);
 }
 
-//test();
+test();
 
 allUsers();
