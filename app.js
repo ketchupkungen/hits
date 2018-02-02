@@ -12,7 +12,7 @@ const db = pm(
   {
     rejectOnErrors: false,
     mapArgsToProps: {
-      query: ["rows", "fields"]
+      query: ["RowDataPacket"]
     }
   }
 );
@@ -22,12 +22,38 @@ async function test() {
   console.log(tables);
 }
 
-
 async function allUsers() {
   let users = await db.query('SELECT * FROM users');
   console.log(users);
 }
 
-//test();
+async function allMessages() {
+  let messages = await db.query('SELECT * FROM messages');
+  console.log(messages);
+}
 
-allUsers();
+async function addUser(email, phone, username, firstname, lastname, password, gender) {
+  let users = await db.query('INSERT INTO users SET?', {
+    email: email,
+    phone: phone,
+    username: username,
+    firstname: firstname,
+    lastname: lastname,
+    password: password,
+    gender: gender
+  });
+  console.log(users);
+}
+
+async function updateUser() {
+
+}
+
+async function addMessage(message) {
+  let messages = await db.query('INSERT INTO messages SET message');
+  console.log(messages);
+}
+
+//addUser("testingThis@gmail.com", "67897098", "Stevo", "Stuart", "Bond", "whatever123", "Man");
+
+addMessage("okej");
