@@ -49,53 +49,53 @@ class Chat extends Component {
 								<div className="container">
 									<label htmlFor="slide" className="toggle">☰</label>
 									<nav className="sidebar">
-									<Row>
-									<Col>
-										<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-							        <DropdownToggle
-							          tag="span"
-							          onClick={this.toggle}
-							          data-toggle="dropdown"
-							          aria-expanded={this.state.dropdownOpen}
-							        >
-							          <img src={profile} alt="Placeholder" height="40px" width="40px"/>
-							        </DropdownToggle>
-							        <DropdownMenu>
-							        	<DropdownItem header>Mr User</DropdownItem>
-							          <DropdownItem header>Göran Stenström</DropdownItem>
-						          	<DropdownItem divider/>
-						          	<DropdownItem onClick={this.toggle}><Link className="nav-link" to="/profile">ProfilePage</Link></DropdownItem>
-										    <DropdownItem onClick={this.toggle}>Options</DropdownItem>
-										    <DropdownItem onClick={this.toggle}>Notifications</DropdownItem>
-										    <DropdownItem onClick={this.toggle}>Help and feedback</DropdownItem>
-										    <DropdownItem divider/>
-										    <DropdownItem onClick={this.toggle}><Link className="nav-link" to="/">Log Out</Link></DropdownItem>
+										<Row>
+											<Col>
+												<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+									        <DropdownToggle
+									          tag="span"
+									          onClick={this.toggle}
+									          data-toggle="dropdown"
+									          aria-expanded={this.state.dropdownOpen}
+									        >
+									          <img src={profile} alt="Placeholder" height="40px" width="40px"/>
+									        </DropdownToggle>
+									        <DropdownMenu>
+									        	<DropdownItem header>Mr User</DropdownItem>
+									          <DropdownItem header>Göran Stenström</DropdownItem>
+								          	<DropdownItem divider/>
+								          	<DropdownItem onClick={this.toggle}><Link className="nav-link" to="/profile">ProfilePage</Link></DropdownItem>
+												    <DropdownItem onClick={this.toggle}>Options</DropdownItem>
+												    <DropdownItem onClick={this.toggle}>Notifications</DropdownItem>
+												    <DropdownItem onClick={this.toggle}>Help and feedback</DropdownItem>
+												    <DropdownItem divider/>
+												    <DropdownItem onClick={this.toggle}><Link className="nav-link" to="/">Log Out</Link></DropdownItem>
 
-							        </DropdownMenu>
-							      </Dropdown>
+									        </DropdownMenu>
+									      </Dropdown>
 
-							    </Col>
-									<Col>Göran Stenström</Col>
-									<Link className="navbar-brand mr-auto" to="/">
-						      	<img src={logo} className="logo" alt='logo' />
-						      </Link> {/*For giggles*/}
-								</Row>
-								<hr/>
-								<br/>
-
-								<Button color="success">Private message</Button>
-
-								<ul>
-									<Row>
-										<Col><strong>Channels</strong></Col>
-										<Col><a href="#">+</a></Col>
+									    </Col>
+										<Col>Göran Stenström</Col>
+										<Link className="navbar-brand mr-auto" to="/">
+							      	<img src={logo} className="logo" alt='logo' />
+							      </Link> {/*For giggles*/}
 									</Row>
-									<li><a href="#"> Channel 1 </a></li>
-									<li><a href="#"> Channel 2 </a></li>
-									<li><a href="#"> And more...btn? </a></li>
-								</ul>
-								<br/>
-								<ul>
+									<hr/>
+									<br/>
+
+									<Button color="success">Private message</Button>
+
+									<ul>
+										<Row>
+											<Col><strong>Channels</strong></Col>
+											<Col><a href="#">+</a></Col>
+										</Row>
+										<li><a href="#"> Channel 1 </a></li>
+										<li><a href="#"> Channel 2 </a></li>
+										<li><a href="#"> And more...btn? </a></li>
+									</ul>
+									<br/>
+									<ul>
 									<Row>
 										<Col><strong>Direct messages</strong></Col>
 										<Col><a href="#">+</a></Col>
@@ -104,8 +104,8 @@ class Chat extends Component {
 									<li><a href="#"> Bengt Ekhammar </a></li>
 									<li><a href="#"> And more...btn? </a></li>
 								</ul>
-									</nav>
-								</div>
+							</nav>
+						</div>
 								<div className="main">
 									  <h5 className="smallScreenHeader">
 									  	Active channel
