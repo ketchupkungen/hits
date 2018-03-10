@@ -9,7 +9,8 @@ import { Container } from 'reactstrap';
 //import Footer from './Footer';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import SurveyNew from './surveys/SurveyNew';
+import Profile from './Profile'
+//import SurveyNew from './surveys/SurveyNew';
 
 
 import '../css/style.css';
@@ -26,8 +27,9 @@ class App extends Component {
 					<Container className="container-fluid" fluid>
 						{/*<Header/>*/}
 						<Route exact path="/" component={Landing} />
-						<Route exact path="/surveys" component={Dashboard} />
-						<Route exact path="/surveys/new" component={SurveyNew} />
+						<Route exact path="/chat" component={Dashboard} />
+						<Route exact path="/profile" component={Profile} />
+						{/*<Route exact path="/surveys/new" component={SurveyNew} />*/}
 						{/*<Footer/>*/}
 					</Container>
 				</BrowserRouter>

@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSurveys } from '../../actions';
-import { Media } from 'reactstrap';
+import { Button, Media } from 'reactstrap';
 
 class SurveyList extends Component {
+	constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
 
 	componentDidMount() {
 		this.props.fetchSurveys();
@@ -41,72 +56,211 @@ class SurveyList extends Component {
 		return (
 			<div className="main">
 				{ this.renderSurveys() }
-				<li>
-	        <Media style={{maxWidth: '400px'}}>
+	      <li className="messageArea">
+	        <Media>
 	          <Media left>
 	            {/*Temporary img*/}
-	            <img width={64} height={64} src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
 	          </Media>
 	          <Media body>
 	            <Media heading>
-	              <b className="dashName">
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
 	                Erik Olsson
 	              </b>
-	              <i className="dashTime">
-	                2018-02-20
+	              <i className="mess-time">
+	                2018-02-20 13:37
 	              </i>
 
 	            </Media>
-	            <p className='dashMess'>
-	              Bacon ipsum dolor amet chicken ham hock meatloaf, shankle t-bone tenderloin porchetta andouille kielbasa bacon fatback. Tail ground round kevin chuck strip steak, pancetta biltong pork belly burgdoggen hamburger drumstick beef ribs. Strip steak beef salami jerky shankle hamburger. Chicken strip steak spare ribs tenderloin, leberkas frankfurter tongue alcatra ground round chuck porchetta buffalo landjaeger jerky. Pork loin ham hock t-bone, hamburger chuck filet mignon alcatra sausage ribeye. Leberkas kevin kielbasa ham chicken tongue jerky pig tail t-bone. Shankle pork belly corned beef shank beef filet mignon.
-
-	              Tail bresaola chuck tri-tip turducken. Andouille biltong kevin ham hock jowl capicola porchetta bresaola. Buffalo ham tongue ground round ball tip meatloaf beef fatback ham hock cow tail. Meatball tongue turkey prosciutto hamburger, short ribs jerky shoulder drumstick ground round tail cupim ball tip ribeye cow. Buffalo ground round ham salami doner rump short loin andouille kielbasa swine leberkas cow picanha tri-tip. Kevin tenderloin short loin, landjaeger burgdoggen shoulder shankle ham hock pork chop meatloaf.
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
+	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
 	            </p>
 	          </Media>
 	        </Media>
 	        <hr/>
 	      </li>
-	      <li>
-	        <Media style={{maxWidth: '400px'}}>
+	      <li className="messageArea">
+	        <Media>
 	          <Media left>
 	            {/*Temporary img*/}
-	            <img width={64} height={64} src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
 	          </Media>
 	          <Media body>
 	            <Media heading>
-	              <b className="dashName">
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
 	                Erik Olsson
 	              </b>
-	              <i className="dashTime">
-	                2018-02-20
+	              <i className="mess-time">
+	                2018-02-20 13:37
 	              </i>
 
 	            </Media>
-	            <p className='dashMess'>
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
+	            </p>
+	          </Media>
+	        </Media>
+	        <hr/>
+	      </li>
+	      <li className="messageArea">
+	        <Media>
+	          <Media left>
+	            {/*Temporary img*/}
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	          </Media>
+	          <Media body>
+	            <Media heading>
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
+	                Erik Olsson
+	              </b>
+	              <i className="mess-time">
+	                2018-02-20 13:37
+	              </i>
+
+	            </Media>
+	            <p className='mess-text'>
 	              Bacon ipsum dolor amet chicken ham hock meatloaf, shankle t-bone tenderloin porchetta andouille kielbasa bacon fatback. Tail ground round kevin chuck strip steak, pancetta
 	            </p>
 	          </Media>
 	        </Media>
 	        <hr/>
 	      </li>
-	      <li>
-	        <Media style={{maxWidth: '400px'}}>
+	      <li className="messageArea">
+	        <Media>
 	          <Media left>
 	            {/*Temporary img*/}
-	            <img width={64} height={64} src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
 	          </Media>
 	          <Media body>
 	            <Media heading>
-	              <b className="dashName">
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
 	                Erik Olsson
 	              </b>
-	              <i className="dashTime">
-	                2018-02-20
+	              <i className="mess-time">
+	                2018-02-20 13:37
 	              </i>
 
 	            </Media>
-	            <p className='dashMess'>
-	              Bacon ipsum dolor amet chicken ham hock meatloaf, shankle t-bone tenderloin porchetta andouille kielbasa bacon fatback. Tail ground round kevin chuck strip steak, pancetta biltong pork belly burgdoggen hamburger drumstick beef ribs. Strip steak beef salami jerky shankle hamburger. Chicken strip steak spare ribs tenderloin, leberkas frankfurter tongue alcatra ground round chuck porchetta buffalo landjaeger jerky. Pork loin ham hock t-bone, hamburger chuck filet mignon alcatra sausage ribeye. Leberkas kevin kielbasa ham chicken tongue jerky pig tail t-bone. Shankle pork belly corned beef shank beef filet mignon.
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
+	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
+	            </p>
+	          </Media>
+	        </Media>
+	        <hr/>
+	      </li>
+	      <li className="messageArea">
+	        <Media>
+	          <Media left>
+	            {/*Temporary img*/}
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	          </Media>
+	          <Media body>
+	            <Media heading>
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
+	                Erik Olsson
+	              </b>
+	              <i className="mess-time">
+	                2018-02-20 13:37
+	              </i>
+
+	            </Media>
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet chicken ham hock meatloaf, shankle t-bone tenderloin porchetta andouille kielbasa bacon fatback. Tail ground round kevin chuck strip steak, pancetta
+	            </p>
+	          </Media>
+	        </Media>
+	        <hr/>
+	      </li>
+	      <li className="messageArea">
+	        <Media>
+	          <Media left>
+	            {/*Temporary img*/}
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	          </Media>
+	          <Media body>
+	            <Media heading>
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
+	                Erik Olsson
+	              </b>
+	              <i className="mess-time">
+	                2018-02-20 13:37
+	              </i>
+
+	            </Media>
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
+	            </p>
+	          </Media>
+	        </Media>
+	        <hr/>
+	      </li>
+	      <li className="messageArea">
+	        <Media>
+	          <Media left>
+	            {/*Temporary img*/}
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	          </Media>
+	          <Media body>
+	            <Media heading>
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
+	                Erik Olsson
+	              </b>
+	              <i className="mess-time">
+	                2018-02-20 13:37
+	              </i>
+
+	            </Media>
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet chicken ham hock meatloaf, shankle t-bone tenderloin porchetta andouille kielbasa bacon fatback. Tail ground round kevin chuck strip steak, pancetta
+	            </p>
+	          </Media>
+	        </Media>
+	        <hr/>
+	      </li>
+	      <li className="messageArea">
+	        <Media>
+	          <Media left>
+	            {/*Temporary img*/}
+	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+	          </Media>
+	          <Media body>
+	            <Media heading>
+	            	<Button className="mess-edit">
+								  <i className="fa fa-ellipsis-h"></i>
+								</Button>
+	              <b className="mess-name">
+	                Erik Olsson
+	              </b>
+	              <i className="mess-time">
+	                2018-02-20 13:37
+	              </i>
+
+	            </Media>
+	            <p className='mess-text'>
+	              Bacon ipsum dolor amet chicken ham hock meatloaf, shankle t-bone tenderloin porchetta andouille kielbasa bacon fatback. Tail ground round kevin chuck strip steak, pancetta
 	            </p>
 	          </Media>
 	        </Media>

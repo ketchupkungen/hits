@@ -1,5 +1,4 @@
-body {
-  height: 1000px;
+html, body {
   display: flex;
   min-height: 100vh;
   flex-direction: column; }
@@ -11,52 +10,112 @@ ul {
   list-style-type: none;
   padding: 0; }
 
-.login-page {
+.login-page-desk {
   background: url(https://images.theconversation.com/files/94013/original/image-20150907-22253-rnp0iv.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1012&h=668&fit=crop);
   height: 100vh;
   background-size: cover; }
+  .login-page-desk .login-card {
+    width: 400px;
+    margin: 0 auto;
+    float: none;
+    border: none;
+    top: 150px;
+    background-color: #696969;
+    padding: 20px;
+    padding-bottom: 130px;
+    color: white;
+    box-shadow: 3px 3px 10px 1px #222222;
+    border-radius: 5px; }
+    .login-page-desk .login-card p {
+      color: white; }
+    .login-page-desk .login-card h2 {
+      text-align: center; }
+    .login-page-desk .login-card a {
+      text-align: center;
+      color: white;
+      display: block;
+      margin-top: 120px; }
+    .login-page-desk .login-card img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+    .login-page-desk .login-card .login-btn {
+      text-decoration: none;
+      background-color: #5CB85C;
+      border: none;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 5px;
+      margin-left: 10px;
+      float: left;
+      box-shadow: 1px 1px 1px 1px #222222;
+      height: 50px;
+      width: 300px;
+      text-align: center;
+      border-radius: 5px; }
+    .login-page-desk .login-card .login-btn:hover {
+      background-color: green; }
+    .login-page-desk .login-card .login-field {
+      margin-top: 5px;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      box-shadow: 1px 1px 1px 1px #222222;
+      border-radius: 5px; }
+    .login-page-desk .login-card .logo {
+      animation: App-logo-spin infinite 10s linear;
+      width: 50px; }
 
-.login-card {
-  width: 420px;
-  margin: 0 auto;
-  float: none;
-  border: none;
-  top: 150px;
+.login-page-mobile {
+  padding: 5px;
+  padding-top: 20px;
   background-color: #696969;
-  padding: 20px;
-  padding-bottom: 130px;
-  color: white;
-  box-shadow: 3px 3px 3px 1px #222222; }
-  .login-card p {
+  height: 100vh;
+  background-size: cover;
+  color: white; }
+  .login-page-mobile h3 {
+    text-align: center;
     color: white; }
-  .login-card h1 {
-    text-align: center; }
-  .login-card .login-btn {
+  .login-page-mobile a {
+    text-align: center;
+    color: white;
+    display: block;
+    margin-top: 20px; }
+  .login-page-mobile img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .login-page-mobile .login-btn {
     text-decoration: none;
     background-color: #5CB85C;
     border: none;
     color: white;
-    padding: 10px 35px;
+    padding: 10px;
     font-size: 20px;
     cursor: pointer;
-    margin: 4px;
-    margin-left: 0;
-    margin-right: 0;
-    float: left;
+    margin-top: 5px;
     box-shadow: 1px 1px 1px 1px #222222;
     height: 50px;
-    position: relative;
-    width: 380px;
-    text-align: center; }
-  .login-card .login-btn:hover {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 5px;
+    display: block; }
+  .login-page-mobile .login-btn:hover {
     background-color: green; }
-  .login-card .login-field {
-    margin-bottom: 5px;
-    width: 380px;
-    margin-left: 4;
-    padding: 15px;
-    box-shadow: 1px 1px 1px 1px #222222; }
-  .login-card .logo {
+  .login-page-mobile .login-field {
+    margin-top: 5px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px #222222;
+    border-radius: 5px; }
+  .login-page-mobile .logo {
     animation: App-logo-spin infinite 10s linear;
     width: 50px; }
 
@@ -75,6 +134,19 @@ ul {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+.profile-img-chat {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px #222222; }
+
+.profile-page {
+  margin-top: 100px; }
+
+.profile-img {
+  width: 100%;
+  border-radius: 5px; }
 
 .messageComposer {
   background: #ffffff;
@@ -98,13 +170,14 @@ ul {
   top: 0;
   left: 0;
   text-align: center;
-  padding: 20px;
+  padding: 8px;
   width: 100%;
   margin: 0;
-  z-index: 1; }
+  z-index: 1;
+  box-shadow: 1px 1px 10px 1px #696969; }
 
 /*Sender of message*/
-.dashName {
+.mess-name {
   color: #808080;
   /*margin-left: 10px;*/
   background: Transparent;
@@ -112,20 +185,41 @@ ul {
   border: none;
   cursor: pointer;
   overflow: hidden;
-  outline: none; }
+  outline: none;
+  font-size: 20px; }
 
 /*Time sent*/
-.dashTime {
+.mess-time {
   color: #808080;
   margin-left: 10px;
   opacity: 0.5;
-  font-size: 12px;
+  font-size: 13px;
   font-family: sans-serif; }
 
+.mess-edit {
+  color: #222222;
+  padding: 0;
+  border: none;
+  background: none;
+  opacity: 0.5;
+  font-size: 20px;
+  right: 10px;
+  margin-top: 0;
+  position: absolute; }
+
+.mess-edit:hover {
+  color: #222222;
+  border: none;
+  background: none; }
+
+.mess-edit:active {
+  color: #222222;
+  border: none;
+  background: none; }
+
 /*Message text*/
-.dashMess {
+.mess-text {
   color: #696969;
-  /*margin-left: 10px;*/
   clear: both;
   padding-top: 0.1em;
   padding-top: 0.1em;
@@ -135,22 +229,37 @@ ul {
 .sidebar-frame {
   background-color: #696969;
   width: 100%;
-  z-index: 10; }
+  z-index: 500; }
   .sidebar-frame p {
     color: white;
     margin-bottom: 5px; }
   .sidebar-frame .toggle {
     text-decoration: none;
-    font-size: 2em;
-    color: #696969;
+    color: #222222;
     -webkit-transition: all 0.15s ease-out 0;
     -moz-transition: all 0.15s ease-out 0;
     transition: all 0.45s ease-out 0;
     position: fixed;
-    top: 2px;
-    left: 10px;
+    top: 3px;
+    left: 5px;
     z-index: 100;
     cursor: pointer; }
+    .sidebar-frame .toggle svg {
+      width: 45px;
+      height: 45px;
+      padding: 5px;
+      background: #ffffff;
+      text-decoration: none;
+      font-size: 10px;
+      color: #696969;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      transition: all 0.45s ease-out 0;
+      position: fixed;
+      z-index: 100;
+      cursor: pointer; }
+    .sidebar-frame .toggle svg:hover {
+      color: #5CB85C; }
   .sidebar-frame .sidebar {
     position: fixed;
     z-index: 100;
@@ -176,35 +285,59 @@ ul {
     text-decoration: none;
     line-height: 200%; }
   .sidebar-frame .sidebar a:hover {
-    color: rgba(0, 0, 0, 0.61); }
+    color: #222222; }
   .sidebar-frame #slide:checked + .container .sidebar {
     left: 0px; }
-  .sidebar-frame #slide:checked + .container .toggle {
-    left: 270px; }
+  .sidebar-frame #slide:checked + .container .toggleBack {
+    left: 190px; }
+    .sidebar-frame #slide:checked + .container .toggleBack svg {
+      color: #990000;
+      background: #696969;
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+      text-decoration: none;
+      font-size: 2em;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      transition: all 0.45s ease-out 0;
+      position: fixed;
+      top: 0px;
+      z-index: 100;
+      cursor: pointer;
+      left: 210px; }
+    .sidebar-frame #slide:checked + .container .toggleBack svg:hover {
+      color: red; }
   .sidebar-frame #slide {
     display: none; }
   .sidebar-frame .sidebar-icon-btn {
     background-color: #5CB85C;
     border: none;
     color: white;
-    padding: 10px;
+    padding: 10px 12px;
     font-size: 20px;
     cursor: pointer;
-    margin: 3px;
-    box-shadow: 1px 1px 1px 1px #222222; }
+    margin: 5px;
+    box-shadow: 1px 1px 1px 1px #222222;
+    border-radius: 5px; }
   .sidebar-frame .sidebar-send-btn {
     background-color: #5CB85C;
     border: none;
     color: white;
-    padding: 10px 35px;
+    padding: 10px 55px;
     font-size: 20px;
     cursor: pointer;
     margin: 4px;
-    box-shadow: 1px 1px 1px 1px #222222; }
+    box-shadow: 1px 1px 1px 1px #222222;
+    border-radius: 5px; }
   .sidebar-frame .sidebar-send-btn:hover {
-    background-color: green; }
+    background-color: green;
+    color: white;
+    text-decoration: none; }
   .sidebar-frame .sidebar-icon-btn:hover {
-    background-color: green; }
+    background-color: green;
+    color: white;
+    text-decoration: none; }
 
 .nav {
   z-index: 500;
@@ -234,20 +367,13 @@ ul {
     padding: 20px;
     padding-bottom: 130px;
     color: white; }
-  .login-page {
-    background-color: #696969;
-    height: 100vh;
-    background-size: cover; } }
+  .login-page-mobile {
+    display: block; }
+  .login-page-desk {
+    display: none; } }
 
 @media screen and (min-width: 500px) {
-  .login-card {
-    width: 420px;
-    margin: 0 auto;
-    float: none;
-    border: none;
-    top: 150px;
-    background-color: #696969;
-    padding: 20px;
-    padding-bottom: 130px;
-    color: white;
-    box-shadow: 3px 3px 3px 1px #222222; } }
+  .login-page-mobile {
+    display: none; }
+  .login-page-desk {
+    display: block; } }

@@ -20,7 +20,7 @@ module.exports = app => {
   });
 
 	// Make sure user is logged in, also make sure user has enough credits
-	app.post('/api/surveys', requireLogin, async (req, res) => {
+	app.post('/api/chat', requireLogin, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
 
     const survey = new Survey({
