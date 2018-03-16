@@ -1,5 +1,12 @@
-// GOOGLE client ID
-623942313227-puqh8eb4ake27um7dvvqcmmp14928uf5.apps.googleusercontent.com
+# How to run
+  
+  Will be missing google and mongo keys.
+  Ask Ketchupkungen for keys or generate your own keys on https://console.developers.google.com/apis and https://mlab.com
 
-// GOOGLE client Secret
-Nq1LqI55j3MR3NQj08MePyCG
+´´´
+cd hits
+npm install
+cd client
+npm install
+npm run dev
+´´´
