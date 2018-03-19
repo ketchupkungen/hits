@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Input } from 'reactstrap';
-import SurveyList from './surveys/SurveyList';
+import { Button } from 'reactstrap';
+import MessageList from './messages/MessageList';
+//import MessageComposer from './messages/MessageComposer';
 import Sidebar from './Sidebar';
 import logo from '../logo.svg';
 
@@ -18,9 +19,11 @@ const Dashboard = () => {
 			</div>
 			<Sidebar />
 			<ul>
-				<SurveyList />
+				<MessageList />
 			</ul>
-	      <Input className="messageComposer" placeholder="Send Message" />
+	      <Link to="/chat/new" className="btn-floating btn-large red">
+			    <Button>Add message</Button>
+			  </Link>
 		</div>
 	);
 };

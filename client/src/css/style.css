@@ -123,7 +123,11 @@ ul {
   margin: 0;
   padding: 10px;
   background: #ffffff;
-  width: 100%; }
+  width: 100%;
+  margin-top: 60px;
+  margin-Bottom: 100px; }
+  .main a:hover {
+    text-decoration: none; }
 
 .logo {
   animation: App-logo-spin infinite 10s linear;

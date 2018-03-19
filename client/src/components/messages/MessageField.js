@@ -1,6 +1,7 @@
 // SurveyField contains logic to render a single
 // label and text input
 import React from 'react';
+import { Input } from 'reactstrap';
 
 export default ({ input, label, meta: { error, touched } }) => {
 	//console.log(props);
@@ -8,10 +9,10 @@ export default ({ input, label, meta: { error, touched } }) => {
 	return (
 		<div>
 			<label>{label}</label>
-			<input style={{ marginBottom: '5px' }} {...input} />
+			<Input style={{ marginBottom: '5px' }} {...input} />
 		{/* if touched(next button) when field is
 		empty, throw error*/}
-			<div className="red-text" style={{ marginBottom: '20px' }}>{touched && error}</div>
+			<div style={{color: 'red' ,marginBottom: '20px' }}>{touched && error}</div>
 		</div>
 	);
 };

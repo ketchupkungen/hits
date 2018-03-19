@@ -3,16 +3,16 @@ import { combineReducers } from 'redux';
 // as it is importet from the redux-form library
 // Renamed to reduxForm, to make it less confusing
 import { reducer as reduxForm } from 'redux-form';
-import authReducer from './authReducer';
-import surveysReducer from './surveysReducer';
+
+import auth from './auth';
+import messages from './messages';
 
 export default combineReducers({
-	// authentication
-	auth: authReducer,
-	// survey form
+	// survey, redux form
 	form: reduxForm,
+
+	// authentication
+	auth: auth,
 	// survey list
-	surveys: surveysReducer
-
-
+	messages: messages
 });

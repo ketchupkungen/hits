@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../actions/actions';
 import { Container } from 'reactstrap';
 
-
-//import Header from './Header';
-//import Footer from './Footer';
-import Landing from './Landing';
+import Landing from './Landing'
+import MessageComposer from './messages/MessageComposer';
 import Dashboard from './Dashboard';
-import Profile from './Profile'
-//import SurveyNew from './surveys/SurveyNew';
+import Profile from './Profile';
 
 
 import '../css/style.css';
@@ -25,12 +22,10 @@ class App extends Component {
 			<div>
 				<BrowserRouter>
 					<Container className="container-fluid" fluid>
-						{/*<Header/>*/}
 						<Route exact path="/" component={Landing} />
-						<Route exact path="/chat" component={Dashboard} />
+						<Route exact path="/chat" component={Dashboard}/>
+						<Route exact path="/chat/new" component={MessageComposer} />
 						<Route exact path="/profile" component={Profile} />
-						{/*<Route exact path="/surveys/new" component={SurveyNew} />*/}
-						{/*<Footer/>*/}
 					</Container>
 				</BrowserRouter>
 			</div>

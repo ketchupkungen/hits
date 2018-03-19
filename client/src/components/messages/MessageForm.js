@@ -5,18 +5,19 @@ import React, { Component } from 'react';
 // text-inputs, dropdowns etc
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import SurveyField from './SurveyField';
+import { Button } from 'reactstrap';
+import MessageField from './MessageField';
 import validateEmails from '../../utils/validateEmails';
 import formFields from './formFields';
 
-class SurveyForm extends Component {
+class MessageForm extends Component {
 	renderFields() {
 		// Assigns label and name to the following fields
 		return _.map(formFields, ({ label, name}) => {
 			return (
 				<Field
 					key={name}
-					component={SurveyField}
+					component={MessageField}
 					type="text"
 					label={label}
 					name={name}
@@ -27,14 +28,14 @@ class SurveyForm extends Component {
 	render() {
 		return(
 			<div>
-				<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+				<form onSubmit={this.props.handleSubmit(this.props.onMessageSubmit)}>
 					{this.renderFields()}
-					<Link className="btn red left waves-effect waves-light" to="/surveys">
-						Cancel
+					<Link to="/chat">
+						<Button>Cancel</Button>
 					</Link>
-					<button className="btn green right waves-effect waves-light" type="submit">Next
-					  <i className="material-icons right">done</i>
-					</button>
+
+					<Button type="submit">Next
+					</Button>
 				</form>
 			</div>
 		);
@@ -47,10 +48,6 @@ function validate (values) {
 	// containing all the different values coming
 	// of of the form
 	const errors = {};
-
-	/*if(!values.title){
-		errors.title = 'You must provide a title';
-	}*/
 
 	// Validates emails
 	errors.recipients = validateEmails(values.recipients || '');
@@ -68,8 +65,8 @@ function validate (values) {
 
 export default reduxForm({
 	validate,
-	form: 'surveyForm',
+	form: 'messageForm',
 	// text in input fields does not
 	// get dumped on viewchange
 	destroyOnUnmount: false
-})(SurveyForm);
+})(MessageForm);

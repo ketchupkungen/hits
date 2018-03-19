@@ -4,13 +4,24 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const SocketIo = require('socket.io');
 require('./models/User');
-require('./models/Survey');
-require('./services/passport');
+require('./models/Message');
+
+const app = express();
+
+const login = require('./config/passport');
+passport.use('passport', login);
+
+// pass the authenticaion checker middleware
+//const authCheckMiddleware = require('./middlewares/auth-check');
+//app.use('/api', authCheckMiddleware);
 
 mongoose.connect(keys.mongoURI);
 
-const app = express();
+/*process.on('uncaughtException', function (err) {
+  console.log(err);
+});*/
 
 app.use(bodyParser.json());
 app.use(
@@ -26,7 +37,11 @@ app.use(passport.session());
 // Login routes
 require('./routes/authRoutes')(app);
 // Survey routes
-require('./routes/surveyRoutes')(app);
+require('./routes/messageRoutes')(app);
+// Message routes
+//require('./routes/messageRoutes')(app);
+// Channel routes
+//require('./routes/channelRoutes')(app);
 
 // Config for behavior in production mode
 if (process.env.NODE_ENV === 'production') {
@@ -43,9 +58,20 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
 // If there isn´t enviroment variable that has been already defined by heroku
 // go ahead and asign tht varible to PORT, otherwise use 5000
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-//app.listen(5000);
+
+
+//process.env.PORT = process.env.PORT || 5000;
+/*const server = app.listen(process.env.PORT, 'localhost', function(err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log('server listening on port: %s', process.env.PORT);
+});*/
+
+//const io = new SocketIo(server, {path: '/api/chat'})
+//const socketEvents = require('./config/socketEvents')(io);
