@@ -42,31 +42,9 @@ class MessageForm extends Component {
 	}
 }
 
-function validate (values) {
-	// takes a singel argument of values
-	// and the values thing is the object
-	// containing all the different values coming
-	// of of the form
-	const errors = {};
-
-	// Validates emails
-	errors.recipients = validateEmails(values.recipients || '');
-
-	// Asignes error to empty strings on
-	// the different fields
-	_.each(formFields, ({ name, noValueError }) => {
-		if(!values[name]) {
-			errors[name] = noValueError;
-		}
-	});
-
-	return errors;
-}
-
 export default reduxForm({
-	validate,
-	form: 'messageForm',
+	//form: 'messageForm',
 	// text in input fields does not
 	// get dumped on viewchange
 	destroyOnUnmount: false
-})(MessageForm);
+})(MessageForm);*/

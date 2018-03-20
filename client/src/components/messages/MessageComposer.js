@@ -1,82 +1,46 @@
 // MessageComposer shows MessageForm and MessageFormReview
 
-import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
-import MessageForm from './MessageForm';
-import MessageFormReview from './MessageFormReview';
-
-class MessageComposer extends Component {
-	state = { showFormReview: false };
-
-	renderContent() {
-		if (this.state.showFormReview){
-			return <MessageFormReview
-				onCancel={() => this.setState({ showFormReview: false })}
-			/>;
-		}
-
-		// else
-		return(
-			<MessageForm
-				onMessageSubmit={() => this.setState({ showFormReview: true})}
-			/>
-		);
-	}
-
-	render() {
-		return(
-			<div>
-				{this.renderContent()}
-			</div>
-		);
-	}
-}
-
-export default reduxForm({
-	form: 'messageForm'
-})(MessageComposer);
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
-import { Input, Button } from 'reactstrap';
-import * as actions from '../../actions';
-import formFields from './formFields';
+import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import _ from 'lodash';
+import * as actions from '../../actions/actions';
+import { Button, Input } from 'reactstrap'
 
-
-
-
-
-
-const MessageComposer = ({ formValues, submitMessage, history }) => {
-	render() {
-		return(
-			<div>
-				<Input className="messageComposer" placeholder="Send Message" />
-				<button
-				onClick={() => submitMessage(formValues, history)}
-				className="sucess"
-				type="submit">
-				Send Survey
-			  <i className="material-icons right">Send</i>
-			</button>
-			</div>
-		);
-	}
+const MessageComposer = props => {
+  const { formValues, submitMessage, history, pristine, submitting, input} = props
+  return (
+    <form onSubmit={() => submitMessage(formValues,history)}>
+      <div>
+        <div>
+          <Input
+          	type="input"
+          	className="messageComposer"
+						placeholder="Send Message"
+						//value={this.state.value}
+						//onChange={this.handleChange}
+						{...input}
+					/>
+        </div>
+      </div>
+      <div>
+        <Button
+        	type="submit"
+        	style={{ bottom: '25px', right: '10px', position: 'fixed'}}
+        	disabled={pristine || submitting}
+        	>
+          	Submit
+        </Button>
+      </div>
+    </form>
+  )
 }
 
-export default MessageComposer;*/
+function mapStateToProps(state) {
+	//console.log(state);
 
+	return {
+		formValues: state.messages.values
+	};
+}
+
+export default connect(mapStateToProps, actions)(MessageComposer);

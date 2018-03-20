@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 import MessageList from './messages/MessageList';
-//import MessageComposer from './messages/MessageComposer';
+import MessageComposer from './messages/MessageComposer';
 import Sidebar from './Sidebar';
 import logo from '../logo.svg';
 
@@ -21,9 +20,7 @@ const Dashboard = () => {
 			<ul>
 				<MessageList />
 			</ul>
-	      <Link to="/chat/new" className="btn-floating btn-large red">
-			    <Button>Add message</Button>
-			  </Link>
+	      <MessageComposer />
 		</div>
 	);
 };

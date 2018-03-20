@@ -33,12 +33,9 @@ class Sidebar extends Component {
 					        <Media className="profile-img-chat" object src={profile} alt="Placeholder"/>
 					      </Media>
 					      <Media body>
-					        <Media heading>
-					          <p>Username</p>
+					          <p>Bob</p>
+					          <p>Bobsson</p>
 					          <label htmlFor="slide" className="toggleBack"><i className="fa fa-times"></i></label>
-
-					        </Media>
-					        <p>Bob Bobsson</p>
 					      </Media>
 					    </Media>
 					    <hr/>

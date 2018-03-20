@@ -1,12 +1,14 @@
-const bcrypt = require('bcrypt-nodejs');
+//const bcrypt = require('bcrypt-nodejs');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
 	// Google login
-	google:{
+	//google:{
 		googleId: String,
-	},
+    googleName: String,
+    googleImageUrl: String
+	//},
 	// Local login
 	/*local: {
 	    email: {
@@ -16,14 +18,6 @@ const userSchema = new Schema({
 	  password: String,
 	  name: String
   }*/
-  email: {
-  	type: String,
-  	index: { unique: true }
-  },
-  password: String,
-  name: String
-
-
 });
 
 ///////////////////////////
@@ -63,15 +57,15 @@ exports.findByUsername = function(username, cb) {
  * @param {string} password
  * @returns {object} callback
  */
-userSchema.methods.comparePassword = function comparePassword(password, callback) {
+/*userSchema.methods.comparePassword = function comparePassword(password, callback) {
   bcrypt.compare(password, this.password, callback);
-};
+};*/
 
 
 /**
  * The pre-save hook method.
  */
-userSchema.pre('save', function saveHook(next) {
+/*userSchema.pre('save', function saveHook(next) {
   const user = this;
 
   // proceed further only if the password is modified or the user is new
@@ -102,6 +96,6 @@ userSchema.methods.generateHash = function(password) {
 // checking if password is valid
 userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
-};
+};*/
 
 mongoose.model('users', userSchema);

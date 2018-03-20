@@ -11,20 +11,16 @@ const Message = mongoose.model('messages');
 module.exports = app => {
 	// Show all messages on dashboard
 	app.get('/api/chat', requireLogin, async (req, res) => {
-    const messages = await Message.find({ _user: req.user.id })
-    	.select({
-    		recipients: false
-    	});
+    const messages = await Message.find({ _user: req.user.id });
 
     res.send(messages);
   });
 
 	// Make sure user is logged in to post
 	app.post('/api/chat', requireLogin, async (req, res) => {
-    const { user, text } = req.body;
+    const { text } = req.body;
 
     const message = new Message({
-      user,
       text,
       _user: req.user.id,
       dateSent: Date.now()

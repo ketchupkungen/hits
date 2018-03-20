@@ -19,9 +19,9 @@ passport.use('passport', login);
 
 mongoose.connect(keys.mongoURI);
 
-/*process.on('uncaughtException', function (err) {
+process.on('uncaughtException', function (err) {
   console.log(err);
-});*/
+});
 
 app.use(bodyParser.json());
 app.use(
@@ -60,18 +60,16 @@ if (process.env.NODE_ENV === 'production') {
 
 // If there isn´t enviroment variable that has been already defined by heroku
 // go ahead and asign tht varible to PORT, otherwise use 5000
-const PORT = process.env.PORT || 5000;
-app.listen(PORT);
-
-
-//process.env.PORT = process.env.PORT || 5000;
-/*const server = app.listen(process.env.PORT, 'localhost', function(err) {
+//const PORT = process.env.PORT || 5000;
+//app.listen(PORT);
+process.env.PORT = process.env.PORT || 5000;
+const server = app.listen(process.env.PORT, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
   }
   console.log('server listening on port: %s', process.env.PORT);
-});*/
+});
 
-//const io = new SocketIo(server, {path: '/api/chat'})
-//const socketEvents = require('./config/socketEvents')(io);
+const io = new SocketIo(server, {path: '/api/chat'})
+const socketEvents = require('./config/socketEvents')(io);

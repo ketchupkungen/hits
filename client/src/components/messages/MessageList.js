@@ -39,20 +39,20 @@ class MessageList extends Component {
 									</Button>
 		              <a href="/profile">
 		              <b className="mess-name">
-		                {message.user}
+		                {message._user}
 		              </b>
 		              </a>
 		              <i className="mess-time">
-		                { new Date(message.dateSent).toLocaleDateString() }
+		                { new Date(message.dateSent).toLocaleString() }
 		              </i>
 
 		            </Media>
 		            <p className='mess-text'>
-		              {message.text}
+		              {message.text}test
 		            </p>
+		            <hr/>
 		          </Media>
 		        </Media>
-		        <hr/>
 		      </li>
 			)
 		})
@@ -63,35 +63,6 @@ class MessageList extends Component {
 		return (
 			<div className="main">
 				{ this.renderMessages() }
-	      <li className="messageArea">
-	        <Media>
-	          <Media left>
-	            {/*Temporary img*/}
-	            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
-	          </Media>
-	          <Media body>
-	            <Media heading>
-	            	<Button className="mess-edit">
-								  <i className="fa fa-ellipsis-h"></i>
-								</Button>
-	              <a href="/profile">
-	              <b className="mess-name">
-	                Erik Olsson
-	              </b>
-	              </a>
-	              <i className="mess-time">
-	                2018-02-20 13:37
-	              </i>
-
-	            </Media>
-	            <p className='mess-text'>
-	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
-	              Bacon ipsum dolor amet ham hock pancetta andouille, kielbasa ribeye corned beef pork strip steak sirloin filet mignon. Kevin pork chicken doner drumstick. Frankfurter shank tri-tip prosciutto sirloin strip steak buffalo short loin boudin andouille landjaeger ham hock meatball burgdoggen. Ground round pork belly short loin capicola brisket.
-	            </p>
-	          </Media>
-	        </Media>
-	        <hr/>
-	      </li>
       </div>
 		)
 	}
