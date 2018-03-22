@@ -139,26 +139,12 @@ ul {
   to {
     transform: rotate(360deg); } }
 
-.profile-img-chat {
-  height: 50px;
-  width: 50px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px #222222; }
-
 .profile-page {
   margin-top: 100px; }
 
 .profile-img {
   width: 100%;
   border-radius: 5px; }
-
-.messageComposer {
-  background: #ffffff;
-  width: 100%;
-  height: 80px;
-  flex-shrink: 0;
-  bottom: 0;
-  position: fixed; }
 
 .activeChannel {
   position: fixed;
@@ -181,9 +167,30 @@ ul {
   box-shadow: 1px 1px 10px 1px #696969; }
 
 /*Sender of message*/
+.profile-img-chat {
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 0px #696969; }
+
+/*.messageArea {
+		padding: 10px;
+	}*/
+.messageComposer {
+  background: #ffffff;
+  width: 100%;
+  height: 80px;
+  flex-shrink: 0;
+  bottom: 0;
+  position: fixed; }
+
+.form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none; }
+
 .mess-name {
   color: #808080;
-  /*margin-left: 10px;*/
   background: Transparent;
   background-repeat: noRepeat;
   border: none;
@@ -322,7 +329,7 @@ ul {
     font-size: 20px;
     cursor: pointer;
     margin: 5px;
-    box-shadow: 1px 1px 1px 1px #222222;
+    box-shadow: 1px 1px 5px 1px #222222;
     border-radius: 5px; }
   .sidebar-frame .sidebar-send-btn {
     background-color: #5CB85C;
@@ -332,7 +339,7 @@ ul {
     font-size: 20px;
     cursor: pointer;
     margin: 4px;
-    box-shadow: 1px 1px 1px 1px #222222;
+    box-shadow: 1px 1px 5px 1px #222222;
     border-radius: 5px; }
   .sidebar-frame .sidebar-send-btn:hover {
     background-color: green;

@@ -28,7 +28,7 @@ const MessageComposer = props => {
         	style={{ bottom: '25px', right: '10px', position: 'fixed'}}
         	disabled={pristine || submitting}
         	>
-          	Submit
+          	Send
         </Button>
       </div>
     </form>
