@@ -30,7 +30,7 @@ class Sidebar extends Component {
 						<nav className="sidebar">
 							<Media>
 					      <Media left href="/profile">
-					        <Media className="profile-img-chat" object src="profile-img-chat" src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png" alt="thumbnail"/>
+					        <Media className="profile-img-chat" object src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png"/>
 					      </Media>
 					      <Media body>
 					          <p>Bob</p>

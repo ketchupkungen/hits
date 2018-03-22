@@ -21,7 +21,7 @@ const Profile = () => {
 				<Container>
 					<Row>
 						<Col sm="12" md="4">
-							<img className="profile-img" alt="profile-img" src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png" alt="thumbnail"/>
+							<img className="profile-img" alt="profile-img" src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png"/>
 						</Col>
 						<Col sm="12" md="8">
 							<p>
