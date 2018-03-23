@@ -44,7 +44,11 @@ passport.use(
 			}
 			// I dont´t have a user record with this ID,
 			// make a new record
-			const user = await new User({googleId: profile.id}).save();
+			const user = await new User({
+        googleId: profile.id,
+        username: profile.displayName,
+        imageUrl: profile._json.image.url
+      }).save();
 			done(null,user);
 			// Testing logs
 			/*console.log('access token', accessToken);
