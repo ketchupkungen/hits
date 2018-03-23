@@ -25,13 +25,16 @@ class MessageList extends Component {
 	}
 
 	renderMessages() {
-		// Temporary: Latest is on top
+		// Shows the latest on the bottom
+		// Temporarily added the reverse, showing the latest on top.
+		// Since autoscroll to bottom is not in place yet
 		return this.props.messages.reverse().map((message, submitMessage, history) => {
 			return (
 					<li className="messageArea" key={message._id}>
 		        <Media>
 		          <Media left>
-		            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
+		            <img className="profile-img-chat" src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png" alt="thumbnail"/>
+
 		          </Media>
 		          <Media body>
 		            <Media heading>

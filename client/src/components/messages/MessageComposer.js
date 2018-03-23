@@ -101,11 +101,12 @@ const MessageComposer = props => {
       </div>
       <div>
         <Button
-          type="submit"
-          style={{ bottom: '25px', right: '10px', position: 'fixed'}}
-          disabled={pristine || submitting}
-          >
-            Send
+
+        	type="submit"
+        	style={{ bottom: '25px', right: '10px', position: 'fixed'}}
+        	disabled={pristine || submitting}
+        	>
+          	Send
         </Button>
       </div>
     </form>

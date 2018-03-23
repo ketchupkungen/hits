@@ -20,10 +20,10 @@ const Profile = () => {
 			<div className="profile-page">
 				<Container>
 					<Row>
-						<Col sm="12" md="6">
-							<img className="profile-img" alt="profile-img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"/>
+						<Col sm="12" md="4">
+							<img className="profile-img" alt="profile-img" src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png"/>
 						</Col>
-						<Col sm="12" md="6">
+						<Col sm="12" md="8">
 							<p>
 								<strong>Name: </strong>Bob Bobsson
 							</p>

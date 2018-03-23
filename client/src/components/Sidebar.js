@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import profile from '../images/profile-placeholder.png';
+//import profile from 'http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png';
 import { Media } from 'reactstrap';
 
 class Sidebar extends Component {
@@ -30,7 +30,7 @@ class Sidebar extends Component {
 						<nav className="sidebar">
 							<Media>
 					      <Media left href="/profile">
-					        <Media className="profile-img-chat" object src={profile} alt="Placeholder"/>
+					        <Media className="profile-img-chat" object src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png"/>
 					      </Media>
 					      <Media body>
 					          <p>Bob</p>
