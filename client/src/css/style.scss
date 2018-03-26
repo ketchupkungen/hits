@@ -6,6 +6,10 @@ html,body {
   flex-direction: column;
 }
 
+p {
+	font-family: 'Titillium Web', sans-serif;
+}
+
 .container-fluid {
 	padding: 0;
 }
@@ -187,13 +191,27 @@ ul {
 }
 
 .profile-page {
-	margin-top: 100px;
+	margin-top: 70px;
+
+	.profile-img {
+		width: 100%;
+		border-radius:15px;
+		box-shadow: 3px 3px 10px 0px #808080;
+		margin-bottom: 20px;
+	}
+
+	strong {
+		color: #696969;
+		margin-right: 5px;
+	}
+
+	p {
+		color: #808080;
+	}
+
 }
 
-.profile-img {
-	width: 100%;
-	border-radius:5px;
-}
+
 
 .activeChannel {
   position: fixed;
@@ -214,7 +232,7 @@ ul {
   width:100%;
   margin: 0;
   z-index: 1;
-  box-shadow: 1px 1px 10px 1px #696969;
+  box-shadow: 1px 1px 20px 1px #696969;
 }
 
 /*Sender of message*/
@@ -223,7 +241,7 @@ ul {
 		height:50px;
 		width:50px;
 		border-radius: 5px;
-		box-shadow: 3px 3px 10px 0px #696969;
+		//box-shadow: 3px 3px 10px 0px #696969;
 	}
 	/*.messageArea {
 		padding: 10px;
@@ -236,6 +254,7 @@ ul {
 	  flex-shrink: 0;
 	  bottom: 0;
 	  position: fixed;
+	  box-shadow: -1px -1px 20px 1px #696969;
 	}
 
 	// When input is active
@@ -253,6 +272,7 @@ ul {
     overflow: hidden;
     outline: none;
     font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
   }
 
   /*Time sent*/
@@ -298,178 +318,6 @@ ul {
     padding-bottom: 0.3em;
   }
 
-
-.sidebar-frame {
-  background-color: #696969;
-  width: 100%;
-  z-index:500;
-
-  p {
-  	color: white;
-  	margin-bottom: 5px;
-  }
-
-	.toggle {
-	  text-decoration: none;
-	  color: #222222;
-	  -webkit-transition: all 0.15s ease-out 0;
-	  -moz-transition: all 0.15s ease-out 0;
-	  transition: all 0.45s ease-out 0;
-	  position: fixed;
-	  top: 3px;
-	  left: 5px;
-	  z-index: 100;
-	  cursor: pointer;
-
-
-	  svg {
-			width: 45px;
-			height: 45px;
-			padding:5px;
-			background: #ffffff;
-		  text-decoration: none;
-		  font-size: 10px;
-		  color: #696969;
-		  -webkit-transition: all 0.15s ease-out 0;
-		  -moz-transition: all 0.15s ease-out 0;
-		  transition: all 0.45s ease-out 0;
-		  position: fixed;
-		  z-index: 100;
-		  cursor: pointer;
-	  }
-
-	  svg:hover {
-			color: #5CB85C;
-	  }
-  }
-
-  .sidebar {
-  position: fixed;
-  z-index: 100;
-  top: 0px;
-  bottom: 0px;
-  left: -290px;
-  -webkit-transition: all 0.15s ease-out 0;
-  -moz-transition: all 0.15s ease-out 0;
-  transition: all 0.15s ease-out 0;
-  width: 250px;
-  padding: 10px;
-  background: #696969;
-  }
-
-  .sidebar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  }
-
-  .sidebar li a {
-  color: #fff;
-  font-size: 17px;
-  margin: 0;
-  margin-bottom: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 200%;
-  }
-
-  .sidebar a:hover {
-    color: #222222;
-  }
-
-  #slide:checked + .container .sidebar {
-  	left: 0px;
-  }
-
-  #slide:checked + .container .toggleBack {
-  	left: 190px;
-
-		svg {
-			color:#990000;
-
-			background: #696969;
-
-			width: 40px;
-			height: 40px;
-			padding:5px;
-		  text-decoration: none;
-		  font-size: 2em;
-		  -webkit-transition: all 0.15s ease-out 0;
-		  -moz-transition: all 0.15s ease-out 0;
-		  transition: all 0.45s ease-out 0;
-		  position: fixed;
-		  top: 0px;
-		  z-index: 100;
-		  cursor: pointer;
-		  left: 210px;
-		}
-
-		svg:hover {
-			color:red;
-		}
-	}
-
-  #slide {
-  display: none;
-  }
-
-  .sidebar-icon-btn {
-    background-color: #5CB85C;
-    border: none;
-    color: white;
-    padding: 10px 12px;
-    font-size: 20px;
-    cursor: pointer;
-    margin:5px;
-    box-shadow: 1px 1px 5px 1px #222222;
-    border-radius: 5px;
-	}
-
-	.sidebar-send-btn {
-		background-color: #5CB85C;
-    border: none;
-    color: white;
-    padding: 10px 55px;
-    font-size: 20px;
-    cursor: pointer;
-    margin:4px;
-    box-shadow: 1px 1px 5px 1px #222222;
-    border-radius: 5px;
-	}
-
-	.sidebar-send-btn:hover {
-    background-color: green;
-    color:white;
-    text-decoration: none;
-	}
-
-	.sidebar-icon-btn:hover {
-    background-color: green;
-    color:white;
-    text-decoration: none;
-	}
-}
-
-.nav {
-  z-index:500;
-  margin: 0;
-  color: white;
-  background: #696969;
-  width: 250px;
-  position: fixed;
-  height: 100%;
-}
-
-.navlink a {
-  text-decoration: none;
-  color: white;
-}
-
-.navlink a:hover {
-  text-decoration: none;
-  color: #696969;
-}
-
 @media screen and (max-width: 500px) {
   .login-card {
 		width: 420px;
@@ -500,3 +348,129 @@ ul {
   	display:block;
   }
 }
+
+.toggle {
+  text-decoration: none;
+
+  position: fixed;
+  width: 10px;
+  top: 6px;
+  left: 7px;
+  z-index: 100;
+  cursor: pointer;
+
+	svg {
+		color: #696969;
+		width: 40px !important;
+  	height: 40px !important;
+	}
+
+	svg:hover {
+		color: #59b300;
+	}
+}
+
+.sidebar-box {
+  background-color: #696969;
+  width: 100%;
+  z-index:500;
+
+  p {
+  	color: white;
+  	margin-bottom: 5px;
+  }
+
+  a {
+		text-decoration: none;
+  	color: white;
+  }
+
+  a:hover {
+		text-decoration: none;
+  	color: #59b300;
+  }
+
+	.sidebar {
+		opacity:1;
+		transition: all 0.60s ease;
+		z-index: 1000;
+		position: fixed;
+	  z-index: 500;
+	  top: 0px;
+	  bottom: 0px;
+	  width: 250px;
+	  padding: 10px;
+	  background: #696969;
+	}
+
+	.sidebar.sidebar-entering {
+		opacity: 0.5;
+		transform: translateX(0%);
+	}
+
+	.sidebar.sidebar-exited {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+
+	// Hide sidebar when clicking outside sidebar
+	// only let "hideScreen" show when sidebar is out
+	.screenHide {
+		opacity:0;
+		top:0;
+		bottom:0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		position:fixed;
+		transition: all 0.01s;
+	}
+
+	.screenHide.screenHide-entering {
+		opacity: 0;
+		transform: translateX(0%);
+	}
+
+	.screenHide.screenHide-exited {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+
+	.sidebar-icon-btn {
+    background-color: #59b300;
+    border: none;
+    color: white;
+    padding: 10px 13px;
+    font-size: 20px;
+    cursor: pointer;
+    margin:5px;
+    margin-left: 5px;
+    box-shadow: 1px 1px 5px 1px #222222;
+    border-radius: 5px;
+	}
+
+	.sidebar-icon-btn:hover {
+    background-color: #408000;
+    color:white;
+    text-decoration: none;
+	}
+
+	.sidebar-send-btn {
+    background-color: #59b300;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+    box-shadow: 1px 1px 10px 1px #222222;
+    border-radius: 5px;
+	}
+
+	.sidebar-send-btn:hover {
+    background-color: #408000;
+    color:white;
+    text-decoration: none;
+	}
+}
+

@@ -42,6 +42,7 @@
     "path": "^0.12.7",
     "path-parser": "^3.0.1",
     "react-stripe-checkout": "^2.6.3",
+    "react-transition": "^1.0.3",
     "redux-thunk": "^2.2.0",
     "sendgrid": "^5.2.3",
     "socket.io": "^2.0.4",

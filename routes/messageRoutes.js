@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 
 const Message = mongoose.model('messages');
+const User = mongoose.model('users');
 
 module.exports = app => {
 	// Show all messages on dashboard

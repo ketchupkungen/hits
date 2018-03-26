@@ -28,7 +28,7 @@ class MessageList extends Component {
 		// Shows the latest on the bottom
 		// Temporarily added the reverse, showing the latest on top.
 		// Since autoscroll to bottom is not in place yet
-		return this.props.messages.reverse().map((message, submitMessage, history) => {
+		return this.props.messages.reverse().map((message, history) => {
 			return (
 					<li className="messageArea" key={message._id}>
 		        <Media>
@@ -81,10 +81,7 @@ class MessageList extends Component {
 		                {user.username}
 		              </b>
 		              </a>
-
-
 		            </Media>
-
 		          </Media>
 		        </Media>
 		      </li>
@@ -96,8 +93,7 @@ class MessageList extends Component {
 	render() {
 		return (
 			<div className="main">
-				{
-					this.renderMessages() }
+				{ this.renderMessages() }
       </div>
 		)
 	}

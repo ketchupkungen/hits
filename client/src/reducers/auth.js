@@ -15,19 +15,10 @@ import {
   RECEIVE_SOCKET*/
  } from '../actions/types';
 
-const initialState = {
-  loaded: false,
-  user: {
-    username: null,
-    id: null,
-    socketID: null
-  }
-};
-
 
 // by default user = null, when we recieve FETCH_USER = true, frist then
 // we know who user is
-export default function(state = initialState, action = {}){
+export default function(state = [], action = {}){
 	//console.log(action);
 
 	switch (action.type) {

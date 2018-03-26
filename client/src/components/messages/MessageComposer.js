@@ -79,14 +79,13 @@ export default class MessageComposer extends Component {
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions/actions';
 import { Button, Input } from 'reactstrap'
 
-const MessageComposer = props => {
-  const { formValues, submitMessage, history, pristine, submitting, input} = props
+const MessageComposer = ({formValues, submitMessage, history, pristine, submitting, input}) => {
   return (
-    <form onSubmit={() => submitMessage(formValues,history)}>
+    //<form onSubmit={() => submitMessage(formValues,history)}>
+    <form>
       <div>
         <div>
           <Input
@@ -101,11 +100,10 @@ const MessageComposer = props => {
       </div>
       <div>
         <Button
-
         	type="submit"
+          onClick={() => submitMessage(formValues, history)}
         	style={{ bottom: '25px', right: '10px', position: 'fixed'}}
-        	disabled={pristine || submitting}
-        	>
+        >
           	Send
         </Button>
       </div>
@@ -117,7 +115,7 @@ function mapStateToProps(state) {
   //console.log(state);
 
   return {
-    formValues: state.messages.values
+    formValues: state.messages
   };
 }
 
