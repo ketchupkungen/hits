@@ -42,7 +42,7 @@ passport.use(
 				// I already have a record with the given profile ID
 				return done(null, existingUser);
 			}*/
-      if(profile._json.domain === "gmail.com"){
+      if(profile._json.hd === "gmail.com"){
         // find or create user in database, etc
         await User.findOne({ googleId: profile.id }).done(done);
       }else{
