@@ -36,12 +36,19 @@ passport.use(
 			proxy: true
 		},
 		async (accessToken, refreshToken, profile, done) => {
-			const existingUser = await User.findOne({ googleId: profile.id });
+			/*const existingUser = await User.findOne({ googleId: profile.id });
 
 			if(existingUser){
 				// I already have a record with the given profile ID
 				return done(null, existingUser);
-			}
+			}*/
+      if(profile._json.domain === "gmail.com"){
+        // find or create user in database, etc
+        await User.findOne({ googleId: profile.id }).done(done);
+      }else{
+        // fail
+        done(new Error("Invalid host domain"));
+      }
 			// I dont´t have a user record with this ID,
 			// make a new record
 			const user = await new User({
