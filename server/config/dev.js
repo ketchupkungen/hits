@@ -1,6 +1,6 @@
 module.exports = {
 	// Mongo URI
-	mongoURI: 'mongodb://hits-dev-user:1234@ds261118.mlab.com:61118/hits-dev',
+	mongoURI: 'mongodb://bjurn:1234@ds121309.mlab.com:21309/bjurn-test',
 
 	// Secret
 	SECRET: 'SUPERSECRETPASSWORD123'

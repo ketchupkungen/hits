@@ -23,12 +23,6 @@ export function getMessages(
 
 }
 
-/*export const fetchMessages = () => async dispatch => {
-  const res = await axios.get('/api/chat');
-
-  dispatch({ type: FETCH_MESSAGES, payload: res.data })
-};*/
-
 export function getMessageWithSender(id){
     const request = axios.get(`/api/getMessage?id=${id}`)
 

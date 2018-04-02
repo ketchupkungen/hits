@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMessages,fetchUser } from '../../actions/actions';
+import { fetchMessages } from '../../actions/actions';
 import { Button, Media } from 'reactstrap';
 
 class MessageList extends Component {
@@ -21,14 +21,13 @@ class MessageList extends Component {
 
 	componentDidMount() {
 		this.props.fetchMessages();
-		this.props.fetchUser();
 	}
 
 	renderMessages() {
 		// Shows the latest on the bottom
 		// Temporarily added the reverse, showing the latest on top.
 		// Since autoscroll to bottom is not in place yet
-		return this.props.messages.reverse().map((message, history) => {
+		return this.props.messages.reverse().map((message, submitMessage, history) => {
 			return (
 					<li className="messageArea" key={message._id}>
 		        <Media>
@@ -62,33 +61,6 @@ class MessageList extends Component {
 		})
 	}
 
-	renderMessages2() {
-		// Temporary: Latest is on top
-		return this.props.users.reverse().map((user, history) => {
-			return (
-					<li className="messageArea" key={user._id}>
-		        <Media>
-		          <Media left>
-		            <img className="profile-img-chat" src="https://react-bootstrap.github.io/thumbnail.png" alt="thumbnail" />
-		          </Media>
-		          <Media body>
-		            <Media heading>
-		            	<Button className="mess-edit">
-									  <i className="fa fa-ellipsis-h"></i>
-									</Button>
-		              <a href="/profile">
-		              <b className="mess-name">
-		                {user.username}
-		              </b>
-		              </a>
-		            </Media>
-		          </Media>
-		        </Media>
-		      </li>
-			)
-		})
-	}
-
 
 	render() {
 		return (
@@ -99,8 +71,8 @@ class MessageList extends Component {
 	}
 }
 
-function mapStateToProps({ messages,users }) {
-	return { messages,users };
+function mapStateToProps({ messages }) {
+	return { messages };
 }
 
-export default connect(mapStateToProps, { fetchMessages,fetchUser })(MessageList);
+export default connect(mapStateToProps, { fetchMessages })(MessageList);
