@@ -22,6 +22,7 @@
     "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
     "del-cli": "^1.1.0",
+    "es6-promise": "^4.2.4",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.0.1",
     "moment-js": "^1.1.15",
