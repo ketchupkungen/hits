@@ -1,67 +1,84 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-//import profile from 'http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png';
-import { Media } from 'reactstrap';
+import Transition from 'react-transition-group/Transition';
+import { Button } from 'mdbreact';
+//import SidebarUser from './SidebarUser';
+
 
 class Sidebar extends Component {
-	constructor(props) {
-    super(props);
+	constructor(props){
+		super(props);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
+		this.state = {
+			isOpen: false
+		};
+	}
+
+  state = {
+  	show:true
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+
+  toggleSidebar = () => {
+  	this.setState({
+  		show:!this.state.show ? true:false
+  	})
   }
+
+  toggle
 
 	render() {
 		return (
 			<div>
 
-				<div className="sidebar-frame">
-					<input type="checkbox" id="slide" name="" value="" />
-					<div className="container">
-						<label htmlFor="slide" className="toggle"><i className="fa fa-bars"></i></label>
-						<nav className="sidebar">
-							<Media>
-					      <Media left href="/profile">
-					        <Media className="profile-img-chat" object src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png"/>
-					      </Media>
-					      <Media body>
-					          <p>Bob</p>
-					          <p>Bobsson</p>
-					          <label htmlFor="slide" className="toggleBack"><i className="fa fa-times"></i></label>
-					      </Media>
-					    </Media>
+				<div onClick={this.toggleSidebar} className="toggle">
+					<i className="fa fa-bars"></i>
+				</div>
+				<Transition
+					in={this.state.show}
+					timeout={5}
+				>
+				{ state =>
+					
+					<div className="sidebar-box">
+						<nav className={`sidebar sidebar-${state}`}>
+							{/*Issue connecting user to sidebar*/}
+							{/*<SidebarUser/>
+
+								<hr/>
+							*/}
+
+					    
+
+							<Link to="/home"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-home"></i></Button></Link>
+							<Link to="/users"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-users"></i></Button></Link>
+							<Link to="/home"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-bars"></i></Button></Link>
+							<Link to="/users-admin"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-wrench"></i></Button></Link>
+
 					    <hr/>
 
-							<Link className="sidebar-icon-btn" to="/chat"><i className="fa fa-home"></i></Link>
-							<Link className="sidebar-icon-btn" to="/chat"><i className="fa fa-users"></i></Link>
-							<Link className="sidebar-icon-btn" to="/chat"><i className="fa fa-bars"></i></Link>
-							<Link className="sidebar-icon-btn" to="/chat"><i className="fa fa-wrench"></i></Link>
-
-					    <hr/>
-
-					    <Link className="sidebar-icon-btn" to="/chat"><i className="fa fa-comment"></i> Private message</Link>
+					    <Link to="/home"><Button className="sidebar-send-btn" color="dark-green"><i className="fa fa-comment"></i> Private message</Button></Link>
 
 					    <hr/>
 
 							<ul>
 								<li><p><Link to="/profile">Profile page</Link></p></li>
-								<li><p><Link to="/chat">Options</Link></p></li>
-								<li><p><Link to="/chat">Notifications</Link></p></li>
-								<li><p><Link to="/chat">Help & feedback</Link></p></li>
-								<li><p><a href="/api/logout">Logout</a></p></li>
+								<li><p><Link to="/users">Users</Link></p></li>
+								<li><p><Link to="/users-admin">Users admin</Link></p></li>
+								<li><p><Link to="/home">Options</Link></p></li>
+								<li><p><Link to="/home">Notifications</Link></p></li>
+								<li><p><Link to="/home">Help & feedback</Link></p></li>
+								<li><p><Link to="/logout">Logout</Link></p></li>
 							</ul>
 						</nav>
+						<div
+							className={`screenHide screenHide-${state}`}
+							onClick={this.toggleSidebar}
+						>
+							
+						</div>
 					</div>
-	      </div>
-
+	    	}
+	    	</Transition>
       </div>
 		)
 	}
