@@ -7,7 +7,7 @@ import UsersAdmin from './components/Admin/UsersAdmin'
 import MessageView from './components/Messages'
 import Login from './containers/login'
 import Profile from './containers/Profile'
-import EditReview from './containers/edit';
+import EditMessage from './containers/edit';
 import Register from './containers/Admin/register';
 import Logout from './components/logout';
 
@@ -32,7 +32,7 @@ const Routes = () => {
         <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
         <Route path="/logout" exact component={Auth(Logout,true)}/>
         <Route path="/profile" exact component={Auth(Profile,true)}/>
-        <Route path="/edit-message/:id" exact component={Auth(EditReview,true)}/>
+        <Route path="/edit-message/:id" exact component={Auth(EditMessage,true)}/>
         <Route path="/home/:id" exact component={Auth(MessageView,true)}/>
       </Switch>
     </Layout>
