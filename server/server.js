@@ -14,8 +14,6 @@ const { auth } = require('./middleware/auth')
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(express.static('client/build'))
-
 // GET //
 app.get('/api/auth',auth,(req,res)=>{
     res.json({
@@ -169,19 +167,35 @@ app.delete('/api/delete_user',(req,res)=>{
     })
 })
 
-if(process.env.NODE_ENV === 'production'){
+/*if(process.env.NODE_ENV === 'production'){
     const path = require('path');
     app.get('/*',(req,res)=>{
         res.sendfile(path.resolve(__dirname,'../client','build','index.html'))
     })
+}*/
+
+// Config for behavior in production mode
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up production assets
+  // like our main.js file, or main.css file!
+  app.use(express.static('client/build'));
+
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route
+    const path = require('path');
+    // Fine return the index.html file
+    app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+  });
 }
 
 
-process.env.PORT = process.env.PORT || 5000;
-const server = app.listen(process.env.PORT, 'localhost', function(err) {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
+/*const server = app.listen(process.env.PORT, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
   }
   console.log('server listening on port: %s', process.env.PORT);
-});
+});*/
