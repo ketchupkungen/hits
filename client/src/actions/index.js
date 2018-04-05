@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getMessages(
-    limit = 10,
+    limit = 20,
     start = 0,
     order = 'asc',
     list = ''
@@ -21,6 +21,29 @@ export function getMessages(
         payload:request
     }
 
+}
+
+export function getMessagesWithSenders(){
+    const request = axios.get(`/api/getMessagesWithSenders`)
+
+    return (dispatch)=>{
+        request.then(({data})=>{
+            let message = data;
+
+            axios.get(`/api/getSender?id=${message.ownerId}`)
+            .then(({data})=>{
+                let response = {
+                    message,
+                    sender:data
+                }
+
+                dispatch({
+                    type:'GET_MESSAGES_W_SENDERS',
+                    payload:response
+                })
+            })
+        })
+    }
 }
 
 export function getMessageWithSender(id){
@@ -46,28 +69,7 @@ export function getMessageWithSender(id){
     }
 }
 
-export function getMessagesWithSenders(){
-    const request = axios.get(`/api/getMessagesWithSenders`)
 
-    return (dispatch)=>{
-        request.then(({data})=>{
-            let message = data;
-
-            axios.get(`/api/getSender?id=${message.ownerId}`)
-            .then(({data})=>{
-                let response = {
-                    message,
-                    sender:data
-                }
-
-                dispatch({
-                    type:'GET_MESSAGE_W_SENDER',
-                    payload:response
-                })
-            })
-        })
-    }
-}
 
 export function clearMessageWithSender(){
     return {
@@ -97,7 +99,7 @@ export function clearNewMessage() {
 
 export function getUserPosts(userId){
     const request = axios.get(`/api/user_posts?user=${userId}`)
-                    .then(response => response.data)
+        .then(response => response.data)
 
     return {
         type:'GET_USER_POSTS',
@@ -107,7 +109,7 @@ export function getUserPosts(userId){
 
 export function getMessage(id){
     const request = axios.get(`/api/getMessage?id=${id}`)
-                    .then(response => response.data);
+        .then(response => response.data);
 
     return {
         type:'GET_MESSAGE',
@@ -117,8 +119,8 @@ export function getMessage(id){
 
 
 export function updateMessage(data){
-    const request = axios.post(`/api/message_update`,data)
-                .then(response => response.data);
+    const request = axios.post(`/api/edit-message`,data)
+        .then(response => response.data);
 
     return {
         type:'UPDATE_MESSAGE',
@@ -129,7 +131,7 @@ export function updateMessage(data){
 
 export function deleteMessage(id){
     const request = axios.delete(`/api/delete_message?id=${id}`)
-                    .then(response => response.data)
+        .then(response => response.data)
 
     return {
         type:'DELETE_MESSAGE',
@@ -151,9 +153,9 @@ export function clearMessage(){
 
 /*========= USER ===========*/
 
-export function loginUser({email,password}){
-    const request = axios.post('/api/login',{email,password})
-                .then(response => response.data)
+export function loginUser({username,password}){
+    const request = axios.post('/api/login',{username,password})
+        .then(response => response.data)
 
     return {
         type:'USER_LOGIN',
@@ -163,7 +165,7 @@ export function loginUser({email,password}){
 
 export function auth(){
     const request = axios.get('/api/auth')
-                .then(response => response.data);
+        .then(response => response.data);
 
     return {
         type:'USER_AUTH',
@@ -175,8 +177,7 @@ export function auth(){
 
 export function getUser(id){
     const request = axios.get(`/api/getUser?id=${id}`)
-                    .then(response => response.data);
-
+        .then(response => response.data);
     return {
         type:'GET_USER',
         payload:request
@@ -206,7 +207,7 @@ export function userRegister(user,userList){
 export function getUsers(){
     const request = axios.get(`/api/users`)
                     .then(response => response.data);
-        
+
     return {
         type:'GET_USER',
         payload:request
@@ -222,3 +223,26 @@ export function deleteUser(id){
         payload:request
     }
 }
+
+/*export function getUsers(
+    limit = 1,
+    start = 0,
+    order = 'asc',
+    list = ''
+){
+    const request = axios.get(`/api/users?limit=${limit}&skip=${start}&order=${order}`)
+        .then(response => {
+            if(list){
+                return [...list,...response.data]
+            } else {
+                return response.data
+            }
+        }
+    )
+
+    return {
+        type:'GET_USERS',
+        payload:request
+    }
+
+}*/

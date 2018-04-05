@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getMessageWithSender, clearMessageWithSender } from '../../actions';
 import { connect } from 'react-redux';
 import { Media,Button } from 'mdbreact';
+import moment from 'moment-js';
 import Sidebar from '../Sidebar'
 import logo from '../../logo.svg'
 
@@ -17,12 +18,12 @@ class MessageView extends Component {
     }
 
     renderMessage = (messages) => (
-        messages.message ? 
+        messages.message ?
         <div>
           <div className="header">
               <h5>
                   <img src={logo} className="logo" alt="logo"/>
-                  {messages.sender.name} {messages.sender.lastname} 
+                  {messages.sender.name} {messages.sender.lastname}
               </h5>
           </div>
           <Sidebar/>
@@ -31,26 +32,23 @@ class MessageView extends Component {
             <li className="messageArea">
                 <Media>
                   <Media left>
-                    <img className="profile-img" alt="profile-img" src={messages.sender.image}/>
-
+                    <Media object className="profile-img-chat" src={messages.sender.image} alt="Generic placeholder image" />
                   </Media>
                   <Media body>
                     <Media heading>
                       <Link to={
-                        `/edit-messages/${messages._id}`
+                        `/home/edit-messages/${this._id}`
                       }>
-                    
-                        <Button className="mess-edit">
+
+                        <Button color="grey" className="mess-edit">
                           <i className="fa fa-ellipsis-h"></i>
                         </Button>
                       </Link>
-                      <a href="/profile">
                       <b className="mess-name">
                         {messages.sender.name} {messages.sender.lastname}
                       </b>
-                      </a>
                       <i className="mess-time">
-                        { new Date(messages.message.dateSent).toLocaleString() }
+                        {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
                       </i>
 
                     </Media>
@@ -72,6 +70,7 @@ class MessageView extends Component {
         return (
             <div>
                 {this.renderMessage(messages)}
+
             </div>
         );
     }

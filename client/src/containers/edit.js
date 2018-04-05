@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getMessage, updateMessage, clearMessage, deleteMessage } from '../actions'
 import { Button } from 'mdbreact'
+import { Link } from 'react-router-dom'
+import Sidebar from '../components/Sidebar'
+import logo from '../logo.svg'
 
 class EditMessage extends PureComponent {
 
@@ -63,45 +65,60 @@ class EditMessage extends PureComponent {
         let messages = this.props.messages;
         return (
             <div>
-                {
-                    messages.updateMessage ? 
-                        <div>
-                            message updated , <Link to={`/messages/${messages.message._id}`}>
-                                Click here to see your message
-                            </Link>
-                        </div>
-                    :null
-                }
-                {
-                    messages.postDeleted ? 
-                        <div>
-                            Message Deleted
-                            {this.redirectUser()}
-                        </div>
-                    :null
-                }
+                <div className="header">
+                    <h5>
+                        <img src={logo} className="logo" alt="logo"/>
+                        Edit message
+                    </h5>
+                </div>
+                <Sidebar/>
+                <div className="main edit-message-screen">
+                  {
+                      messages.updateMessage ?
+                          <div>
+                              message updated
+                              {this.redirectUser()}
+                          </div>
+                      :null
+                  }
+                  {
+                      messages.postDeleted ?
+                          <div>
+                              Message deleted
+                              {this.redirectUser()}
+                          </div>
+                      :null
+                  }
 
-                <form onSubmit={this.submitForm}>
-                    <h2>Edit message</h2>
+                  <form onSubmit={this.submitForm}>
+                      <textarea
+                        className="edit-message"
+                        placeholder="Enter message"
+                        value={this.state.formdata.text}
+                        onChange={(event)=>this.handleInput(event,'text')}
+                      />
 
-                    <div>
-                        <input
-                            type="text"
-                            placeholder="Enter message"
-                            value={this.state.formdata.text}
-                            onChange={(event)=>this.handleInput(event,'text')}
-                        />
-                    </div>
-
-                    <Button type="submit">Edit</Button>
-                    <div>
+                      <Link to={`/home`}>
                         <Button
-                            onClick={this.deleteMessage}
+                          color="grey"
                         >
-                            Delete
+                          Back
                         </Button>
-                    </div>
-                </form>
+                      </Link>
+                      <Button
+                        type="submit"
+                        color="dark-green"
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        onClick={this.deleteMessage}
+                        color="red"
+                      >
+                        Delete
+                      </Button>
+                  </form>
+                </div>
             </div>
         );
     }

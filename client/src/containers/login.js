@@ -9,14 +9,14 @@ import { Card, CardBody, Button } from 'mdbreact';
 class Login extends Component {
 
   state = {
-      email:'',
+      username:'',
       password:'',
       error:'',
       success:false
   }
 
-  handleInputEmail = (event) => {
-      this.setState({email:event.target.value})
+  handleInputUsername = (event) => {
+      this.setState({username:event.target.value})
   }
   handleInputPassword = (event) => {
       this.setState({password:event.target.value})
@@ -48,10 +48,10 @@ class Login extends Component {
                 </h2>
                 <div className="login-field">
                   <input
-                    type="email"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={this.handleInputEmail}
+                    type="text"
+                    placeholder="Username"
+                    value={this.state.username}
+                    onChange={this.handleInputUsername}
                   />
                 </div>
                 <div className="login-field">
@@ -66,10 +66,10 @@ class Login extends Component {
                 <Button className="login-btn" color="dark-green" type="submit">Log in</Button>
                 <Link to="/register"><Button className="login-btn" color="dark-green">Register</Button></Link>
 
-                <div className="loginError">
+                <div>
                   {
                     user.login ?
-                      <p style={{textAlign:'center'}}>{user.login.message}</p>
+                      <p className="loginError">{user.login.message}</p>
                     :null
                   }
                 </div>
@@ -85,10 +85,10 @@ class Login extends Component {
             </h2>
             <div className="login-field">
               <input
-                type="email"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.handleInputEmail}
+                type="text"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleInputUsername}
               />
             </div>
             <div className="login-field">
@@ -103,10 +103,10 @@ class Login extends Component {
             <Button className="login-btn" color="dark-green" type="submit">Log in</Button>
             <Link to="/register"><Button className="login-btn" color="dark-green">Register</Button></Link>
 
-            <div className="loginError">
+            <div>
               {
                 user.login ?
-                  <p style={{textAlign:'center'}}>{user.login.message}</p>
+                  <p className="loginError">{user.login.message}</p>
                 :null
               }
             </div>

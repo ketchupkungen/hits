@@ -28,7 +28,7 @@ class Register extends Component {
 
     handleInputEmail = (event) => {
         this.setState({email:event.target.value})
-    } 
+    }
     handleInputPassword= (event) => {
         this.setState({password:event.target.value})
     }
@@ -37,7 +37,7 @@ class Register extends Component {
     }
     handleInputName = (event) => {
         this.setState({name:event.target.value})
-    } 
+    }
     handleInputLastname = (event) => {
         this.setState({lastname:event.target.value})
     }
@@ -87,7 +87,7 @@ class Register extends Component {
             gender:this.state.gender,
             career:this.state.career,
         },this.props.user.users))
-        
+
     }
 
     render() {
@@ -105,7 +105,7 @@ class Register extends Component {
 
                     <br/>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="text"
                       placeholder="Firstname"
                       value={this.state.name}
@@ -113,7 +113,7 @@ class Register extends Component {
                     />
                     </div>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="text"
                       placeholder="Lastname"
                       value={this.state.lastname}
@@ -121,7 +121,7 @@ class Register extends Component {
                     />
                     </div>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="email"
                       placeholder="mail@mail.com"
                       value={this.state.email}
@@ -129,7 +129,7 @@ class Register extends Component {
                     />
                     </div>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="text"
                       placeholder="username"
                       value={this.state.username}
@@ -137,7 +137,7 @@ class Register extends Component {
                     />
                     </div>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="text"
                       placeholder="phone"
                       value={this.state.phone}
@@ -145,7 +145,7 @@ class Register extends Component {
                     />
                     </div>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="text"
                       placeholder="career"
                       value={this.state.career}
@@ -153,7 +153,7 @@ class Register extends Component {
                     />
                     </div>
                     <div className="login-field">
-                    <input 
+                    <input
                       type="text"
                       placeholder="imageURL"
                       value={this.state.image}
@@ -171,7 +171,7 @@ class Register extends Component {
                       </select>
                     </div>*/}
                     <div className="login-field">
-                    <input 
+                    <input
                       type="password"
                       placeholder="Password"
                       value={this.state.password}
@@ -195,7 +195,7 @@ class Register extends Component {
 
                 <br/>
                 <div className="login-field">
-                <input 
+                <input
                   type="text"
                   placeholder="Firstname"
                   value={this.state.name}
@@ -203,7 +203,7 @@ class Register extends Component {
                 />
                 </div>
                 <div className="login-field">
-                <input 
+                <input
                   type="text"
                   placeholder="Lastname"
                   value={this.state.lastname}
@@ -211,7 +211,7 @@ class Register extends Component {
                 />
                 </div>
                 <div className="login-field">
-                <input 
+                <input
                   type="email"
                   placeholder="mail@mail.com"
                   value={this.state.email}
@@ -219,7 +219,7 @@ class Register extends Component {
                 />
                 </div>
                 <div className="login-field">
-                <input 
+                <input
                   type="text"
                   placeholder="username"
                   value={this.state.username}
@@ -227,7 +227,7 @@ class Register extends Component {
                 />
                 </div>
                 <div className="login-field">
-                <input 
+                <input
                   type="text"
                   placeholder="phone"
                   value={this.state.phone}
@@ -235,7 +235,7 @@ class Register extends Component {
                 />
                 </div>
                 <div className="login-field">
-                <input 
+                <input
                   type="text"
                   placeholder="career"
                   value={this.state.career}
@@ -243,9 +243,9 @@ class Register extends Component {
                 />
                 </div>
                 <div className="login-field">
-                <input 
+                <input
                   type="text"
-                  placeholder="career"
+                  placeholder="imageURL"
                   value={this.state.image}
                   onChange={this.handleInputImage}
                 />
@@ -261,7 +261,7 @@ class Register extends Component {
                   </select>
                 </div>*/}
                 <div className="login-field">
-                <input 
+                <input
                   type="password"
                   placeholder="Password"
                   value={this.state.password}

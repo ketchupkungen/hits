@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Container, Row, Col } from 'mdbreact';
 import Sidebar from '../components/Sidebar';
 import logo from '../logo.svg'
 

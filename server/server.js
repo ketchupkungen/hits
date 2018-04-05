@@ -67,7 +67,12 @@ app.get('/api/getSender',(req,res)=>{
         if(err) return res.status(400).send(err);
         res.json({
             name: doc.name,
-            lastname: doc.lastname
+            lastname: doc.lastname,
+            email:doc.email,
+            username:doc.username,
+            phone:doc.phone,
+            image:doc.image,
+            career:doc.career
         })
     })
 })
@@ -78,6 +83,18 @@ app.get('/api/users',(req,res)=>{
         res.status(200).send(users)
     })
 })
+
+/*app.get('/api/users',(req,res)=>{
+    let skip = parseInt(req.query.skip);
+    let limit = parseInt(req.query.limit);
+    let order = req.query.order;
+
+    // ORDER = asc || desc
+    User.find().skip(skip).sort({_id:order}).limit(limit).exec((err,doc)=>{
+        if(err) return res.status(400).send(err);
+        res.send(doc);
+    })
+})*/
 
 app.get('/api/user_posts',(req,res)=>{
     Message.find({ownerId:req.query.user}).exec((err,docs)=>{
@@ -113,8 +130,8 @@ app.post('/api/register',(req,res)=>{
 })
 
 app.post('/api/login',(req,res)=>{
-    User.findOne({'email':req.body.email},(err,user)=>{
-        if(!user) return res.json({isAuth:false,message:'Sorry, email was not found'})
+    User.findOne({'username':req.body.username},(err,user)=>{
+        if(!user) return res.json({isAuth:false,message:'Sorry, user was not found'})
 
         user.comparePassword(req.body.password,(err,isMatch)=>{
             if(!isMatch) return res.json({
@@ -127,7 +144,7 @@ app.post('/api/login',(req,res)=>{
                 res.cookie('auth',user.token).json({
                     isAuth:true,
                     id:user._id,
-                    email:user.email
+                    username:user.username
                 })
             })
         })
@@ -137,7 +154,7 @@ app.post('/api/login',(req,res)=>{
 
 
 // UPDATE //
-app.post('/api/message_update',(req,res)=>{
+app.post('/api/edit-message',(req,res)=>{
     Message.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
         if(err) return res.status(400).send(err);
         res.json({
@@ -167,13 +184,6 @@ app.delete('/api/delete_user',(req,res)=>{
     })
 })
 
-/*if(process.env.NODE_ENV === 'production'){
-    const path = require('path');
-    app.get('/*',(req,res)=>{
-        res.sendfile(path.resolve(__dirname,'../client','build','index.html'))
-    })
-}*/
-
 // Config for behavior in production mode
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
@@ -192,10 +202,3 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-/*const server = app.listen(process.env.PORT, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log('server listening on port: %s', process.env.PORT);
-});*/

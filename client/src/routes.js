@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Users from './components/Users'
 import UsersAdmin from './components/Admin/UsersAdmin'
+import VisitUser from './components/VisitUser'
 import MessageView from './components/Messages'
 import Login from './containers/login'
 import Profile from './containers/Profile'
@@ -28,12 +29,13 @@ const Routes = () => {
         <Route path="/" exact component={Auth(Login,null)}/>
         <Route path="/register" exact component={Auth(Register,null)}/>
         <Route path="/home" exact component={Auth(Home,true)}/>
+        <Route path="/home/edit-message/:id" exact component={Auth(EditMessage,true)}/>
+        <Route path="/home/:id" exact component={Auth(MessageView,true)}/>
         <Route path="/users" exact component={Auth(Users,true)}/>
+        <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
         <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
         <Route path="/logout" exact component={Auth(Logout,true)}/>
         <Route path="/profile" exact component={Auth(Profile,true)}/>
-        <Route path="/edit-message/:id" exact component={Auth(EditMessage,true)}/>
-        <Route path="/home/:id" exact component={Auth(MessageView,true)}/>
       </Switch>
     </Layout>
   );

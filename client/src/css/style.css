@@ -1,9 +1,8 @@
 html {
   height: 100vh; }
 
-body {
-  height: 100vh;
-  background: white; }
+h2 {
+  text-align: center; }
 
 ul {
   list-style-type: none;
@@ -44,8 +43,6 @@ p {
     }*/ }
     .login-page-desk .login-card p {
       color: white; }
-    .login-page-desk .login-card h2 {
-      text-align: center; }
     .login-page-desk .login-card img {
       display: block;
       margin-left: auto;
@@ -77,9 +74,6 @@ p {
     .login-page-desk .login-card .logo {
       animation: App-logo-spin infinite 10s linear;
       width: 50px; }
-    .login-page-desk .login-card .loginError {
-      color: #FF4500;
-      text-align: center; }
 
 .login-page-mobile {
   padding: 5px;
@@ -88,9 +82,6 @@ p {
   height: 100vh;
   background-size: cover;
   color: white; }
-  .login-page-mobile h2 {
-    text-align: center;
-    color: white; }
   .login-page-mobile a {
     text-align: center;
     color: white;
@@ -131,9 +122,10 @@ p {
   .login-page-mobile .logo {
     animation: App-logo-spin infinite 10s linear;
     width: 50px; }
-  .login-page-mobile .loginError {
-    color: #FF4500;
-    text-align: center; }
+
+.loginError {
+  color: #FF4500 !important;
+  text-align: center; }
 
 .md-form {
   margin-top: 0; }
@@ -191,7 +183,6 @@ p {
 
 /*Sender of message*/
 .profile-img-chat {
-  margin-left: 10px;
   height: 50px;
   width: 50px;
   border-radius: 5px;
@@ -221,6 +212,8 @@ p {
   overflow: hidden;
   outline: none;
   font-size: 20px; }
+  .mess-name a {
+    color: #808080; }
 
 /*Time sent*/
 .mess-time {
@@ -231,23 +224,24 @@ p {
   font-family: sans-serif; }
 
 .mess-edit {
-  color: #222222;
+  width: 30px;
   padding: 0;
   border: none;
+  border-radius: 15px;
   background: none;
-  opacity: 0.5;
+  opacity: 0.1;
   font-size: 20px;
-  right: 10px;
+  right: 0px;
   margin-top: 0;
   position: absolute; }
 
 .mess-edit:hover {
-  color: #222222;
+  opacity: 0.8;
   border: none;
   background: none; }
 
 .mess-edit:active {
-  color: #222222;
+  opacity: 0.5;
   border: none;
   background: none; }
 
@@ -255,10 +249,20 @@ p {
 .mess-text {
   color: #696969;
   clear: both;
-  padding-top: 0.1em;
-  padding-top: 0.1em;
+  padding-top: 1px;
   margin-top: -1px;
-  padding-bottom: 0.3em; }
+  padding-bottom: 3px; }
+
+.edit-message-screen .edit-message {
+  border: none;
+  width: 100%;
+  height: 100px; }
+
+.edit-message-screen .edit-message:focus {
+  outline: none !important; }
+
+.edit-message-screen button {
+  border-radius: 10px; }
 
 @media screen and (max-width: 500px) {
   .login-card {

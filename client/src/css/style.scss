@@ -2,10 +2,9 @@ html {
   height: 100vh;
 }
 
-body {
-  height: 100vh;
-  //background: #222222;
-  background: white;
+
+h2 {
+  text-align: center;
 }
 
 
@@ -49,10 +48,6 @@ p {
 	  	color:white;
 	  }
 
-		h2 {
-			text-align: center;
-		}
-
 		img {
 			display:block;
 			margin-left: auto;
@@ -81,7 +76,7 @@ p {
       width: 300px;
       margin-left: auto;
       margin-right: auto;
-      
+
 
       input {
         width:100%;
@@ -111,11 +106,6 @@ p {
 		  width: 50px;
 		}
 
-    .loginError {
-      color: #FF4500;
-      text-align: center;
-    }
-
 	}
 }
 
@@ -128,11 +118,6 @@ p {
 	height: 100vh;
 	background-size: cover;
 	color:white;
-
-	h2 {
-		text-align: center;
-		color: white;
-	}
 
 	a {
 		text-align: center;
@@ -191,11 +176,11 @@ p {
 	  animation: App-logo-spin infinite 10s linear;
 	  width: 50px;
 	}
+}
 
-  .loginError {
-    color: #FF4500;
-    text-align: center;
-  }
+.loginError {
+  color: #FF4500 !important;
+  text-align: center;
 }
 
 .md-form {
@@ -266,7 +251,6 @@ p {
 
 /*Sender of message*/
 .profile-img-chat {
-	margin-left: 10px;
 	height:50px;
 	width:50px;
 	border-radius: 5px;
@@ -300,6 +284,10 @@ p {
   overflow: hidden;
   outline: none;
   font-size: 20px;
+
+  a{
+    color:  #808080;
+  }
 }
 
 /*Time sent*/
@@ -312,25 +300,26 @@ p {
 }
 
 .mess-edit {
-  color:  #222222;
+  width:30px;
   padding:0;
   border:none;
+  border-radius:15px;
   background: none;
-  opacity: 0.5;
+  opacity: 0.1;
   font-size: 20px;
-  right:10px;
+  right:0px;
   margin-top:0;
   position:absolute;
 }
 
 .mess-edit:hover {
-  color:  #222222;
+  opacity: 0.8;
   border:none;
   background: none;
 }
 
 .mess-edit:active {
-  color:  #222222;
+  opacity: 0.5;
   border:none;
   background: none;
 }
@@ -339,11 +328,29 @@ p {
 .mess-text {
   color:  #696969;
   clear: both;
-  padding-top: 0.1em;
-  padding-top: 0.1em;
+  padding-top: 1px;
   margin-top: -1px;
-  padding-bottom: 0.3em;
+  padding-bottom: 3px;
+
 }
+
+// Edit message screen
+.edit-message-screen {
+  .edit-message {
+    border: none;
+    width:100%;
+    height:100px;
+  }
+
+  .edit-message:focus {
+    outline:none !important;
+  }
+
+  button{
+    border-radius:10px;
+  }
+}
+//
 
 @media screen and (max-width: 500px) {
   .login-card {
@@ -438,7 +445,7 @@ p {
     border-radius:5px;
   }
 
-  .sidebar-icon-btn:hover {    
+  .sidebar-icon-btn:hover {
     box-shadow: 0px 2px 15px 0px #222222;
   }
 

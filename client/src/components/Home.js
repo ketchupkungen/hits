@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import { addMessage, clearNewMessage } from '../actions'
-import { Button } from 'mdbreact';
+//import { Button } from 'mdbreact';
 import MessageContainer from '../containers/message_container'
 import Sidebar from './Sidebar'
 import logo from '../logo.svg'
 
 class Home extends Component {
-   
+
     state = {
         formdata:{
             text:''
@@ -44,7 +44,7 @@ class Home extends Component {
                 <div className="header">
                     <h5>
                         <img src={logo} className="logo" alt="logo"/>
-                        General 
+                        General
                     </h5>
                 </div>
                 <Sidebar/>
@@ -61,13 +61,13 @@ class Home extends Component {
                         />
                     </div>
 
-                    <Button 
-                        color="dark-green" 
+                    {/*<Button
+                        color="dark-green"
                         type="submit"
-                        style={{ bottom: '11px', right: '10px', position: 'fixed'}}
+                        style={{ padding:'5px',bottom: '17px', right: '10px', position: 'fixed'}}
                     >
-                        Add message
-                    </Button>
+                        Send
+                    </Button>*/}
                 </form>
             </div>
         );

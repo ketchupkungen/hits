@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
 
 const messageSchema = mongoose.Schema({
-    text:{
-        type:String,
-        required:true
-    },
-    dateSent: Date,
-    ownerId:{
-        type:String,
-        required:true
-    }
-})
+  text:{
+    type:String,
+    required:true
+  },
+  ownerId:{
+    type:String,
+    required:true
+  }
+},{timestamps:true})
 
 const Message = mongoose.model('Message',messageSchema )
 

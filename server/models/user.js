@@ -41,7 +41,7 @@ const userSchema = mongoose.Schema({
     career:{
         type:String
     },
-    
+
     // Role is for what rights, guest, regular user or admin
     // Not done yet.
     role:{
@@ -51,7 +51,7 @@ const userSchema = mongoose.Schema({
     token:{
         type:String
     }
-})
+},{timestamps:true})
 
 userSchema.pre('save',function(next){
     var user = this;
