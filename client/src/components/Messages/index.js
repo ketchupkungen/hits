@@ -6,6 +6,7 @@ import { Media,Button } from 'mdbreact';
 import moment from 'moment-js';
 import Sidebar from '../Sidebar'
 import logo from '../../logo.svg'
+import ImgFallback from 'react-img-fallback'
 
 class MessageView extends Component {
 
@@ -28,40 +29,42 @@ class MessageView extends Component {
           </div>
           <Sidebar/>
           <div className="main">
-          <ul>
-            <li className="messageArea">
-                <Media>
-                  <Media left>
-                    <Media object className="profile-img-chat" src={messages.sender.image} alt="Generic placeholder image" />
-                  </Media>
-                  <Media body>
-                    <Media heading>
-                      <Link to={
-                        `/home/edit-messages/${this._id}`
-                      }>
+            <Media>
+              <Media left>
+                <ImgFallback
+                  className="profile-img-chat"
+                  src={messages.sender.image}
+                  alt="user-img"
+                  fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
+                >
+                </ImgFallback>
+              </Media>
+              <Media body>
+                <Media heading>
+                  <Link to={
+                    `/home/edit-messages/${this._id}`
+                  }>
 
-                        <Button color="grey" className="mess-edit">
-                          <i className="fa fa-ellipsis-h"></i>
-                        </Button>
-                      </Link>
-                      <Link to={`/home`}>
-                        <b className="mess-name">
-                          {messages.sender.name} {messages.sender.lastname}
-                        </b>
-                      </Link>
-                      <i className="mess-time">
-                        {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
-                      </i>
+                    <Button color="grey" className="mess-edit">
+                      <i className="fa fa-ellipsis-h"></i>
+                    </Button>
+                  </Link>
+                  <Link to={`/home`}>
+                    <b className="mess-name">
+                      {messages.sender.name} {messages.sender.lastname}
+                    </b>
+                  </Link>
+                  <i className="mess-time">
+                    {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
+                  </i>
 
-                    </Media>
-                    <p className='mess-text'>
-                      {messages.message.text}
-                    </p>
-                    <hr/>
-                  </Media>
                 </Media>
-              </li>
-            </ul>
+                <p className='mess-text'>
+                  {messages.message.text}
+                </p>
+                <hr/>
+              </Media>
+            </Media>
           </div>
         </div>
         :null

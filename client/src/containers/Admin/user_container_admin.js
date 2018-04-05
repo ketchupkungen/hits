@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
 import { getUsers, deleteUser } from '../../actions';
 
-import { Card,CardBody,CardImage,Button } from 'mdbreact';
+import { Card,CardBody,Button } from 'mdbreact';
+import ImgFallback from 'react-img-fallback'
 
 class UserContainerAdmin extends Component {
 
@@ -16,11 +17,17 @@ class UserContainerAdmin extends Component {
     }
 
     showUsers = (user) =>(
-        user.users ? 
+        user.users ?
             user.users.map(item => (
               <div className="col-md-4" key={item._id}>
                 <Card cascade style={{height:'700px',marginBottom:'30px'}}>
-                  <CardImage className="img-fluid" src={item.image} />
+                  <ImgFallback
+                    className="img-fluid"
+                    src={item.image}
+                    alt="user-img"
+                    fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
+                  >
+                  </ImgFallback>
                   <CardBody>
                     <h4>Name: {item.name} {item.lastname}</h4>
                     <h5>Username: {item.username}</h5>
@@ -44,7 +51,7 @@ class UserContainerAdmin extends Component {
           <div className="container" style={{marginTop:'60px'}}>
             <h4>Current users:</h4>
             <div className="row">
-            
+
               {this.showUsers(user)}
             </div>
           </div>

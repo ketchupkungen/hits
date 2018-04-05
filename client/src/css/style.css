@@ -141,11 +141,12 @@ p {
             PROFILE PAGE
 ===============================*/
 .profile-page {
-  margin-top: 100px; }
+  margin-top: 70px; }
 
 .profile-img {
   width: 100%;
-  border-radius: 20px; }
+  border-radius: 20px;
+  margin-bottom: 20px; }
 
 /*=============================
             HEADER
@@ -402,7 +403,9 @@ p {
   .mess-text {
     width: 230px; }
   .mess-name {
-    font-size: 17px; } }
+    font-size: 17px; }
+  .mess-time {
+    font-size: 10px; } }
 
 @media screen and (min-width: 500px) {
   .login-page-mobile {

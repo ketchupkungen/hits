@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUsers } from '../actions';
 import { Link } from 'react-router-dom';
+import ImgFallback from 'react-img-fallback'
 
 import { Media } from 'mdbreact';
 
@@ -14,9 +15,16 @@ class UserContainer extends Component {
     showUsers = (user) =>(
         user.users ?
             user.users.map(item => (
-              <Media key={item._id}>
+            <div key={item._id} style={{marginBottom:'20px'}}>
+              <Media>
                 <Link className="mr-3" to={`/users/${item._id}`}>
-                  <Media object className="profile-img-chat" src={item.image} alt="Generic placeholder image" />
+                  <ImgFallback
+                    className="profile-img-chat"
+                    src={item.image}
+                    alt="user-img"
+                    fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
+                  >
+                  </ImgFallback>
                 </Link>
                 <Media body>
                   <Media heading>
@@ -24,6 +32,7 @@ class UserContainer extends Component {
                   </Media>
                 </Media>
               </Media>
+            </div>
             ))
         :null
     )

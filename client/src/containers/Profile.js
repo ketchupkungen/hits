@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import logo from '../logo.svg'
+import ImgFallback from 'react-img-fallback'
 
 const Profile = (props) => {
   let user = props.user.login;
@@ -18,7 +19,13 @@ const Profile = (props) => {
           <div className="row">
             <div className="col-sm-4">
               {/*<img className="profile-img" alt="profile-img" src="http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png"/>*/}
-              <img className="profile-img" alt="profile-img" src={user.image}/>
+              <ImgFallback
+	              className="profile-img"
+	              src={user.image}
+	              alt="user-img"
+	              fallback='http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png'
+	            >
+	            </ImgFallback>
             </div>
             <div className=" col-sm-8">
               <p>

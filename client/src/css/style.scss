@@ -197,12 +197,13 @@ p {
 
 
 .profile-page {
-	margin-top: 100px;
+	margin-top: 70px;
 }
 
 .profile-img {
 	width: 100%;
 	border-radius:20px;
+  margin-bottom:20px;
 }
 
 /*=============================
@@ -520,18 +521,17 @@ p {
   .login-page-mobile {
     display:block;
   }
-
   .login-page-desk {
     display:none;
   }
-
   .mess-text {
     width:230px;
-
   }
-
   .mess-name {
     font-size:17px;
+  }
+  .mess-time {
+    font-size:10px;
   }
 }
 

@@ -6,6 +6,7 @@ import { getMessages } from '../actions';
 import ScrollEvent from 'react-onscroll';
 import {Media,Button} from 'mdbreact';
 import moment from 'moment-js';
+import ImgFallback from 'react-img-fallback'
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -35,7 +36,13 @@ class HomeContainer extends Component {
         //<MessageItem {...item} key={item._id}/>
         <Media key={item._id}>
           <Link className="mr-3" to={`/home/${item._id}`}>
-            <Media object className="profile-img-chat" src="http://lpltc.org/wp-content/uploads/2016/07/placeholder.png" /*src={messages.sender.image}*/ alt="Generic placeholder image" />
+              <ImgFallback
+                className="profile-img-chat"
+                src={item.image}
+                alt="user-img"
+                fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
+              >
+              </ImgFallback>
           </Link>
           <Media body>
               {/*<Link className="mr-3" to={`/users/${item._id}`}>
