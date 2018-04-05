@@ -38,7 +38,7 @@ class Sidebar extends Component {
 					timeout={5}
 				>
 				{ state =>
-					
+
 					<div className="sidebar-box">
 						<nav className={`sidebar sidebar-${state}`}>
 							{/*Issue connecting user to sidebar*/}
@@ -47,7 +47,7 @@ class Sidebar extends Component {
 								<hr/>
 							*/}
 
-					    
+
 
 							<Link to="/home"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-home"></i></Button></Link>
 							<Link to="/users"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-users"></i></Button></Link>
@@ -71,10 +71,10 @@ class Sidebar extends Component {
 							</ul>
 						</nav>
 						<div
-							className={`screenHide screenHide-${state}`}
+							className={`green-strong screenHide screenHide-${state}`}
 							onClick={this.toggleSidebar}
 						>
-							
+
 						</div>
 					</div>
 	    	}

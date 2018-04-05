@@ -20,17 +20,17 @@ class MessageView extends Component {
 
     renderMessage = (messages) => (
         messages.message ?
-        <div>
+        <div key={messages.message._id}>
           <div className="header">
-              <h5>
-                  <img src={logo} className="logo" alt="logo"/>
-                  {messages.sender.name} {messages.sender.lastname}
-              </h5>
+            <h5>
+              <img src={logo} className="logo" alt="logo"/>
+              {messages.sender.name} {messages.sender.lastname}
+            </h5>
           </div>
           <Sidebar/>
           <div className="main">
             <Media>
-              <Media left>
+              <Link className="mr-3" to={`/home`}>
                 <ImgFallback
                   className="profile-img-chat"
                   src={messages.sender.image}
@@ -38,30 +38,30 @@ class MessageView extends Component {
                   fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
                 >
                 </ImgFallback>
-              </Media>
+              </Link>
               <Media body>
-                <Media heading>
-                  <Link to={
-                    `/home/edit-messages/${this._id}`
-                  }>
+                {/*<Link className="mr-3" to={`/users/${item._id}`}>
+                  {item.name} {item.lastname}
+                </Link>*/}
+                <Link to={`/home`}>
+                  <b className="mess-name">
+                    {messages.sender.name} {messages.sender.lastname}
+                  </b>
+                </Link>
 
-                    <Button color="grey" className="mess-edit">
-                      <i className="fa fa-ellipsis-h"></i>
-                    </Button>
-                  </Link>
-                  <Link to={`/home`}>
-                    <b className="mess-name">
-                      {messages.sender.name} {messages.sender.lastname}
-                    </b>
-                  </Link>
-                  <i className="mess-time">
-                    {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
-                  </i>
-
-                </Media>
-                <p className='mess-text'>
-                  {messages.message.text}
-                </p>
+                <i className="mess-time">
+                  {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
+                </i>
+                <Link to={`/home/edit-message/${messages.message._id}`}>
+                  <Button color="grey" className="mess-edit">
+                    <i className="fa fa-ellipsis-h"></i>
+                  </Button>
+                </Link>
+                <div className='mess-text'>
+                  <p className='mess-text'>
+                    {messages.message.text}
+                  </p>
+                </div>
                 <hr/>
               </Media>
             </Media>

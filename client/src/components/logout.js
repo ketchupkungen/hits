@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import logo from '../logo.svg'
 
 const Logout = (props) => {
   let user = props.user.login;
@@ -13,6 +14,7 @@ const Logout = (props) => {
   return (
     <h1  className="logout">
         See you soon, {user.name}!
+        <img src={logo} className="logo" alt="logo"/>
     </h1>
   );
 };

@@ -34,15 +34,16 @@ class HomeContainer extends Component {
     messages.list ?
       messages.list.map( item => (
         //<MessageItem {...item} key={item._id}/>
-        <Media key={item._id}>
+        <div key={item._id}>
+        <Media>
           <Link className="mr-3" to={`/home/${item._id}`}>
-              <ImgFallback
-                className="profile-img-chat"
-                src={item.image}
-                alt="user-img"
-                fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
-              >
-              </ImgFallback>
+            <ImgFallback
+              className="profile-img-chat"
+              src={item.image}
+              alt="user-img"
+              fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
+            >
+            </ImgFallback>
           </Link>
           <Media body>
               {/*<Link className="mr-3" to={`/users/${item._id}`}>
@@ -62,14 +63,15 @@ class HomeContainer extends Component {
                   <i className="fa fa-ellipsis-h"></i>
                 </Button>
               </Link>
-            <div className='mess-text'>
+              <div className='mess-text'>
                 <p className='mess-text'>
                   {item.text}
                 </p>
-            </div>
-            <hr/>
+              </div>
           </Media>
         </Media>
+        <hr/>
+        </div>
       ))
     :null
   )

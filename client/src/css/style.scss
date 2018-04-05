@@ -107,7 +107,7 @@ p {
     }
 
 		.logo {
-		  animation: App-logo-spin infinite 10s linear;
+		  animation: rubberBand infinite 2s linear;
 		  width: 50px;
 		}
 
@@ -176,7 +176,7 @@ p {
   }
 
   .logo {
-    animation: App-logo-spin infinite 10s linear;
+    animation: rubberBand infinite 2s linear;
     width: 50px;
   }
 }
@@ -189,6 +189,11 @@ p {
 .logout{
   color:#696969;
   text-align: center;
+
+  .logo {
+    animation: rubberBand infinite 2s linear;
+    width: 50px;
+  }
 }
 
 /*=============================
@@ -217,6 +222,7 @@ p {
   top:0;
   left:0;
   text-align: center;
+  font-size:25px;
   padding: 8px;
   width:100%;
   margin: 0;
@@ -225,8 +231,9 @@ p {
 }
 
 .logo {
-  animation: App-logo-spin infinite 10s linear;
-  width: 30px;
+  //animation: App-logo-spin infinite 10s linear;
+  animation: tada infinite 4s;
+  width: 40px;
 }
 
 @keyframes App-logo-spin {
@@ -247,11 +254,19 @@ p {
 
 .messageComposer {
   background: #ffffff;
+  padding:10px;
   width: 100%;
   height: 80px;
   flex-shrink: 0;
   bottom: 0;
   position: fixed;
+  box-shadow: 0px 0px 10px 0px #696969;
+  border: none;
+  font-size:20px;
+}
+
+.messageComposer:focus {
+  outline: none;
 }
 
 .mess-name {
