@@ -44,9 +44,11 @@ class MessageView extends Component {
                           <i className="fa fa-ellipsis-h"></i>
                         </Button>
                       </Link>
-                      <b className="mess-name">
-                        {messages.sender.name} {messages.sender.lastname}
-                      </b>
+                      <Link to={`/home`}>
+                        <b className="mess-name">
+                          {messages.sender.name} {messages.sender.lastname}
+                        </b>
+                      </Link>
                       <i className="mess-time">
                         {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
                       </i>

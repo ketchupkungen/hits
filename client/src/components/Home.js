@@ -14,7 +14,6 @@ class Home extends Component {
         }
     }
 
-
     handleInput = (event,text) => {
         const newFormdata = {
             ...this.state.formdata

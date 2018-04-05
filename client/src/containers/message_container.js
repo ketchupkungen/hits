@@ -38,7 +38,6 @@ class HomeContainer extends Component {
             <Media object className="profile-img-chat" src="http://lpltc.org/wp-content/uploads/2016/07/placeholder.png" /*src={messages.sender.image}*/ alt="Generic placeholder image" />
           </Link>
           <Media body>
-            <Media heading className="mess-name">
               {/*<Link className="mr-3" to={`/users/${item._id}`}>
                 {item.name} {item.lastname}
               </Link>*/}
@@ -56,7 +55,6 @@ class HomeContainer extends Component {
                   <i className="fa fa-ellipsis-h"></i>
                 </Button>
               </Link>
-            </Media>
             <div className='mess-text'>
                 <p className='mess-text'>
                   {item.text}

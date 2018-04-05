@@ -191,7 +191,7 @@ p {
   position: fixed; }
 
 .mess-name {
-  color: #808080;
+  color: #222222;
   background: Transparent;
   background-repeat: noRepeat;
   border: none;
@@ -253,23 +253,6 @@ p {
 
 .edit-message-screen button {
   border-radius: 10px; }
-
-/*=============================
-            RESPONSIVE
-===============================*/
-@media screen and (max-width: 500px) {
-  .login-page-mobile {
-    display: block; }
-  .login-page-desk {
-    display: none; }
-  .mess-text {
-    width: 230px; } }
-
-@media screen and (min-width: 500px) {
-  .login-page-mobile {
-    display: none; }
-  .login-page-desk {
-    display: block; } }
 
 /*=============================
             SIDEBAR
@@ -407,3 +390,22 @@ p {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+/*=============================
+            RESPONSIVE
+===============================*/
+@media screen and (max-width: 500px) {
+  .login-page-mobile {
+    display: block; }
+  .login-page-desk {
+    display: none; }
+  .mess-text {
+    width: 230px; }
+  .mess-name {
+    font-size: 17px; } }
+
+@media screen and (min-width: 500px) {
+  .login-page-mobile {
+    display: none; }
+  .login-page-desk {
+    display: block; } }
