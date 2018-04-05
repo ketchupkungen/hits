@@ -39,11 +39,6 @@ class HomeContainer extends Component {
           </Link>
           <Media body>
             <Media heading className="mess-name">
-              <Link to={`/home/edit-message/${item._id}`}>
-                <Button color="grey" className="mess-edit">
-                  <i className="fa fa-ellipsis-h"></i>
-                </Button>
-              </Link>
               {/*<Link className="mr-3" to={`/users/${item._id}`}>
                 {item.name} {item.lastname}
               </Link>*/}
@@ -54,12 +49,16 @@ class HomeContainer extends Component {
               </Link>
 
               <i className="mess-time">
-              {/* new Date(item.dateSent).toLocaleString() */}
-              {moment(item.createdAt).format("YYYY-MM-DD HH:mm")}
-            </i>
+                {moment(item.createdAt).format("YYYY-MM-DD HH:mm")}
+              </i>
+              <Link to={`/home/edit-message/${item._id}`}>
+                <Button color="grey" className="mess-edit">
+                  <i className="fa fa-ellipsis-h"></i>
+                </Button>
+              </Link>
             </Media>
             <div className='mess-text'>
-                <p>
+                <p className='mess-text'>
                   {item.text}
                 </p>
             </div>

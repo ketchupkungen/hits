@@ -7,7 +7,6 @@ h2 {
   text-align: center;
 }
 
-
 ul {
 	list-style-type: none;
 	padding: 0;
@@ -17,6 +16,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 a:focus {
 	text-decoration: none;
 }
@@ -24,6 +27,19 @@ a:focus {
 p {
   font-family: 'Titillium Web', sans-serif;
 }
+
+.main {
+  margin: 0;
+  padding: 10px;
+  background:#ffffff;
+  width: 100%;
+  margin-top: 60px;
+  margin-Bottom: 100px;
+}
+
+/*=============================
+            LOGIN/REGISTER
+===============================*/
 
 
 .login-page-desk {
@@ -89,17 +105,6 @@ p {
         outline: none;
       }
     }
-
-
-
-    /*input.form-control {
-      margin-top:0px;
-      width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-      padding:10px;
-      color: white;
-    }*/
 
 		.logo {
 		  animation: App-logo-spin infinite 10s linear;
@@ -170,12 +175,10 @@ p {
     }
   }
 
-
-
-	.logo {
-	  animation: App-logo-spin infinite 10s linear;
-	  width: 50px;
-	}
+  .logo {
+    animation: App-logo-spin infinite 10s linear;
+    width: 50px;
+  }
 }
 
 .loginError {
@@ -183,40 +186,15 @@ p {
   text-align: center;
 }
 
-.md-form {
-  margin-top:0;
-}
-
 .logout{
   color:#696969;
   text-align: center;
 }
 
+/*=============================
+            PROFILE PAGE
+===============================*/
 
-
-
-.main {
-  margin: 0;
-  padding: 10px;
-  background:#ffffff;
-  width: 100%;
-  margin-top: 60px;
-  margin-Bottom: 100px;
-
-  a:hover{
-		text-decoration: none;
-  }
-}
-
-.logo {
-  animation: App-logo-spin infinite 10s linear;
-  width: 30px;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .profile-page {
 	margin-top: 100px;
@@ -227,13 +205,9 @@ p {
 	border-radius:20px;
 }
 
-.activeChannel {
-  position: fixed;
-  background: #ffffff;
-  top:0;
-  padding: 20px;
-  width:100%;
-}
+/*=============================
+            HEADER
+===============================*/
 
 .header {
   position: fixed;
@@ -249,16 +223,26 @@ p {
   box-shadow: 0px 0px 10px 0px #696969;
 }
 
-/*Sender of message*/
+.logo {
+  animation: App-logo-spin infinite 10s linear;
+  width: 30px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*=============================
+            MESSAGE AREA
+===============================*/
+
 .profile-img-chat {
 	height:50px;
 	width:50px;
 	border-radius: 5px;
 	box-shadow: 3px 3px 10px 0px #696969;
 }
-/*.messageArea {
-	padding: 10px;
-}*/
 
 .messageComposer {
   background: #ffffff;
@@ -267,12 +251,6 @@ p {
   flex-shrink: 0;
   bottom: 0;
   position: fixed;
-}
-
-// When input is active
-.form-control:focus {
-  border-color: #ced4da;
-  box-shadow: none;
 }
 
 .mess-name {
@@ -290,7 +268,6 @@ p {
   }
 }
 
-/*Time sent*/
 .mess-time {
   color:  #808080;
   margin-left: 10px;
@@ -324,17 +301,20 @@ p {
   background: none;
 }
 
-/*Message text*/
 .mess-text {
+  width:500px;
   color:  #696969;
   clear: both;
   padding-top: 1px;
   margin-top: -1px;
   padding-bottom: 3px;
+  word-wrap: break-word;
 
 }
 
-// Edit message screen
+/*=============================
+            EDIT MESSAGE
+===============================*/
 .edit-message-screen {
   .edit-message {
     border: none;
@@ -350,20 +330,12 @@ p {
     border-radius:10px;
   }
 }
-//
+
+/*=============================
+            RESPONSIVE
+===============================*/
 
 @media screen and (max-width: 500px) {
-  .login-card {
-		width: 420px;
-	  margin: 0 auto;
-	  float: none;
-	  border:none;
-	  top: 0px;
-	  background-color: #696969;
-	  padding: 20px;
-	  padding-bottom: 130px;
-	  color: white;
-  }
   .login-page-mobile {
 		display:block;
 	}
@@ -371,6 +343,11 @@ p {
   .login-page-desk {
 		display:none;
 	}
+
+  .mess-text {
+    width:230px;
+
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -384,7 +361,9 @@ p {
 }
 
 
-
+/*=============================
+            SIDEBAR
+===============================*/
 .toggle {
   text-decoration: none;
 
@@ -558,19 +537,4 @@ p {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-
-
-
-
-
-.loadmore {
-  background: #dbdbdb;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding: 20px;
-  font-weight: 500;
-  cursor: pointer;
 }
