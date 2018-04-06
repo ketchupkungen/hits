@@ -2,12 +2,6 @@
 
 ##### Human IT - Social
 
-### Author & Contributor list
-
-Björn Ohlsson
-
-Kristoffer Annerfeldt
-
 ### Description
 This is a WIP chat application where you can register an account, login, see other users, send messages, see your own profile, edit or remove messages sent, logout etc.
 
@@ -38,7 +32,8 @@ npm run dev
 ```
 Also, you need to ask me for the dev.js file and add it to config folder
 
-Or you could create your own dev.js file and add the following
+Or you could create your own dev.js file and do the following:
+
 Create an account on mlab.com, create a database, create admin user on db, copy mongoURI
 and replace `<user>` and `<password>` with admin credentials. Make sure you don´t push this file
 ```
@@ -89,3 +84,9 @@ module.exports = {
 - redux
 - redux-promise
 - redux-thunk
+
+### Author & Contributor list
+
+Björn Ohlsson
+
+Kristoffer Annerfeldt
