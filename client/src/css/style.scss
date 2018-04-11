@@ -189,7 +189,7 @@ p {
 .logout{
   color:#696969;
   text-align: center;
-  margin-top: 25%;
+  margin: 0 auto;
 
   .logo {
     animation: rubberBand infinite 2s linear;
@@ -460,7 +460,13 @@ p {
 ===============================*/
 
 .theLoader {
-  margin-top: 25%;
+  position: absolute;
+  height: 200px;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
 }
 
 .loader,
