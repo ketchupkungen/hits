@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { getMessage, updateMessage, clearMessage, deleteMessage } from '../actions'
+import { getMessage, updateMessage, clearMessage, deleteMessage } from '../../actions'
 import { Button } from 'mdbreact'
 import { Link } from 'react-router-dom'
-import Sidebar from '../components/Sidebar'
-import logo from '../logo.svg'
+import Sidebar from '../Sidebar'
+import logo from '../../logo.svg'
 
 class EditMessage extends PureComponent {
 

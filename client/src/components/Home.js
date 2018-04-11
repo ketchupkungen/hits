@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import { addMessage, clearNewMessage } from '../actions'
 //import { Button } from 'mdbreact';
-import MessageContainer from '../containers/message_container'
+import MessageList from './Messages/MessageList'
 import Sidebar from './Sidebar'
 import logo from '../logo.svg'
 
@@ -45,7 +45,7 @@ class Home extends Component {
           General
         </div>
         <Sidebar/>
-        <MessageContainer/>
+        <MessageList/>
         <form onSubmit={this.submitForm}>
           <input
             type="text"

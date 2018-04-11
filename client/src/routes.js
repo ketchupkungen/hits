@@ -2,15 +2,15 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './components/Home';
-import Users from './components/Users'
+import Users from './components/Users/Users'
 import UsersAdmin from './components/Admin/UsersAdmin'
-import VisitUser from './components/VisitUser'
-import MessageView from './components/Messages'
-import Login from './containers/login'
-import Profile from './containers/Profile'
-import EditMessage from './containers/edit';
-import Register from './containers/Admin/register';
-import Logout from './components/logout';
+import VisitUser from './components/Users/VisitUser'
+import MessageView from './components/Messages/MessageView'
+import Login from './components/Login'
+import Profile from './components/Users/Profile'
+import EditMessage from './components/Messages/EditMessage';
+import Register from './components/Register';
+import Logout from './components/Logout';
 
 
 import 'font-awesome/css/font-awesome.min.css';

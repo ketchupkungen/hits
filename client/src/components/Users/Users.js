@@ -1,7 +1,7 @@
 import React from 'react';
-import UserContainer from '../containers/user_container'
-import Sidebar from './Sidebar'
-import logo from '../logo.svg'
+import UserList from './UserList'
+import Sidebar from '../Sidebar'
+import logo from '../../logo.svg'
 
 const Users = () => {
   return (
@@ -11,7 +11,7 @@ const Users = () => {
 			Users
 		</div>
 		<Sidebar/>
-      <UserContainer/>
+      <UserList/>
     </div>
   );
 };

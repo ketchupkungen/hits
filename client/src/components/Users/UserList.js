@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUsers } from '../actions';
+import { getUsers } from '../../actions';
 import { Link } from 'react-router-dom';
 import ImgFallback from 'react-img-fallback'
 

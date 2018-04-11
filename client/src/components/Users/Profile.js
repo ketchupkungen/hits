@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
-import logo from '../logo.svg'
+import Sidebar from '..//Sidebar';
+import logo from '../../logo.svg'
 import ImgFallback from 'react-img-fallback'
 
 const Profile = (props) => {

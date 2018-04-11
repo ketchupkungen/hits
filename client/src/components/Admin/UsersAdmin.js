@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContainerAdmin from '../../containers/Admin/user_container_admin'
+import UserListAdmin from './UserListAdmin'
 import Sidebar from '../Sidebar'
 import logo from '../../logo.svg'
 
@@ -9,11 +9,11 @@ const UsersAdmin = () => {
     		<div className="header">
     			<h5>
     				<img src={logo} className="logo" alt="logo"/>
-    				Users 
+    				Users
     			</h5>
     		</div>
     		<Sidebar/>
-            <UserContainerAdmin/>
+            <UserListAdmin/>
         </div>
     );
 };
