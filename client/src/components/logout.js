@@ -8,7 +8,7 @@ const Logout = (props) => {
     .then(() =>{
       setTimeout(()=>{
         props.history.push('/')
-      },1000)
+      },1500)
     })
 
   return (

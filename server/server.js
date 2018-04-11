@@ -17,46 +17,6 @@ const { auth } = require('./middleware/auth')
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// Config for behavior in production mode
-if (process.env.NODE_ENV === 'production') {
-  // Express will serve up production assets
-  // like our main.js file, or main.css file!
-  app.use(express.static('client/build'));
-
-    // Express will serve up the index.html file
-    // if it doesn't recognize the route
-    const path = require('path');
-    // Fine return the index.html file
-    app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
-  });
-}
-
-//const server = app.listen(PORT);
-const server = app.listen(process.env.PORT, function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log('server listening on port: %s', process.env.PORT);
-});
-
-io = socketIo(server);
-
-io.on('connection', (socket) => {
-    console.log('user connected');
-
-    socket.on('disconnect', () => {
-      console.log('user disconnected')
-    });
-
-    socket.on('SEND_MESSAGE', function(data){
-        io.emit('RECEIVE_MESSAGE', data);
-    })
-});
-//const io = new socketIo(server, {path: '/api/chat'})
-//const socketEvents = require('./socketEvents')(io);
-
 // GET //
 app.get('/api/auth',auth,(req,res)=>{
     res.json({
@@ -79,7 +39,6 @@ app.get('/api/logout',auth,(req,res)=>{
         res.sendStatus(200)
     })
 })
-
 
 app.get('/api/getMessage',(req,res)=>{
     let id = req.query.id;
@@ -126,18 +85,6 @@ app.get('/api/users',(req,res)=>{
         res.status(200).send(users)
     })
 })
-
-/*app.get('/api/users',(req,res)=>{
-    let skip = parseInt(req.query.skip);
-    let limit = parseInt(req.query.limit);
-    let order = req.query.order;
-
-    // ORDER = asc || desc
-    User.find().skip(skip).sort({_id:order}).limit(limit).exec((err,doc)=>{
-        if(err) return res.status(400).send(err);
-        res.send(doc);
-    })
-})*/
 
 app.get('/api/user_posts',(req,res)=>{
     Message.find({ownerId:req.query.user}).exec((err,docs)=>{
@@ -226,4 +173,44 @@ app.delete('/api/delete_user',(req,res)=>{
         res.json(true)
     })
 })
+
+
+// Config for behavior in production mode
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up production assets
+  // like our main.js file, or main.css file!
+  app.use(express.static('client/build'));
+
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route
+    const path = require('path');
+    // Fine return the index.html file
+    app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+  });
+}
+
+const server = app.listen(process.env.PORT, function(err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log('server listening on port: %s', process.env.PORT);
+});
+
+io = socketIo(server);
+
+io.on('connection', (socket) => {
+    console.log('user connected');
+
+    socket.on('disconnect', () => {
+      console.log('user disconnected')
+    });
+
+    socket.on('SEND_MESSAGE', function(data){
+        io.emit('RECEIVE_MESSAGE', data);
+    })
+});
+//const io = new socketIo(server, {path: '/api/chat'})
+//const socketEvents = require('./socketEvents')(io);
 
