@@ -8,7 +8,8 @@ const keys = require('./config/keys');
 const app = express();
 
 mongoose.connect(keys.mongoURI);
-process.env.PORT = process.env.PORT || 5000;
+//process.env.PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 const { User } = require('./models/user');
 const { Message } = require('./models/message');
@@ -190,7 +191,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const server = app.listen(process.env.PORT, function(err) {
+app.listen(PORT);
+
+/*const server = app.listen(process.env.PORT, function(err) {
   if (err) {
     console.log(err);
     return;
@@ -210,7 +213,7 @@ io.on('connection', (socket) => {
     socket.on('SEND_MESSAGE', function(data){
         io.emit('RECEIVE_MESSAGE', data);
     })
-});
+});*/
 //const io = new socketIo(server, {path: '/api/chat'})
 //const socketEvents = require('./socketEvents')(io);
 
