@@ -1,11 +1,14 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const socketIo = require('socket.io');
 const keys = require('./config/keys');
 const app = express();
 
 mongoose.connect(keys.mongoURI);
+process.env.PORT = process.env.PORT || 5000;
 
 const { User } = require('./models/user');
 const { Message } = require('./models/message');
@@ -13,6 +16,46 @@ const { auth } = require('./middleware/auth')
 
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+// Config for behavior in production mode
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up production assets
+  // like our main.js file, or main.css file!
+  app.use(express.static('client/build'));
+
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route
+    const path = require('path');
+    // Fine return the index.html file
+    app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+  });
+}
+
+//const server = app.listen(PORT);
+const server = app.listen(process.env.PORT, function(err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log('server listening on port: %s', process.env.PORT);
+});
+
+io = socketIo(server);
+
+io.on('connection', (socket) => {
+    console.log('user connected');
+
+    socket.on('disconnect', () => {
+      console.log('user disconnected')
+    });
+
+    socket.on('SEND_MESSAGE', function(data){
+        io.emit('RECEIVE_MESSAGE', data);
+    })
+});
+//const io = new socketIo(server, {path: '/api/chat'})
+//const socketEvents = require('./socketEvents')(io);
 
 // GET //
 app.get('/api/auth',auth,(req,res)=>{
@@ -184,21 +227,3 @@ app.delete('/api/delete_user',(req,res)=>{
     })
 })
 
-// Config for behavior in production mode
-if (process.env.NODE_ENV === 'production') {
-  // Express will serve up production assets
-  // like our main.js file, or main.css file!
-  app.use(express.static('client/build'));
-
-    // Express will serve up the index.html file
-    // if it doesn't recognize the route
-    const path = require('path');
-    // Fine return the index.html file
-    app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
-  });
-}
-
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT);

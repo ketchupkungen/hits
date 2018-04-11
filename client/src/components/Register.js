@@ -15,7 +15,6 @@ class Register extends Component {
         username:'',
         phone:'',
         image:'',
-        gender:'',
         career:'',
         password:'',
         error:''
@@ -44,9 +43,6 @@ class Register extends Component {
     handleInputPhone = (event) => {
         this.setState({phone:event.target.value})
     }
-    handleInputGender = (event) => {
-        this.setState({gender:event.target.value})
-    }
     handleInputCareer = (event) => {
         this.setState({career:event.target.value})
     }
@@ -65,7 +61,6 @@ class Register extends Component {
               username:'',
               phone:'',
               image:'',
-              gender:'',
               career:'',
               password:'',
             })
@@ -84,7 +79,6 @@ class Register extends Component {
             lastname:this.state.lastname,
             phone:this.state.phone,
             image:this.state.image,
-            gender:this.state.gender,
             career:this.state.career,
         },this.props.user.users))
 
@@ -160,16 +154,6 @@ class Register extends Component {
                       onChange={this.handleInputImage}
                     />
                     </div>
-                    {/*<div className="login-field">
-                      <select
-                        value={this.state.gender}
-                        onChange={this.handleInputGender}
-                      >
-                        <option val="Man">Man</option>
-                        <option val="Woman">Woman</option>
-                        <option val="Other">Other</option>
-                      </select>
-                    </div>*/}
                     <div className="login-field">
                     <input
                       type="password"
@@ -179,7 +163,7 @@ class Register extends Component {
                     />
                     </div>
                     <Button className="login-btn" color="dark-green" type="submit">Register</Button>
-                    <Link to="/"><Button className="login-btn" color="red">Back</Button></Link>
+                    <Link to="/chat"><Button className="login-btn" color="red">Back</Button></Link>
 
                     <p className="loginError">{this.state.error}</p>
                   </form>
@@ -250,16 +234,6 @@ class Register extends Component {
                   onChange={this.handleInputImage}
                 />
                 </div>
-                {/*<div className="login-field">
-                  <select
-                    value={this.state.gender}
-                    onChange={this.handleInputGender}
-                  >
-                    <option val="Man">Man</option>
-                    <option val="Woman">Woman</option>
-                    <option val="Other">Other</option>
-                  </select>
-                </div>*/}
                 <div className="login-field">
                 <input
                   type="password"

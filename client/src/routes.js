@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './components/Home';
+import Chat from './components/Chat';
 import Users from './components/Users/Users'
 import UsersAdmin from './components/Admin/UsersAdmin'
 import VisitUser from './components/Users/VisitUser'
@@ -28,9 +28,9 @@ const Routes = () => {
       <Switch>
         <Route path="/" exact component={Auth(Login,null)}/>
         <Route path="/register" exact component={Auth(Register,null)}/>
-        <Route path="/home" exact component={Auth(Home,true)}/>
-        <Route path="/home/edit-message/:id" exact component={Auth(EditMessage,true)}/>
-        <Route path="/home/:id" exact component={Auth(MessageView,true)}/>
+        <Route path="/chat" exact component={Auth(Chat,true)}/>
+        <Route path="/chat/edit-message/:id" exact component={Auth(EditMessage,true)}/>
+        <Route path="/chat/:id" exact component={Auth(MessageView,true)}/>
         <Route path="/users" exact component={Auth(Users,true)}/>
         <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
         <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>

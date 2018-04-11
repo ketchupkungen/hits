@@ -13,6 +13,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-error-overlay": "^4.0.0",
+    "react-favicon": "0.0.14",
     "react-fontawesome": "^1.6.1",
     "react-img-fallback": "^1.0.1",
     "react-onscroll": "^1.0.4",
@@ -24,7 +25,8 @@
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "socket.io-client": "^2.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --inklude-path ./src/css --include-path ../node_modules src/css -o src/css",

@@ -135,7 +135,8 @@ p {
 
 .logout {
   color: #696969;
-  text-align: center; }
+  text-align: center;
+  margin-top: 25%; }
   .logout .logo {
     animation: rubberBand infinite 2s linear;
     width: 50px; }
@@ -341,6 +342,9 @@ p {
 /*=============================
             LOADER
 ===============================*/
+.theLoader {
+  margin-top: 25%; }
+
 .loader,
 .loader:before,
 .loader:after {
@@ -348,13 +352,13 @@ p {
 
 .loader {
   color: #388e3c;
-  font-size: 11px;
+  font-size: 10px;
   text-indent: -99999em;
-  margin: 55px auto;
+  margin: 5.5em auto;
   position: relative;
   width: 10em;
   height: 10em;
-  box-shadow: inset 0 0 0 1em;
+  box-shadow: inset 0 0 1em 0.5em #388e3c;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0); }
@@ -368,12 +372,12 @@ p {
   margin: 0 auto;
   background: white;
   border-radius: 10.2em 0 0 10.2em;
-  top: -0.1em;
-  left: -0.1em;
+  top: -10px;
+  left: -10em;
   -webkit-transform-origin: 5.2em 5.1em;
   transform-origin: 5.2em 5.1em;
   -webkit-animation: load2 2s infinite ease 1.5s;
-  animation: load2 1s infinite ease 1.5s; }
+  animation: load2 1.5s infinite ease 1.5s; }
 
 .loader:after {
   width: 5.2em;
@@ -385,7 +389,7 @@ p {
   -webkit-transform-origin: 0px 5.1em;
   transform-origin: 0px 5.1em;
   -webkit-animation: load2 2s infinite ease;
-  animation: load2 1s infinite ease; }
+  animation: load2 0.8s infinite ease; }
 
 @-webkit-keyframes load2 {
   0% {

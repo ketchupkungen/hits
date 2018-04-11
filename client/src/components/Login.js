@@ -24,7 +24,7 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps){
       if(nextProps.user.login.isAuth){
-          this.props.history.push('/home')
+        this.props.history.push('/chat')
       }
   }
 
@@ -118,9 +118,9 @@ class Login extends Component {
 }
 
 function mapStateToProps(state){
-    return {
-        user:state.user
-    }
+  return {
+    user:state.user
+  }
 }
 
 export default connect(mapStateToProps)(Login)

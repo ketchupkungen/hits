@@ -21,12 +21,14 @@
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
     "del-cli": "^1.1.0",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.0.1",
     "moment-js": "^1.1.15",
     "mongoose": "^4.10.8",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "socket.io": "^2.1.0"
   },
   "devDependencies": {
     "forever": "^0.15.3"

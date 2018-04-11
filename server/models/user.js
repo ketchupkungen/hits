@@ -34,10 +34,6 @@ const userSchema = mongoose.Schema({
     image:{
         type:String
     },
-    /*gender:{
-        type:String,
-        enum: ['Man','Woman']
-    },*/
     career:{
         type:String
     },
