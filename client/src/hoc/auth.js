@@ -23,7 +23,7 @@ export default function(ComposedClass,reload){
         }
       } else {
         if(reload === false) {
-          this.props.history.push('/chat')
+          this.props.history.push('/profile')
         }
       }
     }

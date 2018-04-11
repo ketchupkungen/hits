@@ -34,8 +34,8 @@ const Routes = () => {
         <Route path="/users" exact component={Auth(Users,true)}/>
         <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
         <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
-        <Route path="/logout" exact component={Auth(Logout,true)}/>
         <Route path="/profile" exact component={Auth(Profile,true)}/>
+        <Route path="/logout" exact component={Auth(Logout,true)}/>
       </Switch>
     </Layout>
   );
