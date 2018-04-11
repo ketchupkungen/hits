@@ -10,7 +10,7 @@ import Login from './components/Login'
 import Profile from './components/Users/Profile'
 import EditMessage from './components/Messages/EditMessage';
 import Register from './components/Register';
-//import Logout from './components/Logout';
+import Logout from './components/Logout';
 
 
 import 'font-awesome/css/font-awesome.min.css';
@@ -34,7 +34,7 @@ const Routes = () => {
         <Route path="/users" exact component={Auth(Users,true)}/>
         <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
         <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
-        {/*<Route path="/logout" exact component={Auth(Logout,true)}/>*/}
+        <Route path="/logout" exact component={Auth(Logout,true)}/>
         <Route path="/profile" exact component={Auth(Profile,true)}/>
       </Switch>
     </Layout>
