@@ -49,14 +49,14 @@ class Sidebar extends Component {
 
 
 
-							<Link to="/home"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-home"></i></Button></Link>
+							<Link to="/chat"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-home"></i></Button></Link>
 							<Link to="/users"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-users"></i></Button></Link>
-							<Link to="/home"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-bars"></i></Button></Link>
+							<Link to="/chat"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-bars"></i></Button></Link>
 							<Link to="/users-admin"><Button className="sidebar-icon-btn" color="dark-green"><i className="fa fa-wrench"></i></Button></Link>
 
 					    <hr/>
 
-					    <Link to="/home"><Button className="sidebar-send-btn" color="dark-green"><i className="fa fa-comment"></i> Private message</Button></Link>
+					    <Link to="/chat"><Button className="sidebar-send-btn" color="dark-green"><i className="fa fa-comment"></i> Private message</Button></Link>
 
 					    <hr/>
 
@@ -64,9 +64,9 @@ class Sidebar extends Component {
 								<li><p><Link to="/profile">Profile page</Link></p></li>
 								<li><p><Link to="/users">Users</Link></p></li>
 								<li><p><Link to="/users-admin">Users admin</Link></p></li>
-								<li><p><Link to="/home">Options</Link></p></li>
-								<li><p><Link to="/home">Notifications</Link></p></li>
-								<li><p><Link to="/home">Help & feedback</Link></p></li>
+								<li><p><Link to="/chat">Options</Link></p></li>
+								<li><p><Link to="/chat">Notifications</Link></p></li>
+								<li><p><Link to="/chat">Help & feedback</Link></p></li>
 								<li><p><Link to="/logout">Logout</Link></p></li>
 							</ul>
 						</nav>

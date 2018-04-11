@@ -43,7 +43,7 @@ class MessageView extends Component {
                 {/*<Link className="mr-3" to={`/users/${item._id}`}>
                   {item.name} {item.lastname}
                 </Link>*/}
-                <Link to={`/home`}>
+                <Link to={`/chat`}>
                   <b className="mess-name">
                     {messages.sender.name} {messages.sender.lastname}
                   </b>
@@ -52,7 +52,7 @@ class MessageView extends Component {
                 <i className="mess-time">
                   {moment(messages.message.createdAt).format("YYYY-MM-DD HH:mm")}
                 </i>
-                <Link to={`/home/edit-message/${messages.message._id}`}>
+                <Link to={`/chat/edit-message/${messages.message._id}`}>
                   <Button color="grey" className="mess-edit">
                     <i className="fa fa-ellipsis-h"></i>
                   </Button>

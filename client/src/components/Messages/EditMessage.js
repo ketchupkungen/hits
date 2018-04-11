@@ -38,7 +38,7 @@ class EditMessage extends PureComponent {
     }
     redirectUser = () => {
         setTimeout(()=>{
-            this.props.history.push('/home')
+            this.props.history.push('/chat')
         },1000)
     }
 
@@ -98,7 +98,7 @@ class EditMessage extends PureComponent {
                         onChange={(event)=>this.handleInput(event,'text')}
                       />
 
-                      <Link to={`/home`}>
+                      <Link to={`/chat`}>
                         <Button
                           color="grey"
                         >

@@ -36,7 +36,7 @@ class HomeContainer extends Component {
         //<MessageItem {...item} key={item._id}/>
         <div key={item._id}>
         <Media>
-          <Link className="mr-3" to={`/home/${item._id}`}>
+          <Link className="mr-3" to={`/chat/${item._id}`}>
             <ImgFallback
               className="profile-img-chat"
               src={item.image}
@@ -49,7 +49,7 @@ class HomeContainer extends Component {
               {/*<Link className="mr-3" to={`/users/${item._id}`}>
                 {item.name} {item.lastname}
               </Link>*/}
-              <Link to={`/home/${item._id}`}>
+              <Link to={`/chat/${item._id}`}>
                 <b className="mess-name">
                   Bob Bobssson
                 </b>
@@ -58,7 +58,7 @@ class HomeContainer extends Component {
               <i className="mess-time">
                 {moment(item.createdAt).format("YYYY-MM-DD HH:mm")}
               </i>
-              <Link to={`/home/edit-message/${item._id}`}>
+              <Link to={`/chat/edit-message/${item._id}`}>
                 <Button color="grey" className="mess-edit">
                   <i className="fa fa-ellipsis-h"></i>
                 </Button>
