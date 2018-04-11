@@ -136,7 +136,7 @@ p {
 .logout {
   color: #696969;
   text-align: center;
-  margin-top: 10%; }
+  margin-top: 25%; }
   .logout .logo {
     animation: rubberBand infinite 2s linear;
     width: 50px; }
@@ -343,7 +343,7 @@ p {
             LOADER
 ===============================*/
 .theLoader {
-  margin-top: 10%; }
+  margin-top: 25%; }
 
 .loader,
 .loader:before,

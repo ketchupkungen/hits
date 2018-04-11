@@ -10,7 +10,7 @@ import Login from './components/Login'
 import Profile from './components/Users/Profile'
 import EditMessage from './components/Messages/EditMessage';
 import Register from './components/Register';
-import Logout from './components/Logout';
+import Logout from './components/logout';
 
 
 import 'font-awesome/css/font-awesome.min.css';

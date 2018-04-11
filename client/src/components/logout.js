@@ -12,13 +12,12 @@ const Logout = (props) => {
     })
 
   return (
-  <div className="theLoader">
-    <h1 className="logout">
-      See you soon, {user.name}!
-      <img src={logo} className="logo" alt="logo"/>
-    </h1>
-  </div>
-
+    <div className="theLoader">
+      <h1 className="logout">
+        See you soon, {user.name}!
+        <img src={logo} className="logo" alt="logo"/>
+      </h1>
+    </div>
   );
 };
 
