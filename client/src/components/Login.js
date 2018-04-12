@@ -5,7 +5,7 @@ import { loginUser } from '../actions'
 import logo from '../logo.svg';
 import { Card, CardBody, Button } from 'mdbreact';
 
-import Footer from './Footer'
+import FooterPart from './footer-part'
 
 class Login extends Component {
 
@@ -113,13 +113,13 @@ class Login extends Component {
             </div>
           </form>
         </div>
-        <Footer/>
+        <FooterPart/>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state){
   return {
     user:state.user
   }

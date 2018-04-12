@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getUsers, userRegister } from '../actions';
 import { Card,CardBody,Button } from 'mdbreact';
 import logo from '../logo.svg';
-import Footer from './Footer'
+import FooterPart from './footer-part'
 
 class Register extends Component {
 
@@ -167,7 +167,7 @@ class Register extends Component {
                   />
                 </div>
                 <Button className="login-btn" color="dark-green" type="submit">Register</Button>
-                <Link to="/chat"><Button className="login-btn" color="red">Back</Button></Link>
+                <Link to="/chat"><Button className="login-btn" color="elegant">Back</Button></Link>
 
                 <p className="loginError">{this.state.error}</p>
               </form>
@@ -253,18 +253,18 @@ class Register extends Component {
               />
             </div>
             <Button className="login-btn" color="dark-green" type="submit">Register</Button>
-            <Link className="login-link" to="/"><Button className="login-btn" color="red">Back</Button></Link>
+            <Link className="login-link" to="/"><Button className="login-btn" color="grey">Back</Button></Link>
 
             <p className="loginError">{this.state.error}</p>
           </form>
         </div>
-        <Footer/>
+        <FooterPart/>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return{
     user:state.user
   }

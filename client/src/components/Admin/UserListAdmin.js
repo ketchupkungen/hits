@@ -58,7 +58,7 @@ class UserContainerAdmin extends Component {
         );
     }
 }
-const mapStateToProps = (state) =>{
+function mapStateToProps (state) {
     return{
         user:state.user
     }
