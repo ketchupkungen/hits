@@ -5,35 +5,31 @@ const keys = require('./../config/keys');
 const SALT_I = 10;
 
 const userSchema = mongoose.Schema({
+    name:{
+        type:String,
+        trim:true,
+        maxlength:20
+    },
+    lastname:{
+        type:String,
+        trim:true,
+        maxlength:20
+    },
     email:{
         type:String,
         required:true,
         trim:true,
         unique:true,
-        lowercase:true
+        lowercase:true,
+        maxlength:30
     },
     username:{
         type:String,
         required:true,
         trim:true,
         unique:true,
-        lowercase:true
-    },
-    password:{
-        type:String,
-        required:true,
-        trim:true,
-        minlength:6
-    },
-    name:{
-        type:String,
-        trim:true,
-        maxlength:100
-    },
-    lastname:{
-        type:String,
-        trim:true,
-        maxlength:100
+        lowercase:true,
+        maxlength:20
     },
     phone: {
         type:String,
@@ -41,16 +37,21 @@ const userSchema = mongoose.Schema({
         unique:true,
         maxlength:20
     },
-    image:{
-        type:String,
-        trim:true
-    },
     career:{
         type:String,
         trim:true,
         maxlength:100
     },
-
+    image:{
+        type:String,
+        trim:true
+    },
+    password:{
+        type:String,
+        required:true,
+        trim:true,
+        minlength:6
+    },
     // Role is for what rights, guest, regular user or admin
     // Not done yet.
     role:{
