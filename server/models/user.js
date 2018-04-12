@@ -9,39 +9,53 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true,
         trim:true,
-        unique:1
+        unique:true,
+        lowercase:true
     },
     username:{
         type:String,
         required:true,
+        trim:true,
+        unique:true,
+        lowercase:true
     },
     password:{
         type:String,
         required:true,
+        trim:true,
         minlength:6
     },
     name:{
         type:String,
+        trim:true,
         maxlength:100
     },
     lastname:{
         type:String,
+        trim:true,
         maxlength:100
     },
     phone: {
-        type:String
+        type:Number,
+        trim:true,
+        unique:true,
+        maxlength:20
     },
     image:{
         type:String
+        trim:true,
     },
     career:{
-        type:String
+        type:String,
+        trim:true,
+        maxlength:100
     },
 
     // Role is for what rights, guest, regular user or admin
     // Not done yet.
     role:{
         type:Number,
+        trim:true,
         default:0
     },
     token:{
