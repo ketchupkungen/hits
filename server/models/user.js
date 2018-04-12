@@ -42,8 +42,8 @@ const userSchema = mongoose.Schema({
         maxlength:20
     },
     image:{
-        type:String
-        trim:true,
+        type:String,
+        trim:true
     },
     career:{
         type:String,
