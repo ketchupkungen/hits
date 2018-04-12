@@ -13,7 +13,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-error-overlay": "^4.0.0",
-    "react-fontawesome": "^1.6.1",
     "react-img-fallback": "^1.0.1",
     "react-onscroll": "^1.0.4",
     "react-redux": "^5.0.6",

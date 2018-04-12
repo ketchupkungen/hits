@@ -2,86 +2,85 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUsers, userRegister } from '../actions';
-
-import logo from '../logo.svg';
 import { Card,CardBody,Button } from 'mdbreact';
+import logo from '../logo.svg';
+import Footer from './Footer'
 
 class Register extends Component {
 
   state ={
-      name:'',
-      lastname:'',
-      email:'',
-      username:'',
-      phone:'',
-      image:'',
-      career:'',
-      password:'',
-      error:''
+    name:'',
+    lastname:'',
+    email:'',
+    username:'',
+    phone:'',
+    image:'',
+    career:'',
+    password:'',
+    error:''
   }
 
   componentWillMount(){
-      this.props.dispatch(getUsers())
+    this.props.dispatch(getUsers())
   }
 
 
   handleInputEmail = (event) => {
-      this.setState({email:event.target.value})
+    this.setState({email:event.target.value})
   }
   handleInputPassword= (event) => {
-      this.setState({password:event.target.value})
+    this.setState({password:event.target.value})
   }
   handleInputUsername= (event) => {
-      this.setState({username:event.target.value})
+    this.setState({username:event.target.value})
   }
   handleInputName = (event) => {
-      this.setState({name:event.target.value})
+    this.setState({name:event.target.value})
   }
   handleInputLastname = (event) => {
-      this.setState({lastname:event.target.value})
+    this.setState({lastname:event.target.value})
   }
   handleInputPhone = (event) => {
-      this.setState({phone:event.target.value})
+    this.setState({phone:event.target.value})
   }
   handleInputCareer = (event) => {
-      this.setState({career:event.target.value})
+    this.setState({career:event.target.value})
   }
   handleInputImage = (event) => {
-      this.setState({image:event.target.value})
+    this.setState({image:event.target.value})
   }
 
   componentWillReceiveProps(nextProps){
-      if(nextProps.user.register === false){
-          this.setState({error:'Invalid input, try again'})
-      } else{
-          this.setState({
-            name:'',
-            lastname:'',
-            email:'',
-            username:'',
-            phone:'',
-            image:'',
-            career:'',
-            password:'',
-          })
-      }
+    if(nextProps.user.register === false){
+        this.setState({error:'Invalid input, try again'})
+    } else{
+      this.setState({
+        name:'',
+        lastname:'',
+        email:'',
+        username:'',
+        phone:'',
+        image:'',
+        career:'',
+        password:'',
+      })
+    }
   }
 
   submitForm = (e) => {
-      e.preventDefault();
-      this.setState({error:''});
+    e.preventDefault();
+    this.setState({error:''});
 
-      this.props.dispatch(userRegister({
-          email:this.state.email,
-          password:this.state.password,
-          username:this.state.username,
-          name:this.state.name,
-          lastname:this.state.lastname,
-          phone:this.state.phone,
-          image:this.state.image,
-          career:this.state.career,
-      },this.props.user.users))
-
+    this.props.dispatch(userRegister({
+      email:this.state.email,
+      password:this.state.password,
+      username:this.state.username,
+      name:this.state.name,
+      lastname:this.state.lastname,
+      phone:this.state.phone,
+      image:this.state.image,
+      career:this.state.career,
+    },this.props.user.users))
   }
 
   render() {
@@ -254,17 +253,18 @@ class Register extends Component {
               />
             </div>
             <Button className="login-btn" color="dark-green" type="submit">Register</Button>
-            <Button className="login-btn" color="red"><Link to="/">Back</Link></Button>
+            <Link className="login-link" to="/"><Button className="login-btn" color="red">Back</Button></Link>
 
             <p className="loginError">{this.state.error}</p>
           </form>
         </div>
+        <Footer/>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
+const mapStateToProps = (state) => {
   return{
     user:state.user
   }

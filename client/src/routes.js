@@ -17,27 +17,26 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
-import Layout from './hoc/layout'
+// What right does users have. If true, you must be logged in to access.
+// If it´s null, anyone can access.
 import Auth from './hoc/auth'
 
 import './css/style.css';
 
 const Routes = () => {
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" exact component={Auth(Login,null)}/>
-        <Route path="/register" exact component={Auth(Register,null)}/>
-        <Route path="/chat" exact component={Auth(Chat,true)}/>
-        <Route path="/chat/edit-message/:id" exact component={Auth(EditMessage,true)}/>
-        <Route path="/chat/:id" exact component={Auth(MessageView,true)}/>
-        <Route path="/users" exact component={Auth(Users,true)}/>
-        <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
-        <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
-        <Route path="/profile" exact component={Auth(Profile,true)}/>
-        <Route path="/logout" exact component={Auth(Logout,true)}/>
-      </Switch>
-    </Layout>
+    <Switch>
+      <Route path="/" exact component={Auth(Login,null)}/>
+      <Route path="/register" exact component={Auth(Register,null)}/>
+      <Route path="/chat" exact component={Auth(Chat,true)}/>
+      <Route path="/chat/edit-message/:id" exact component={Auth(EditMessage,true)}/>
+      <Route path="/chat/:id" exact component={Auth(MessageView,true)}/>
+      <Route path="/users" exact component={Auth(Users,true)}/>
+      <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
+      <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
+      <Route path="/profile" exact component={Auth(Profile,true)}/>
+      <Route path="/logout" exact component={Auth(Logout,true)}/>
+    </Switch>
   );
 };
 

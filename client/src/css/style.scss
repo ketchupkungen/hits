@@ -1,5 +1,6 @@
-html {
+html,body {
   height: 100vh;
+  background: #424242;
 }
 
 
@@ -24,18 +25,44 @@ a:focus {
 	text-decoration: none;
 }
 
-p {
+p,h4,h3,h2,h1 {
   font-family: 'Titillium Web', sans-serif;
+  color:white;
+}
+
+strong {
+  color:#b3b3b3;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #b3b3b3;
+    opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #b3b3b3;
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #b3b3b3;
+}
+
+input,textarea{
+  background:#696969;
+  color:white;
+  border-radius:5px;
+  border:none;
 }
 
 .main {
   margin: 0;
   padding: 10px;
-  background:#ffffff;
+  background:#424242;
   width: 100%;
   margin-top: 60px;
   margin-Bottom: 100px;
 }
+
 
 /*=============================
             LOGIN/REGISTER
@@ -54,7 +81,7 @@ p {
 	  float: none;
 	  border:none;
 	  top: 100px;
-	  background-color: #696969;
+	  background-color: #424242;
 	  padding: 20px;
 	  color: white;
 	  box-shadow: 3px 3px 10px 1px #222222;
@@ -121,10 +148,10 @@ p {
 
 
 .login-page-mobile {
+  height:100vh;
 	padding:5px;
 	padding-top: 20px;
-	background-color: #696969;
-	height: 100vh;
+	background-color: #424242;
 	background-size: cover;
 	color:white;
 
@@ -155,11 +182,11 @@ p {
 	  text-align: center;
 	  border-radius: 5px;
 	  display: block;
-
-    a{
-        margin:0;
-      }
 	}
+
+  .login-link {
+    margin:0;
+  }
 
 	.login-btn:hover {
       box-shadow: 0px 5px 30px 0px #222222;
@@ -173,7 +200,7 @@ p {
 
     input {
       width:100%;
-      padding:10px;
+      padding:7px;
       box-shadow: 1px 1px 1px 1px #222222;
       border-radius: 5px;
     }
@@ -195,7 +222,7 @@ p {
 }
 
 .logout{
-  color:#696969;
+  color:white;
   text-align: center;
   margin: 0 auto;
 
@@ -211,13 +238,14 @@ p {
 
 
 .profile-page {
-	margin-top: 70px;
+	margin-top: 80px;
+  background-color: #424242;
 }
 
 .profile-img {
 	width: 100%;
 	border-radius:20px;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 /*=============================
@@ -225,8 +253,9 @@ p {
 ===============================*/
 
 .header {
+  color:white;
   position: fixed;
-  background: #ffffff;
+  background: #212121;
   flex-shrink: 0;
   top:0;
   left:0;
@@ -236,7 +265,7 @@ p {
   width:100%;
   margin: 0;
   z-index: 1;
-  box-shadow: 0px 0px 10px 0px #696969;
+  box-shadow: 0px 0px 10px 0px #222222;
 }
 
 .logo {
@@ -258,18 +287,18 @@ p {
 	height:50px;
 	width:50px;
 	border-radius: 5px;
-	box-shadow: 3px 3px 10px 0px #696969;
+	box-shadow: 3px 3px 10px 0px #222222;
 }
 
 .messageComposer {
-  background: #ffffff;
+  color:white;
   padding:10px;
   width: 100%;
   height: 80px;
   flex-shrink: 0;
   bottom: 0;
   position: fixed;
-  box-shadow: 0px 0px 10px 0px #696969;
+  box-shadow: 0px 0px 10px 0px #222222;
   border: none;
   font-size:20px;
 }
@@ -279,7 +308,7 @@ p {
 }
 
 .mess-name {
-  color:  #222222;
+  color: white;
   background: Transparent;
   background-repeat: noRepeat;
   border: none;
@@ -294,7 +323,7 @@ p {
 }
 
 .mess-time {
-  color:  #808080;
+  color:  #999999;
   margin-left: 10px;
   opacity: 0.5;
   font-size: 13px;
@@ -302,12 +331,13 @@ p {
 }
 
 .mess-edit {
+  color:white;
   width:30px;
   padding:0;
   border:none;
   border-radius:15px;
-  background: none;
-  opacity: 0.1;
+  background: #222222;
+  opacity: 0.3;
   font-size: 20px;
   right:0px;
   margin-top:0;
@@ -315,20 +345,18 @@ p {
 }
 
 .mess-edit:hover {
-  opacity: 0.8;
+  opacity: 1;
   border:none;
-  background: none;
 }
 
 .mess-edit:active {
   opacity: 0.5;
   border:none;
-  background: none;
 }
 
 .mess-text {
   width:500px;
-  color:  #696969;
+  color:  #b3b3b3;
   clear: both;
   padding-top: 1px;
   margin-top: -1px;
@@ -367,13 +395,13 @@ p {
 
   position: fixed;
   width: 10px;
-  top: 6px;
+  top: 9px;
   left: 7px;
   z-index: 100;
   cursor: pointer;
 
   svg {
-    color: #696969;
+    color: #b3b3b3;
     width: 40px !important;
     height: 40px !important;
   }
@@ -385,7 +413,7 @@ p {
 }
 
 .sidebar-box {
-  background: #696969;
+  background: #2E2E2E;
   width: 100%;
   z-index:500;
 
@@ -414,7 +442,7 @@ p {
     bottom: 0px;
     width: 250px;
     padding: 10px;
-    background: #696969;
+    background: #2E2E2E;
   }
 
   .sidebar-icon-btn {
@@ -464,6 +492,30 @@ p {
 }
 
 /*=============================
+            FOOTER
+===============================*/
+
+.footer {
+  margin-top:0 !important;
+
+  .footer-copyright {
+    padding-top:20px;
+  }
+
+  .footer-img {
+    width: 30px;
+  }
+
+  .fb-link {
+    color: #4267B2;
+  }
+
+  .li-link {
+    color: #0077B5;
+  }
+}
+
+/*=============================
             LOADER
 ===============================*/
 
@@ -502,7 +554,7 @@ p {
 }
 .loader:before {
   margin: 0 auto;
-  background: white;
+  background: #424242;
   border-radius: 10.2em 0 0 10.2em;
   top: -10px;
   left: -10em;
@@ -514,7 +566,7 @@ p {
 .loader:after {
   width: 5.2em;
   height: 10.2em;
-  background: white;
+  background: #424242;
   border-radius: 0 10.2em 10.2em 0;
   top: -0.1em;
   left: 5.1em;

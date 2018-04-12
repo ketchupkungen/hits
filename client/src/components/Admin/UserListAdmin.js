@@ -35,8 +35,8 @@ class UserContainerAdmin extends Component {
                     <p>Phone: {item.phone}</p>
                     <p>Career: {item.career}</p>
                     <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <Button color="dark-green" href="#">Edit</Button>
-                    <Button onClick={this.deletePost} color="red" href="#">Delete</Button>
+                    <Button color="dark-green">Edit</Button>
+                    <Button onClick={this.deletePost} color="red">Delete</Button>
                   </CardBody>
                 </Card>
               </div>
@@ -48,7 +48,7 @@ class UserContainerAdmin extends Component {
     render() {
         let user = this.props.user;
         return (
-          <div className="container" style={{marginTop:'60px'}}>
+          <div className="container profile-page">
             <h4>Current users:</h4>
             <div className="row">
 
@@ -58,7 +58,7 @@ class UserContainerAdmin extends Component {
         );
     }
 }
-function mapStateToProps(state){
+const mapStateToProps = (state) =>{
     return{
         user:state.user
     }

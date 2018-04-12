@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginUser } from '../actions'
 import logo from '../logo.svg';
-
 import { Card, CardBody, Button } from 'mdbreact';
+
+import Footer from './Footer'
 
 class Login extends Component {
 
@@ -101,7 +102,7 @@ class Login extends Component {
             </div>
 
             <Button className="login-btn" color="dark-green" type="submit">Log in</Button>
-            <Button className="login-btn" color="dark-green"><Link to="/register">Register</Link></Button>
+            <Link className="login-link" to="/register"><Button className="login-btn" color="dark-green">Register</Button></Link>
 
             <div>
               {
@@ -112,12 +113,13 @@ class Login extends Component {
             </div>
           </form>
         </div>
+        <Footer/>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
+const mapStateToProps = (state) => {
   return {
     user:state.user
   }

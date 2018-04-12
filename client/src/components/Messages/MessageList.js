@@ -66,6 +66,7 @@ class HomeContainer extends Component {
               <div className='mess-text'>
                 <p className='mess-text'>
                   {item.text}
+                  https://baconipsum.com/?paras=5&type=all-meat&start-with-lorem=1
                 </p>
               </div>
           </Media>

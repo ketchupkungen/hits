@@ -9,32 +9,32 @@ import logo from '../logo.svg'
 class Home extends Component {
 
   state = {
-      formdata:{
-          text:''
-      }
+    formdata:{
+     text:''
+    }
   }
 
   handleInput = (event,text) => {
-      const newFormdata = {
-          ...this.state.formdata
-      }
-      newFormdata[text] = event.target.value
+    const newFormdata = {
+      ...this.state.formdata
+    }
+    newFormdata[text] = event.target.value
 
-      this.setState({
-          formdata:newFormdata
-      })
+    this.setState({
+      formdata:newFormdata
+    })
   }
 
   submitForm = (e) => {
-      e.preventDefault();
-      this.props.dispatch(addMessage({
-          ...this.state.formdata,
-          ownerId:this.props.user.login.id
-      }))
+    e.preventDefault();
+    this.props.dispatch(addMessage({
+      ...this.state.formdata,
+      ownerId:this.props.user.login.id
+    }))
   }
 
   componentWillUnmount(){
-      this.props.dispatch(clearNewMessage())
+    this.props.dispatch(clearNewMessage())
   }
 
   render() {
@@ -60,10 +60,10 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps(state){
-    return {
-        messages:state.messages
-    }
+const mapStateToProps = (state) =>{
+  return {
+    messages:state.messages
+  }
 }
 
 export default connect(mapStateToProps)(Home)
