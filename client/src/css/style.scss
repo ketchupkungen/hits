@@ -80,6 +80,10 @@ p {
 		  height: 50px;
 		  width: 300px;
 		  border-radius: 5px;
+
+      a{
+        margin:0;
+      }
 		}
 
 		.login-btn:hover {
@@ -87,7 +91,7 @@ p {
 		}
 
 
-		.login-field{
+		.login-field {
       margin-top:5px;
       width: 300px;
       margin-left: auto;
@@ -151,6 +155,10 @@ p {
 	  text-align: center;
 	  border-radius: 5px;
 	  display: block;
+
+    a{
+        margin:0;
+      }
 	}
 
 	.login-btn:hover {

@@ -63,6 +63,8 @@ p {
       height: 50px;
       width: 300px;
       border-radius: 5px; }
+      .login-page-desk .login-card .login-btn a {
+        margin: 0; }
     .login-page-desk .login-card .login-btn:hover {
       box-shadow: 0px 5px 30px 0px #222222; }
     .login-page-desk .login-card .login-field {
@@ -111,6 +113,8 @@ p {
     text-align: center;
     border-radius: 5px;
     display: block; }
+    .login-page-mobile .login-btn a {
+      margin: 0; }
   .login-page-mobile .login-btn:hover {
     box-shadow: 0px 5px 30px 0px #222222; }
   .login-page-mobile .login-field {

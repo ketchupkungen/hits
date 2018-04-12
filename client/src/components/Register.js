@@ -254,7 +254,7 @@ class Register extends Component {
               />
             </div>
             <Button className="login-btn" color="dark-green" type="submit">Register</Button>
-            <Link to="/"><Button className="login-btn" color="red">Back</Button></Link>
+            <Button className="login-btn" color="red"><Link to="/">Back</Link></Button>
 
             <p className="loginError">{this.state.error}</p>
           </form>

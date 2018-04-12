@@ -1,5 +1,5 @@
 const express = require('express');
-//const path = require('path');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
@@ -196,7 +196,7 @@ const server = app.listen(process.env.PORT, function(err) {
   console.log('server listening on port: %s', process.env.PORT);
 });
 
-io = socketIo(server);
+/*io = socketIo(server);
 
 io.on('connection', (socket) => {
     console.log('user connected');
@@ -208,6 +208,6 @@ io.on('connection', (socket) => {
     socket.on('SEND_MESSAGE', function(data){
         io.emit('RECEIVE_MESSAGE', data);
     })
-});
-//const io = new socketIo(server, {path: '/api/chat'})
-//const socketEvents = require('./socketEvents')(io);
+});*/
+const io = new socketIo(server, {path: '/api/chat'})
+const socketEvents = require('./socketEvents')(io);
