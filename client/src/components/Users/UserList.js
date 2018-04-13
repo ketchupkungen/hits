@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getUsers } from '../../actions';
 import { Link } from 'react-router-dom';
 import ImgFallback from 'react-img-fallback'
-
 import { Media } from 'mdbreact';
 
 class UserContainer extends Component {

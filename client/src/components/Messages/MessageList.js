@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { getMessages } from '../../actions';
-//import MessageItem from '../widgetsUI/message_item';
 import ScrollEvent from 'react-onscroll';
 import {Media,Button} from 'mdbreact';
 import moment from 'moment-js';
