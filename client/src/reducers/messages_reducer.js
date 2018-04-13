@@ -33,7 +33,7 @@ export default function(state={},action){
             return {
                 ...state,
                 updateMessage:action.payload.success,
-                message:action.payload.doc
+                message:action.payload.data
             }
         case 'DELETE_MESSAGE':
             return {

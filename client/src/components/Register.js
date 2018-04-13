@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUsers, userRegister } from '../actions';
@@ -6,7 +6,7 @@ import { Card,CardBody,Button } from 'mdbreact';
 import logo from '../logo.svg';
 import FooterPart from './footer-part'
 
-class Register extends Component {
+class Register extends PureComponent {
 
   state ={
     name:'',
@@ -17,6 +17,7 @@ class Register extends Component {
     image:'',
     career:'',
     password:'',
+    success:'',
     error:''
   }
 
@@ -52,8 +53,13 @@ class Register extends Component {
 
   componentWillReceiveProps(nextProps){
     if(nextProps.user.register === false){
-        this.setState({error:'Invalid input, try again'})
-    } else{
+      this.setState({error:'Invalid input, try again'})
+    }
+
+    if(nextProps.user.register === true){
+      this.setState({success:'You are now registered!'});
+      this.redirectUser();
+    } else {
       this.setState({
         name:'',
         lastname:'',
@@ -62,7 +68,7 @@ class Register extends Component {
         phone:'',
         image:'',
         career:'',
-        password:'',
+        password:''
       })
     }
   }
@@ -70,6 +76,8 @@ class Register extends Component {
   submitForm = (e) => {
     e.preventDefault();
     this.setState({error:''});
+
+    this.setState({success:''});
 
     this.props.dispatch(userRegister({
       email:this.state.email,
@@ -83,7 +91,16 @@ class Register extends Component {
     },this.props.user.users))
   }
 
+  redirectUser = () => {
+    setTimeout(()=>{
+      this.props.history.push('/')
+    },2000)
+  }
+
+
+
   render() {
+    let user = this.props.user;
     return (
       <div>
         <div className="login-page-desk">
@@ -94,13 +111,12 @@ class Register extends Component {
                   <img src={logo} className="logo" alt='logo' />
                   Human IT - Social
                 </h2>
-
-                <br/>
                 <div className="login-field">
                   <input
                     type="text"
                     placeholder="Firstname"
                     maxLength="20"
+                    autoFocus
                     value={this.state.name}
                     onChange={this.handleInputName}
                   />
@@ -169,6 +185,7 @@ class Register extends Component {
                 <Button className="login-btn" color="dark-green" type="submit">Register</Button>
                 <Link to="/chat"><Button className="login-btn" color="elegant">Back</Button></Link>
                 <p className="loginError">{this.state.error}</p>
+                <p className="loginSuccess">{this.state.success}</p>
               </form>
             </CardBody>
           </Card>
@@ -179,13 +196,12 @@ class Register extends Component {
               <img src={logo} className="logo" alt='logo' />
               Human IT - Social
             </h2>
-
-            <br/>
             <div className="login-field">
               <input
                 type="text"
                 placeholder="Firstname"
                 maxLength="20"
+                autoFocus
                 value={this.state.name}
                 onChange={this.handleInputName}
               />
@@ -254,6 +270,7 @@ class Register extends Component {
             <Button className="login-btn" color="dark-green" type="submit">Register</Button>
             <Link className="login-link" to="/chat"><Button className="login-btn" color="elegant">Back</Button></Link>
             <p className="loginError">{this.state.error}</p>
+            <p className="loginSuccess">{this.state.success}</p>
           </form>
         </div>
         <FooterPart/>

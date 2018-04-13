@@ -5,11 +5,11 @@ import logo from '../logo.svg'
 const Logout = (props) => {
   let user = props.user.login;
   axios.get(`/api/logout`)
-    .then(() =>{
-      setTimeout(()=>{
-        props.history.push('/')
-      },1500)
-    })
+  .then(() =>{
+    setTimeout(()=>{
+      props.history.push('/')
+    },1500)
+  })
 
   return (
     <div className="theLoader">

@@ -42,9 +42,9 @@ app.get('/api/logout',auth,(req,res)=>{
 app.get('/api/get_message',(req,res)=>{
     let id = req.query.id;
 
-    Message.findById(id,(err,doc)=>{
+    Message.findById(id,(err,data)=>{
         if(err) return res.status(400).send(err);
-        res.send(doc);
+        res.send(data);
     })
 })
 
@@ -54,9 +54,9 @@ app.get('/api/messages',(req,res)=>{
     let order = req.query.order;
 
     // ORDER = asc || desc
-    Message.find().skip(skip).sort({_id:order}).limit(limit).exec((err,doc)=>{
+    Message.find().skip(skip).sort({_id:order}).limit(limit).exec((err,data)=>{
         if(err) return res.status(400).send(err);
-        res.send(doc);
+        res.send(data);
     })
 })
 
@@ -64,16 +64,16 @@ app.get('/api/messages',(req,res)=>{
 app.get('/api/get_sender',(req,res)=>{
     let id = req.query.id;
 
-    User.findById(id,(err,doc)=>{
+    User.findById(id,(err,data)=>{
         if(err) return res.status(400).send(err);
         res.json({
-            name: doc.name,
-            lastname: doc.lastname,
-            email:doc.email,
-            username:doc.username,
-            phone:doc.phone,
-            image:doc.image,
-            career:doc.career
+            name: data.name,
+            lastname: data.lastname,
+            email:data.email,
+            username:data.username,
+            phone:data.phone,
+            image:data.image,
+            career:data.career
         })
     })
 })
@@ -86,9 +86,9 @@ app.get('/api/users',(req,res)=>{
 })
 
 app.get('/api/user_posts',(req,res)=>{
-    Message.find({ownerId:req.query.user}).exec((err,docs)=>{
+    Message.find({ownerId:req.query.user}).exec((err,data)=>{
         if(err) return res.status(400).send(err);
-        res.send(docs)
+        res.send(data)
     })
 })
 
@@ -101,7 +101,7 @@ app.post('/api/message',(req,res)=>{
         if(err) return res.status(400).send(err);
         res.status(200).json({
             post:true,
-            messageId: doc._id
+            messageId: data._id
         })
     })
 })
@@ -109,11 +109,11 @@ app.post('/api/message',(req,res)=>{
 app.post('/api/register',(req,res)=>{
     const user = new User(req.body);
 
-    user.save((err,doc)=>{
+    user.save((err,data)=>{
         if(err) return res.json({success:false});
         res.status(200).json({
             success:true,
-            user:doc
+            user:data
         })
     })
 })
@@ -144,11 +144,11 @@ app.post('/api/login',(req,res)=>{
 
 // UPDATE //
 app.post('/api/edit_message',(req,res)=>{
-    Message.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
+    Message.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,data)=>{
         if(err) return res.status(400).send(err);
         res.json({
             success:true,
-            doc
+            data
         })
     })
 })
@@ -158,7 +158,7 @@ app.post('/api/edit_message',(req,res)=>{
 app.delete('/api/delete_message',(req,res)=>{
     let id = req.query.id;
 
-    Message.findByIdAndRemove(id,(err,doc)=>{
+    Message.findByIdAndRemove(id,(err,data)=>{
         if(err) return res.status(400).send(err);
         res.json(true)
     })
@@ -167,7 +167,7 @@ app.delete('/api/delete_message',(req,res)=>{
 app.delete('/api/delete_user',(req,res)=>{
     let id = req.query.id;
 
-    User.findByIdAndRemove(id,(err,doc)=>{
+    User.findByIdAndRemove(id,(err,data)=>{
         if(err) return res.status(400).send(err);
         res.json(true)
     })
@@ -180,6 +180,7 @@ if (process.env.NODE_ENV === 'production') {
 
     // Express will serve up the index.html file
     // if it doesn't recognize the route
+    const path = require('path');
     // Return the index.html file
     app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
