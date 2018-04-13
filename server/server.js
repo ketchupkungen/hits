@@ -39,7 +39,7 @@ app.get('/api/logout',auth,(req,res)=>{
     })
 })
 
-app.get('/api/getMessage',(req,res)=>{
+app.get('/api/get_message',(req,res)=>{
     let id = req.query.id;
 
     Message.findById(id,(err,doc)=>{
@@ -61,7 +61,7 @@ app.get('/api/messages',(req,res)=>{
 })
 
 
-app.get('/api/getSender',(req,res)=>{
+app.get('/api/get_sender',(req,res)=>{
     let id = req.query.id;
 
     User.findById(id,(err,doc)=>{
@@ -97,7 +97,7 @@ app.get('/api/user_posts',(req,res)=>{
 app.post('/api/message',(req,res)=>{
     const message = new Message(req.body)
 
-    message.save((err,doc)=>{
+    message.save((err,data)=>{
         if(err) return res.status(400).send(err);
         res.status(200).json({
             post:true,
@@ -143,7 +143,7 @@ app.post('/api/login',(req,res)=>{
 
 
 // UPDATE //
-app.post('/api/edit-message',(req,res)=>{
+app.post('/api/edit_message',(req,res)=>{
     Message.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
         if(err) return res.status(400).send(err);
         res.json({

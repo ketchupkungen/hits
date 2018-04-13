@@ -76,7 +76,7 @@ class EditMessage extends PureComponent {
                   {
                       messages.updateMessage ?
                           <div>
-                              <p>Message updated</p>
+                              <p style={{color:'#59b300'}}>Message updated</p>
                               {this.redirectUser()}
                           </div>
                       :null
@@ -84,7 +84,7 @@ class EditMessage extends PureComponent {
                   {
                       messages.postDeleted ?
                           <div>
-                              Message deleted
+                              <p style={{color:'#FF4500'}}>Message deleted</p>
                               {this.redirectUser()}
                           </div>
                       :null

@@ -30,7 +30,7 @@ export function getMessagesWithSenders(){
         request.then(({data})=>{
             let message = data;
 
-            axios.get(`/api/getSender?id=${message.ownerId}`)
+            axios.get(`/api/get_sender?id=${message.ownerId}`)
             .then(({data})=>{
                 let response = {
                     message,
@@ -47,13 +47,13 @@ export function getMessagesWithSenders(){
 }
 
 export function getMessageWithSender(id){
-    const request = axios.get(`/api/getMessage?id=${id}`)
+    const request = axios.get(`/api/get_message?id=${id}`)
 
     return (dispatch)=>{
         request.then(({data})=>{
             let message = data;
 
-            axios.get(`/api/getSender?id=${message.ownerId}`)
+            axios.get(`/api/get_sender?id=${message.ownerId}`)
             .then(({data})=>{
                 let response = {
                     message,
@@ -108,7 +108,7 @@ export function getUserPosts(userId){
 }
 
 export function getMessage(id){
-    const request = axios.get(`/api/getMessage?id=${id}`)
+    const request = axios.get(`/api/get_message?id=${id}`)
         .then(response => response.data);
 
     return {
@@ -119,7 +119,7 @@ export function getMessage(id){
 
 
 export function updateMessage(data){
-    const request = axios.post(`/api/edit-message`,data)
+    const request = axios.post(`/api/edit_message`,data)
         .then(response => response.data);
 
     return {
@@ -176,7 +176,7 @@ export function auth(){
 
 
 export function getUser(id){
-    const request = axios.get(`/api/getUser?id=${id}`)
+    const request = axios.get(`/api/get_user?id=${id}`)
         .then(response => response.data);
     return {
         type:'GET_USER',
