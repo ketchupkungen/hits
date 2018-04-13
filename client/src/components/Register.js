@@ -168,7 +168,6 @@ class Register extends Component {
                 </div>
                 <Button className="login-btn" color="dark-green" type="submit">Register</Button>
                 <Link to="/chat"><Button className="login-btn" color="elegant">Back</Button></Link>
-
                 <p className="loginError">{this.state.error}</p>
               </form>
             </CardBody>
@@ -253,8 +252,7 @@ class Register extends Component {
               />
             </div>
             <Button className="login-btn" color="dark-green" type="submit">Register</Button>
-            <Link className="login-link" to="/"><Button className="login-btn" color="grey">Back</Button></Link>
-
+            <Link className="login-link" to="/chat"><Button className="login-btn" color="elegant">Back</Button></Link>
             <p className="loginError">{this.state.error}</p>
           </form>
         </div>

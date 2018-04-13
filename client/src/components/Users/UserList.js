@@ -22,7 +22,7 @@ class UserContainer extends Component {
                 className="profile-img-chat"
                 src={item.image}
                 alt="user-img"
-                fallback='https://stroops.com/wp-content/uploads/2016/11/placeholder-profile-male-500x500.png'
+                fallback='http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png'
               >
               </ImgFallback>
             </Link>
