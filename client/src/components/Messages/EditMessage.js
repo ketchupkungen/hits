@@ -76,7 +76,7 @@ class EditMessage extends PureComponent {
                   {
                       messages.updateMessage ?
                           <div>
-                              message updated
+                              <p>Message updated</p>
                               {this.redirectUser()}
                           </div>
                       :null
