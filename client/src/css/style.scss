@@ -1,11 +1,11 @@
 html,body {
-  height: 100vh;
-  background: #424242;
+	height: 100vh;
+	background: #424242;
 }
 
 
 h2 {
-  text-align: center;
+	text-align: center;
 }
 
 ul {
@@ -18,7 +18,7 @@ a {
 }
 
 a:hover{
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a:focus {
@@ -26,120 +26,120 @@ a:focus {
 }
 
 p,h5,h4,h3,h2,h1 {
-  font-family: 'Titillium Web', sans-serif;
-  color:white;
+	font-family: 'Titillium Web', sans-serif;
+	color:white;
 }
 
 strong {
-  color:#b3b3b3;
+	color:#b3b3b3;
 }
 
 input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #b3b3b3;
-    opacity: 1; /* Firefox */
+		color: #b3b3b3;
+		opacity: 1; /* Firefox */
 }
 
 input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #b3b3b3;
+		color: #b3b3b3;
 }
 
 input::-ms-input-placeholder { /* Microsoft Edge */
-    color: #b3b3b3;
+		color: #b3b3b3;
 }
 
 input,textarea{
-  background:#696969;
-  color:white;
-  border-radius:5px;
-  border:none;
+	background:#696969;
+	color:white;
+	border-radius:5px;
+	border:none;
 }
 
 .main {
-  margin: 0;
-  padding: 10px;
-  background:#424242;
-  width: 100%;
-  margin-top: 60px;
-  margin-Bottom: 100px;
+	margin: 0;
+	padding: 10px;
+	background:#424242;
+	width: 100%;
+	margin-top: 60px;
+	margin-Bottom: 100px;
 }
 
 
 /*=============================
-            LOGIN/REGISTER
+						LOGIN/REGISTER
 ===============================*/
 
 
 .login-page-desk {
 	background: url(https://images.theconversation.com/files/94013/original/image-20150907-22253-rnp0iv.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1012&h=668&fit=crop);
 	background-size: cover;
-  background-repeat:no-repeat;
-  height: 100vh;
+	background-repeat:no-repeat;
+	height: 100vh;
 
 	.login-card {
-	  width: 400px;
-	  margin: 0 auto;
-	  float: none;
-	  border:none;
-	  top: 100px;
-	  background-color: #424242;
-	  padding: 20px;
-	  color: white;
-	  box-shadow: 3px 3px 10px 1px #222222;
-	  border-radius: 5px;
+		width: 400px;
+		margin: 0 auto;
+		float: none;
+		border:none;
+		top: 100px;
+		background-color: #424242;
+		padding: 20px;
+		color: white;
+		box-shadow: 3px 3px 10px 1px #222222;
+		border-radius: 5px;
 
-	  p {
-	  	color:white;
-	  }
+		p {
+			color:white;
+		}
 
 		img {
 			display:block;
 			margin-left: auto;
-    	margin-right: auto;
+			margin-right: auto;
 		}
 
 		.login-btn {
-		  padding: 10px;
-		  font-size: 20px;
-		  cursor: pointer;
-		  margin-top:5px;
-      margin-bottom:0px;
+			padding: 10px;
+			font-size: 20px;
+			cursor: pointer;
+			margin-top:5px;
+			margin-bottom:0px;
 			margin-left: 10px;
-		  height: 50px;
-		  width: 300px;
-		  border-radius: 5px;
+			height: 50px;
+			width: 300px;
+			border-radius: 5px;
 
-      a{
-        margin:0;
-      }
+			a{
+				margin:0;
+			}
 		}
 
 		.login-btn:hover {
-      box-shadow: 0px 5px 30px 0px #222222;
+			box-shadow: 0px 5px 30px 0px #222222;
 		}
 
 
 		.login-field {
-      margin-top:5px;
-      width: 300px;
-      margin-left: auto;
-      margin-right: auto;
+			margin-top:5px;
+			width: 300px;
+			margin-left: auto;
+			margin-right: auto;
 
 
-      input {
-        width:100%;
-        padding:10px;
-        box-shadow: 1px 1px 1px 1px #222222;
-        border-radius: 5px;
-      }
+			input {
+				width:100%;
+				padding:10px;
+				box-shadow: 1px 1px 1px 1px #222222;
+				border-radius: 5px;
+			}
 
-      input:focus {
-        outline: none;
-      }
-    }
+			input:focus {
+				outline: none;
+			}
+		}
 
 		.logo {
-		  animation: rubberBand infinite 2s linear;
-		  width: 50px;
+			animation: rubberBand infinite 2s linear;
+			width: 50px;
 		}
 
 	}
@@ -148,7 +148,7 @@ input,textarea{
 
 
 .login-page-mobile {
-  height:100vh;
+	height:100vh;
 	padding:5px;
 	padding-top: 20px;
 	background-color: #424242;
@@ -165,140 +165,140 @@ input,textarea{
 	img {
 		display:block;
 		margin-left: auto;
-  	margin-right: auto;
+		margin-right: auto;
 	}
 
 	.login-btn {
-	  color: white;
-	  padding: 10px;
-	  font-size: 20px;
-	  cursor: pointer;
-    margin-top:5px;
-    margin-bottom:0px;
-	  height: 50px;
-	  width: 250px;
-	  margin-left: auto;
+		color: white;
+		padding: 10px;
+		font-size: 20px;
+		cursor: pointer;
+		margin-top:5px;
+		margin-bottom:0px;
+		height: 50px;
+		width: 250px;
+		margin-left: auto;
 		margin-right: auto;
-	  text-align: center;
-	  border-radius: 5px;
-	  display: block;
+		text-align: center;
+		border-radius: 5px;
+		display: block;
 	}
 
-  .login-link {
-    margin:0;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+	.login-link {
+		margin:0;
+		width: 250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	.login-btn:hover {
-      box-shadow: 0px 5px 30px 0px #222222;
+			box-shadow: 0px 5px 30px 0px #222222;
 	}
 
-  .login-field{
-    margin-top:5px;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+	.login-field{
+		margin-top:5px;
+		width: 250px;
+		margin-left: auto;
+		margin-right: auto;
 
-    input {
-      width:100%;
-      padding:7px;
-      box-shadow: 1px 1px 1px 1px #222222;
-      border-radius: 5px;
-    }
+		input {
+			width:100%;
+			padding:7px;
+			box-shadow: 1px 1px 1px 1px #222222;
+			border-radius: 5px;
+		}
 
-    input:focus {
-      outline: none;
-    }
-  }
+		input:focus {
+			outline: none;
+		}
+	}
 
-  .logo {
-    animation: rubberBand infinite 2s linear;
-    width: 50px;
-  }
+	.logo {
+		animation: rubberBand infinite 2s linear;
+		width: 50px;
+	}
 }
 
 .loginError {
-  color: #FF4500 !important;
-  text-align: center;
+	color: #FF4500 !important;
+	text-align: center;
 }
 
 .loginSuccess {
-  color: #59b300 !important;
-  text-align: center;
+	color: #59b300 !important;
+	text-align: center;
 }
 
 .logout{
-  color:white;
-  text-align: center;
-  margin: 0 auto;
+	color:white;
+	text-align: center;
+	margin: 0 auto;
 
-  .logo {
-    animation: rubberBand infinite 2s linear;
-    width: 50px;
-  }
+	.logo {
+		animation: rubberBand infinite 2s linear;
+		width: 50px;
+	}
 }
 
 /*=============================
-            PROFILE PAGE
+						PROFILE PAGE
 ===============================*/
 
 
 .profile-page {
 	margin-top: 80px;
-  background-color: #424242;
+	background-color: #424242;
 }
 
 .profile-img {
 	width: 100%;
 	border-radius:20px;
-  margin-bottom:30px;
+	margin-bottom:30px;
 }
 
 /*=============================
-            USERS
+						USERS
 ===============================*/
 
 th,td {
-  padding:0px;
+	padding:0px;
 }
 
 
 
 /*=============================
-            HEADER
+						HEADER
 ===============================*/
 
 .header {
-  color:white;
-  position: fixed;
-  background: #212121;
-  flex-shrink: 0;
-  top:0;
-  left:0;
-  text-align: center;
-  font-size:25px;
-  padding: 8px;
-  width:100%;
-  margin: 0;
-  z-index: 1;
-  box-shadow: 0px 0px 10px 0px #222222;
+	color:white;
+	position: fixed;
+	background: #212121;
+	flex-shrink: 0;
+	top:0;
+	left:0;
+	text-align: center;
+	font-size:25px;
+	padding: 8px;
+	width:100%;
+	margin: 0;
+	z-index: 1;
+	box-shadow: 0px 0px 10px 0px #222222;
 }
 
 .logo {
-  //animation: App-logo-spin infinite 10s linear;
-  animation: tada infinite 4s;
-  width: 40px;
+	//animation: App-logo-spin infinite 10s linear;
+	animation: tada infinite 4s;
+	width: 40px;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
 }
 
 /*=============================
-            MESSAGE AREA
+						MESSAGE AREA
 ===============================*/
 
 .profile-img-chat {
@@ -309,341 +309,341 @@ th,td {
 }
 
 .messageComposer {
-  color:white;
-  padding:10px;
-  width: 100%;
-  height: 80px;
-  flex-shrink: 0;
-  bottom: 0;
-  position: fixed;
-  box-shadow: 0px 0px 10px 0px #222222;
-  border: none;
-  font-size:20px;
+	color:white;
+	padding:10px;
+	width: 100%;
+	height: 80px;
+	flex-shrink: 0;
+	bottom: 0;
+	position: fixed;
+	box-shadow: 0px 0px 10px 0px #222222;
+	border: none;
+	font-size:20px;
 }
 
 .messageComposer:focus {
-  outline: none;
+	outline: none;
 }
 
 .mess-name {
-  color: white;
-  background: Transparent;
-  background-repeat: noRepeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  font-size: 20px;
+	color: white;
+	background: Transparent;
+	background-repeat: noRepeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	font-size: 20px;
 
-  a{
-    color:  #808080;
-  }
+	a{
+		color:  #808080;
+	}
 }
 
 .mess-time {
-  color:  #999999;
-  margin-left: 10px;
-  opacity: 0.5;
-  font-size: 13px;
-  font-family: sans-serif;
+	color:  #999999;
+	margin-left: 10px;
+	opacity: 0.5;
+	font-size: 13px;
+	font-family: sans-serif;
 }
 
 .mess-edit {
-  color:white;
-  width:30px;
-  padding:0;
-  border:none;
-  border-radius:15px;
-  background: #222222;
-  opacity: 0.3;
-  font-size: 20px;
-  right:0px;
-  margin-top:0;
-  position:absolute;
+	color:white;
+	width:30px;
+	padding:0;
+	border:none;
+	border-radius:15px;
+	background: #222222;
+	opacity: 0.3;
+	font-size: 20px;
+	right:0px;
+	margin-top:0;
+	position:absolute;
 }
 
 .mess-edit:hover {
-  opacity: 1;
-  border:none;
+	opacity: 1;
+	border:none;
 }
 
 .mess-edit:active {
-  opacity: 0.5;
-  border:none;
+	opacity: 0.5;
+	border:none;
 }
 
 .mess-text {
-  width:500px;
-  color:  #b3b3b3;
-  clear: both;
-  padding-top: 1px;
-  margin-top: -1px;
-  padding-bottom: 3px;
-  word-wrap: break-word;
+	width:500px;
+	color:  #b3b3b3;
+	clear: both;
+	padding-top: 1px;
+	margin-top: -1px;
+	padding-bottom: 3px;
+	word-wrap: break-word;
 
 }
 
 /*=============================
-            EDIT MESSAGE
+						EDIT MESSAGE
 ===============================*/
 .edit-message-screen {
-  .edit-message {
-    border: none;
-    width:100%;
-    height:100px;
-  }
+	.edit-message {
+		border: none;
+		width:100%;
+		height:100px;
+	}
 
-  .edit-message:focus {
-    outline:none !important;
-  }
+	.edit-message:focus {
+		outline:none !important;
+	}
 
-  button{
-    border-radius:10px;
-  }
+	button{
+		border-radius:10px;
+	}
 }
 
 
 
 
 /*=============================
-            SIDEBAR
+						SIDEBAR
 ===============================*/
 .toggle {
-  text-decoration: none;
+	text-decoration: none;
 
-  position: fixed;
-  width: 10px;
-  top: 9px;
-  left: 7px;
-  z-index: 100;
-  cursor: pointer;
+	position: fixed;
+	width: 10px;
+	top: 9px;
+	left: 7px;
+	z-index: 100;
+	cursor: pointer;
 
-  svg {
-    color: #b3b3b3;
-    width: 40px !important;
-    height: 40px !important;
-  }
+	svg {
+		color: #b3b3b3;
+		width: 40px !important;
+		height: 40px !important;
+	}
 
-  svg:hover {
-    color: #59b300;
-  }
+	svg:hover {
+		color: #59b300;
+	}
 
 }
 
 .sidebar-box {
-  background: #2E2E2E;
-  width: 100%;
-  z-index:500;
+	background: #2E2E2E;
+	width: 100%;
+	z-index:500;
 
-  p{
-    color: white;
-    margin-bottom:5px;
-    text-align: center;
-  }
+	p{
+		color: white;
+		margin-bottom:5px;
+		text-align: center;
+	}
 
-  a{
-    text-decoration:none;
-    color:white;
-  }
+	a{
+		text-decoration:none;
+		color:white;
+	}
 
-  a:hover{
-    text-decoration:none;
-    color:#59b300;
-  }
+	a:hover{
+		text-decoration:none;
+		color:#59b300;
+	}
 
-  .sidebar{
-    opacity:1;
-    transition: all 0.6s ease;
-    z-index: 1000;
-    position:fixed;
-    top: 0px;
-    bottom: 0px;
-    width: 250px;
-    padding: 10px;
-    background: #2E2E2E;
-  }
+	.sidebar{
+		opacity:1;
+		transition: all 0.6s ease;
+		z-index: 1000;
+		position:fixed;
+		top: 0px;
+		bottom: 0px;
+		width: 250px;
+		padding: 10px;
+		background: #2E2E2E;
+	}
 
-  .sidebar-icon-btn {
-    padding: 10px 15.5px;
-    border-radius:5px;
-  }
+	.sidebar-icon-btn {
+		padding: 10px 15.5px;
+		border-radius:5px;
+	}
 
-  .sidebar-icon-btn:hover {
-    box-shadow: 0px 2px 15px 0px #222222;
-  }
+	.sidebar-icon-btn:hover {
+		box-shadow: 0px 2px 15px 0px #222222;
+	}
 
-  .sidebar-send-btn {
-    padding: 10px 15.5px;
-    margin-left:35px;
-    border-radius:5px;
-  }
+	.sidebar-send-btn {
+		padding: 10px 15.5px;
+		margin-left:35px;
+		border-radius:5px;
+	}
 
-  .sidebar.sidebar-entering{
-    opacity:0.5;
-    transform:translateX(0%);
-  }
+	.sidebar.sidebar-entering{
+		opacity:0.5;
+		transform:translateX(0%);
+	}
 
-  .sidebar.sidebar-exited{
-    opacity:0;
-    transform:translateX(-100%);
-  }
+	.sidebar.sidebar-exited{
+		opacity:0;
+		transform:translateX(-100%);
+	}
 
-  .screenHide {
-    top:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    z-index:400;
-    position:fixed;
-    transition: all 0.01s;
-  }
+	.screenHide {
+		top:0;
+		bottom:0;
+		width:100%;
+		height:100%;
+		z-index:400;
+		position:fixed;
+		transition: all 0.01s;
+	}
 
-  .screenHide.screenHide-entering {
-    opacity:0;
-    transform:translateX(0%);
-  }
+	.screenHide.screenHide-entering {
+		opacity:0;
+		transform:translateX(0%);
+	}
 
-  .screenHide.screenHide-exited {
-    opacity:0;
-    transform:translateX(-100%);
-  }
+	.screenHide.screenHide-exited {
+		opacity:0;
+		transform:translateX(-100%);
+	}
 }
 
 /*=============================
-            FOOTER
+						FOOTER
 ===============================*/
 
 .footer {
-  margin-top:0 !important;
+	margin-top:0 !important;
 
-  .footer-copyright {
-    padding-top:20px;
-  }
+	.footer-copyright {
+		padding-top:20px;
+	}
 
-  .footer-img {
-    width: 30px;
-  }
+	.footer-img {
+		width: 30px;
+	}
 
-  .fb-link {
-    color: #4267B2;
-  }
+	.fb-link {
+		color: #4267B2;
+	}
 
-  .li-link {
-    color: #0077B5;
-  }
+	.li-link {
+		color: #0077B5;
+	}
 }
 
 /*=============================
-            LOADER
+						LOADER
 ===============================*/
 
 .theLoader {
-  position: absolute;
-  height: 200px;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:auto;
+	position: absolute;
+	height: 200px;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
 }
 
 .loader,
 .loader:before,
 .loader:after {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 .loader {
-  color: #59b300;
-  font-size: 10px;
-  text-indent: -99999em;
-  margin: 5.5em auto;
-  position: relative;
-  width: 10em;
-  height: 10em;
-  box-shadow: inset 0 0 1em 0.5em #59b300;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
+	color: #59b300;
+	font-size: 10px;
+	text-indent: -99999em;
+	margin: 5.5em auto;
+	position: relative;
+	width: 10em;
+	height: 10em;
+	box-shadow: inset 0 0 1em 0.5em #59b300;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
 }
 .loader:before,
 .loader:after {
-  position: absolute;
-  content: '';
+	position: absolute;
+	content: '';
 }
 .loader:before {
-  margin: 0 auto;
-  background: #424242;
-  border-radius: 10.2em 0 0 10.2em;
-  top: -10px;
-  left: -10em;
-  -webkit-transform-origin: 5.2em 5.1em;
-  transform-origin: 5.2em 5.1em;
-  -webkit-animation: load2 2s infinite ease 1.5s;
-  animation: load2 1.5s infinite ease 1.5s;
+	margin: 0 auto;
+	background: #424242;
+	border-radius: 10.2em 0 0 10.2em;
+	top: -10px;
+	left: -10em;
+	-webkit-transform-origin: 5.2em 5.1em;
+	transform-origin: 5.2em 5.1em;
+	-webkit-animation: load2 2s infinite ease 1.5s;
+	animation: load2 1.5s infinite ease 1.5s;
 }
 .loader:after {
-  width: 5.2em;
-  height: 10.2em;
-  background: #424242;
-  border-radius: 0 10.2em 10.2em 0;
-  top: -0.1em;
-  left: 5.1em;
-  -webkit-transform-origin: 0px 5.1em;
-  transform-origin: 0px 5.1em;
-  -webkit-animation: load2 2s infinite ease;
-  animation: load2 0.8s infinite ease;
+	width: 5.2em;
+	height: 10.2em;
+	background: #424242;
+	border-radius: 0 10.2em 10.2em 0;
+	top: -0.1em;
+	left: 5.1em;
+	-webkit-transform-origin: 0px 5.1em;
+	transform-origin: 0px 5.1em;
+	-webkit-animation: load2 2s infinite ease;
+	animation: load2 0.8s infinite ease;
 }
 
 @-webkit-keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
 /*=============================
-            RESPONSIVE
+						RESPONSIVE
 ===============================*/
 
 @media screen and (max-width: 500px) {
-  .login-page-mobile {
-    display:block;
-  }
-  .login-page-desk {
-    display:none;
-  }
-  .mess-text {
-    width:230px;
-  }
-  .mess-name {
-    font-size:17px;
-  }
-  .mess-time {
-    font-size:10px;
-  }
+	.login-page-mobile {
+		display:block;
+	}
+	.login-page-desk {
+		display:none;
+	}
+	.mess-text {
+		width:230px;
+	}
+	.mess-name {
+		font-size:17px;
+	}
+	.mess-time {
+		font-size:10px;
+	}
 }
 
 @media screen and (min-width: 500px) {
-  .login-page-mobile {
-    display:none;
-  }
+	.login-page-mobile {
+		display:none;
+	}
 
-  .login-page-desk {
-    display:block;
-  }
+	.login-page-desk {
+		display:block;
+	}
 }

@@ -8,62 +8,62 @@ import logo from '../logo.svg'
 
 class Home extends Component {
 
-  state = {
-    formdata:{
-     text:''
-    }
-  }
+	state = {
+		formdata:{
+		 text:''
+		}
+	}
 
-  handleInput = (event,text) => {
-    const newFormdata = {
-      ...this.state.formdata
-    }
-    newFormdata[text] = event.target.value
+	handleInput = (event,text) => {
+		const newFormdata = {
+			...this.state.formdata
+		}
+		newFormdata[text] = event.target.value
 
-    this.setState({
-      formdata:newFormdata
-    })
-  }
+		this.setState({
+			formdata:newFormdata
+		})
+	}
 
-  submitForm = (e) => {
-    e.preventDefault();
-    this.props.dispatch(addMessage({
-      ...this.state.formdata,
-      ownerId:this.props.user.login.id
-    }))
-  }
+	submitForm = (e) => {
+		e.preventDefault();
+		this.props.dispatch(addMessage({
+			...this.state.formdata,
+			ownerId:this.props.user.login.id
+		}))
+	}
 
-  componentWillUnmount(){
-    this.props.dispatch(clearNewMessage())
-  }
+	componentWillUnmount(){
+		this.props.dispatch(clearNewMessage())
+	}
 
-  render() {
-    return (
-      <div>
-        <div className="header">
-          <img src={logo} className="logo" alt="logo"/>
-          General
-        </div>
-        <Sidebar/>
-        <MessageList/>
-        <form onSubmit={this.submitForm}>
-          <input
-            type="text"
-            placeholder="Enter message"
-            className="messageComposer"
-            value={this.state.formdata.text}
-            onChange={(event)=>this.handleInput(event,'text')}
-          />
-        </form>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<div className="header">
+					<img src={logo} className="logo" alt="logo"/>
+					General
+				</div>
+				<Sidebar/>
+				<MessageList/>
+				<form onSubmit={this.submitForm}>
+					<input
+						type="text"
+						placeholder="Enter message"
+						className="messageComposer"
+						value={this.state.formdata.text}
+						onChange={(event)=>this.handleInput(event,'text')}
+					/>
+				</form>
+			</div>
+		);
+	}
 }
 
 function mapStateToProps (state) {
-  return {
-    messages:state.messages
-  }
+	return {
+		messages:state.messages
+	}
 }
 
 export default connect(mapStateToProps)(Home)

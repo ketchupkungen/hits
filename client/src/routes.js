@@ -24,20 +24,20 @@ import Auth from './hoc/auth'
 import './css/style.css';
 
 const Routes = () => {
-  return (
-    <Switch>
-      <Route path="/" exact component={Auth(Login,null)}/>
-      <Route path="/register" exact component={Auth(Register,null)}/>
-      <Route path="/chat" exact component={Auth(Chat,true)}/>
-      <Route path="/chat/edit-message/:id" exact component={Auth(EditMessage,true)}/>
-      <Route path="/chat/:id" exact component={Auth(MessageView,true)}/>
-      <Route path="/users" exact component={Auth(Users,true)}/>
-      <Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
-      <Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
-      <Route path="/profile" exact component={Auth(Profile,true)}/>
-      <Route path="/logout" exact component={Auth(Logout,true)}/>
-    </Switch>
-  );
+	return (
+		<Switch>
+			<Route path="/" exact component={Auth(Login,null)}/>
+			<Route path="/register" exact component={Auth(Register,null)}/>
+			<Route path="/chat" exact component={Auth(Chat,true)}/>
+			<Route path="/chat/edit-message/:id" exact component={Auth(EditMessage,true)}/>
+			<Route path="/chat/:id" exact component={Auth(MessageView,true)}/>
+			<Route path="/users" exact component={Auth(Users,true)}/>
+			<Route path="/users/:id" exact component={Auth(VisitUser,true)}/>
+			<Route path="/users-admin" exact component={Auth(UsersAdmin,true)}/>
+			<Route path="/profile" exact component={Auth(Profile,true)}/>
+			<Route path="/logout" exact component={Auth(Logout,true)}/>
+		</Switch>
+	);
 };
 
 export default Routes;
