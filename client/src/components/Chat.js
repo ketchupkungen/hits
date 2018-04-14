@@ -6,7 +6,7 @@ import MessageList from './Messages/MessageList'
 import Sidebar from './Sidebar'
 import logo from '../logo.svg'
 
-class Home extends Component {
+class Chat extends Component {
 
 	state = {
 		formdata:{
@@ -66,4 +66,4 @@ function mapStateToProps (state) {
 	}
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(Chat)

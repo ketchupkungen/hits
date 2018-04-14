@@ -80,7 +80,7 @@ export function clearMessageWithSender(){
 	}
 }
 
-export function addMessage(message){
+/*export function addMessage(message){
 	const request = axios.post('/api/message',message)
 		.then(response => response.data);
 
@@ -88,7 +88,22 @@ export function addMessage(message){
 		type:'ADD_MESSAGE',
 		payload:request
 	}
+}*/
+
+
+export function addMessage(message){
+
+	return function(dispatch){
+		axios.post('/api/message', message)
+		.then(response => {
+			dispatch({
+				type: 'ADD_MESSAGE',
+				payload: {message: message.text, sender: message.ownerId}
+			})
+		})
+	}
 }
+
 export function clearNewMessage() {
 	return {
 		type:'CLEAR_NEWMESSAGE',

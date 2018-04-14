@@ -51,10 +51,8 @@ app.get('/api/get_message',(req,res)=>{
 app.get('/api/messages',(req,res)=>{
 	let skip = parseInt(req.query.skip);
 	let limit = parseInt(req.query.limit);
-	let order = req.query.order;
 
-	// ORDER = asc || desc
-	Message.find().skip(skip).sort({_id:order}).limit(limit).exec((err,data)=>{
+	Message.find().skip(skip).limit(limit).exec((err,data)=>{
 		if(err) return res.status(400).send(err);
 			res.send(data);
 	})

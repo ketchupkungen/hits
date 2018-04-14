@@ -26,7 +26,10 @@ export default function(state={},action){
 				sender:action.payload.sender
 			}
 		case 'ADD_MESSAGE':
-			return {...state,newmessage:action.payload}
+			//return {...state,newmessage:action.payload}
+			let list = [ {text: action.payload.message, ownerid: action.payload.ownerid},...state.list]
+
+      return {...state, list}
 		case 'CLEAR_NEWMESSAGE':
 			return {...state,newmessage:action.payload}
 		case 'UPDATE_MESSAGE':

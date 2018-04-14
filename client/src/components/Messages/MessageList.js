@@ -7,7 +7,7 @@ import {Media,Button} from 'mdbreact';
 import moment from 'moment-js';
 import ImgFallback from 'react-img-fallback'
 
-class HomeContainer extends Component {
+class MessageList extends Component {
 	constructor(props) {
 			super(props);
 
@@ -101,4 +101,4 @@ function mapStateToProps(state){
 	}
 }
 
-export default connect(mapStateToProps)(HomeContainer)
+export default connect(mapStateToProps)(MessageList)
