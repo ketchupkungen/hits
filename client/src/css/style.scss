@@ -516,6 +516,8 @@ th,td {
 	}
 
 	.screenHide {
+		background:black;
+		opacity: 0.5;
 		top:0;
 		bottom:0;
 		width:100%;
@@ -666,6 +668,17 @@ th,td {
 
 	.logout{
 		font-size:28px;
+	}
+
+	.sidebar-box.screenHide {
+		background:#388E3C;
+	}
+
+	.sidebar-box {
+
+		.screenHide {
+			background:#388E3C;
+		}
 	}
 }
 
