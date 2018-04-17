@@ -51,6 +51,10 @@ class Chat extends Component {
 						type="text"
 						placeholder="Enter message"
 						className="messageComposer"
+						ref="messageComposer"
+						name="message"
+						autoFocus="true"
+						autoComplete="off"
 						value={this.state.formdata.text}
 						onChange={(event)=>this.handleInput(event,'text')}
 					/>

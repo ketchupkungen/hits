@@ -12,12 +12,11 @@ import EditMessage from './components/Messages/EditMessage';
 import Register from './components/Register';
 import Logout from './components/logout';
 
-
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
-// What right does users have. If true, you must be logged in to access.
+// What rights does users have? If true, you must be logged in to access.
 // If it´s null, anyone can access.
 import Auth from './hoc/auth'
 

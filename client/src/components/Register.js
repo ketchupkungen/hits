@@ -103,7 +103,7 @@ class Register extends PureComponent {
 		return (
 			<div>
 				<div className="login-page-desk">
-					<Card className="login-card">
+					<Card className="register-card">
 						<CardBody>
 							<form onSubmit={this.submitForm}>
 								<h2>

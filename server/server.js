@@ -1,21 +1,24 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
-const socketIo = require('socket.io');
-const keys = require('./config/keys');
-const app = express();
+const express = require('express'),
+			app = express(),
+			path = require('path'),
+			bodyParser = require('body-parser'),
+			cookieParser = require('cookie-parser'),
+			mongoose = require('mongoose'),
+			socketIo = require('socket.io'),
+			keys = require('./config/keys'),
+			cors = require('cors');
 
 mongoose.connect(keys.mongoURI);
 process.env.PORT = process.env.PORT || 5000;
 
-const { User } = require('./models/user');
-const { Message } = require('./models/message');
-const { auth } = require('./middleware/auth')
+const { User } = require('./models/user'),
+		  { Message } = require('./models/message'),
+ 			{ auth } = require('./middleware/auth');
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors());
 
 // GET //
 app.get('/api/auth',auth,(req,res)=>{
@@ -48,7 +51,9 @@ app.get('/api/get_message',(req,res)=>{
 	})
 })
 
-app.get('/api/messages',(req,res)=>{
+// Prototype for rendering old messages on scroll
+//
+/*app.get('/api/messages',(req,res)=>{
 	let skip = parseInt(req.query.skip);
 	let limit = parseInt(req.query.limit);
 
@@ -56,8 +61,15 @@ app.get('/api/messages',(req,res)=>{
 		if(err) return res.status(400).send(err);
 			res.send(data);
 	})
-})
+})*/
 
+// WORKS
+app.get('/api/messages',(req,res)=>{
+	Message.find({},(err,messages)=>{
+		if(err) return res.status(400).send(err);
+		res.status(200).send(messages)
+	})
+})
 
 app.get('/api/get_sender',(req,res)=>{
 	let id = req.query.id;
@@ -190,7 +202,7 @@ const server = app.listen(process.env.PORT, (err) => {
 		console.log(err);
 		return;
 	}
-	console.log('server listening on port: %s', process.env.PORT);
+	console.log('server listening on port: %s', process.env.PORT );
 });
 
 const io = new socketIo(server, {path: '/api/chat'})

@@ -6,10 +6,10 @@ const messageSchema = mongoose.Schema({
     type:String,
     required:true
   },
-  user: Object,
+  //user: Object,
   ownerId:{
     type:String,
-    required:true
+    //required:true
   }
 },{timestamps:true})
 

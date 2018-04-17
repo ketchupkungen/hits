@@ -76,72 +76,94 @@ input,textarea{
 	height: 100vh;
 
 	.login-card {
+		position: absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		margin:auto;
+		height: 400px;
 		width: 400px;
-		margin: 0 auto;
 		float: none;
 		border:none;
-		top: 100px;
 		background-color: #424242;
 		padding: 20px;
 		color: white;
 		box-shadow: 3px 3px 10px 1px #222222;
 		border-radius: 5px;
+	}
 
-		p {
+	.register-card {
+		position: absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		margin:auto;
+		height: 700px;
+		width: 400px;
+		float: none;
+		border:none;
+		background-color: #424242;
+		padding: 20px;
+		color: white;
+		box-shadow: 3px 3px 10px 1px #222222;
+		border-radius: 5px;
+	}
+
+	p {
 			color:white;
-		}
+	}
 
-		img {
-			display:block;
-			margin-left: auto;
-			margin-right: auto;
-		}
+	img {
+		display:block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-		.login-btn {
-			padding: 10px;
-			font-size: 20px;
-			cursor: pointer;
-			margin-top:5px;
-			margin-bottom:0px;
-			margin-left: 10px;
-			height: 50px;
-			width: 300px;
+	.login-btn {
+		padding: 10px;
+		font-size: 20px;
+		cursor: pointer;
+		margin-top:5px;
+		margin-bottom:0px;
+		margin-left: 10px;
+		height: 50px;
+		width: 300px;
+		border-radius: 5px;
+
+		a{
+			margin:0;
+		}
+	}
+
+	.login-btn:hover {
+		box-shadow: 0px 5px 30px 0px #222222;
+	}
+
+
+	.login-field {
+		margin-top:5px;
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+
+
+		input {
+			width:100%;
+			padding:10px;
+			box-shadow: 1px 1px 1px 1px #222222;
 			border-radius: 5px;
-
-			a{
-				margin:0;
-			}
 		}
 
-		.login-btn:hover {
-			box-shadow: 0px 5px 30px 0px #222222;
+		input:focus {
+			outline: none;
 		}
+	}
 
-
-		.login-field {
-			margin-top:5px;
-			width: 300px;
-			margin-left: auto;
-			margin-right: auto;
-
-
-			input {
-				width:100%;
-				padding:10px;
-				box-shadow: 1px 1px 1px 1px #222222;
-				border-radius: 5px;
-			}
-
-			input:focus {
-				outline: none;
-			}
-		}
-
-		.logo {
-			animation: rubberBand infinite 2s linear;
-			width: 50px;
-		}
-
+	.logo {
+		animation: rubberBand infinite 2s linear;
+		width: 50px;
 	}
 }
 
