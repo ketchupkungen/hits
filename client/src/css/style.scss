@@ -3,7 +3,7 @@ html {
 }
 body {
 	background: #424242; /* For browsers that do not support gradients */
-	background: linear-gradient(to bottom right, #737373,#424242 , #222222 ); /* Standard syntax */
+	background: linear-gradient(to right, #424242 , #222222 ); /* Standard syntax */
 	height: 100%;
 	margin: 0;
 	background-repeat: no-repeat;
@@ -69,7 +69,6 @@ input:focus,textarea:focus {
 .main {
 	margin: 0;
 	padding: 10px;
-	background:#424242;
 	width: 100%;
 	padding-top: 70px;
 	padding-bottom: 130px;
@@ -107,7 +106,7 @@ input:focus,textarea:focus {
 		float: none;
 		border:none;
 		background: #424242; /* For browsers that do not support gradients */
-		background: linear-gradient(to bottom right, #808080,#424242, #222222); /* Standard syntax */
+		background: linear-gradient(to right, #424242 , #222222 ); /* Standard syntax */
 		padding: 20px;
 		color: white;
 		box-shadow: 3px 3px 10px 1px #222222;
@@ -126,7 +125,7 @@ input:focus,textarea:focus {
 		float: none;
 		border:none;
 		background: #424242; /* For browsers that do not support gradients */
-		background: linear-gradient(to bottom right, #808080,#424242, #222222); /* Standard syntax */
+		background: linear-gradient(to right, #424242 , #222222 ); /* Standard syntax */
 		padding: 20px;
 		color: white;
 		box-shadow: 3px 3px 10px 1px #222222;
@@ -488,7 +487,7 @@ th,td {
 
 	.sidebar{
 		opacity:1;
-		transition: all 0.6s ease;
+		transition: all 0.8s ease;
 		z-index: 1000;
 		position:fixed;
 		top: 0px;
@@ -527,6 +526,7 @@ th,td {
 
 	.sidebar.sidebar-exited{
 		opacity:0;
+		transition: all 0.8s ease;
 		transform:translateX(-100%);
 	}
 
@@ -539,14 +539,7 @@ th,td {
 		height:100%;
 		z-index:400;
 		position:fixed;
-		transition: all 0s;
-		transition: opacity 1s;
-	}
-
-	.screenHide.screenHide-entering {
-		opacity:0;
-		transition: opacity 50s;
-		transform:translateX(0%);
+		transition: opacity 2s ease;
 	}
 
 	.screenHide.screenHide-exited {
@@ -610,7 +603,7 @@ th,td {
 }
 .loader:before {
 	margin: 0 auto;
-	background: #434343;
+	background: #333333;
 	border-radius: 10.2em 0 0 10.2em;
 	top: -10px;
 	left: -10em;
@@ -622,7 +615,7 @@ th,td {
 .loader:after {
 	width: 5.2em;
 	height: 10.2em;
-	background: #434343;
+	background: #333333;
 	border-radius: 0 10.2em 10.2em 0;
 	top: -0.1em;
 	left: 5.1em;

@@ -25,8 +25,6 @@ class Sidebar extends Component {
   	})
   }
 
-  toggle
-
 	render() {
 		return (
 			<div>
@@ -36,7 +34,7 @@ class Sidebar extends Component {
 				</div>
 				<Transition
 					in={this.state.show}
-					timeout={5}
+					timeout={0}
 				>
 				{ state =>
 
@@ -72,7 +70,7 @@ class Sidebar extends Component {
 							</ul>
 
 							<hr/>
-							
+
 							<ul className="list-unstyled list-inline sidebar-links">
 								<li className="list-inline-item">
 									<a href="http://www.humanit.se">
@@ -98,7 +96,7 @@ class Sidebar extends Component {
 							</ul>
 						</nav>
 						<div
-							className={`green-strong screenHide screenHide-${state}`}
+							className={`screenHide screenHide-${state}`}
 							onClick={this.toggleSidebar}
 						>
 
