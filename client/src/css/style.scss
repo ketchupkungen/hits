@@ -1,13 +1,13 @@
 html {
-    height: 100%;
+  min-height: 100%;
 }
 body {
 	background: #424242; /* For browsers that do not support gradients */
-	background: linear-gradient(to bottom right, #808080,#424242 50%, #222222 ); /* Standard syntax */
+	background: linear-gradient(to bottom right, #737373,#424242 , #222222 ); /* Standard syntax */
 	height: 100%;
 	margin: 0;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-size: auto 100%;
 }
 
 
@@ -73,6 +73,14 @@ input:focus,textarea:focus {
 	width: 100%;
 	padding-top: 70px;
 	padding-bottom: 130px;
+}
+
+.fb-link {
+	color: #4267B2;
+}
+
+.li-link {
+	color: #0077B5;
 }
 
 
@@ -458,6 +466,7 @@ th,td {
 
 .sidebar-box {
 	background: #2E2E2E;
+	height: 100%;
 	width: 100%;
 	z-index:500;
 
@@ -492,6 +501,13 @@ th,td {
 	.sidebar-icon-btn {
 		padding: 10px 15.5px;
 		border-radius:5px;
+	}
+
+	.sidebar-links {
+		text-align:center;
+		.sidebar-img-link {
+			width:30px;
+		}
 	}
 
 	.sidebar-icon-btn:hover {
@@ -553,14 +569,6 @@ th,td {
 	.footer-img {
 		width: 30px;
 	}
-
-	.fb-link {
-		color: #4267B2;
-	}
-
-	.li-link {
-		color: #0077B5;
-	}
 }
 
 /*=============================
@@ -584,7 +592,7 @@ th,td {
 }
 .loader {
 	color: #59b300;
-	font-size: 10px;
+	font-size: 5px;
 	text-indent: -99999em;
 	margin: 5.5em auto;
 	position: relative;
@@ -602,7 +610,7 @@ th,td {
 }
 .loader:before {
 	margin: 0 auto;
-	background: #424242;
+	background: #434343;
 	border-radius: 10.2em 0 0 10.2em;
 	top: -10px;
 	left: -10em;
@@ -614,7 +622,7 @@ th,td {
 .loader:after {
 	width: 5.2em;
 	height: 10.2em;
-	background: #424242;
+	background: #434343;
 	border-radius: 0 10.2em 10.2em 0;
 	top: -0.1em;
 	left: 5.1em;
