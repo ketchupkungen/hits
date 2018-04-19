@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Transition from 'react-transition-group/Transition';
 import { Button } from 'mdbreact';
+import logo from '../logo.svg'
 //import SidebarUser from './SidebarUser';
 
 
@@ -68,6 +69,32 @@ class Sidebar extends Component {
 								<li><p><Link to="/chat">Notifications</Link></p></li>
 								<li><p><Link to="/chat">Help & feedback</Link></p></li>
 								<li><p><Link to="/logout">Logout</Link></p></li>
+							</ul>
+
+							<hr/>
+							
+							<ul className="list-unstyled list-inline sidebar-links">
+								<li className="list-inline-item">
+									<a href="http://www.humanit.se">
+										<img className="sidebar-img-link" src={logo} alt="logo"/>
+									</a>
+								</li>
+								<li className="list-inline-item">
+									<a
+										href="https://www.facebook.com/humanit.se/?hc_ref=ARRvb_tANI-PaVFpIHa0VClrvO5nG-Wa7PSpJCqkAA7Tn3Og8X7BjWsEAd8X-tlU_Es&fref=nf"
+										className="btn-floating btn-sm btn-tw  footer-link"
+									>
+										<i className="fab fa-facebook-f fb-link"></i>
+									</a>
+								</li>
+								<li className="list-inline-item">
+									<a
+										href="https://www.linkedin.com/company/human-it-sverige/"
+										className="btn-floating btn-sm btn-li footer-link"
+									>
+										<i className="fab fa-linkedin-in li-link"></i>
+									</a>
+								</li>
 							</ul>
 						</nav>
 						<div
