@@ -1,6 +1,13 @@
-html,body {
-	height: 100vh;
-	background: #424242;
+html {
+    height: 100%;
+}
+body {
+	background: #424242; /* For browsers that do not support gradients */
+	background: linear-gradient(to bottom right, #808080,#424242 50%, #222222 ); /* Standard syntax */
+	height: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 
@@ -54,13 +61,18 @@ input,textarea{
 	border:none;
 }
 
+input:focus,textarea:focus {
+	outline: none;
+	background:#737373;
+}
+
 .main {
 	margin: 0;
 	padding: 10px;
 	background:#424242;
 	width: 100%;
-	margin-top: 60px;
-	margin-Bottom: 100px;
+	padding-top: 70px;
+	padding-bottom: 130px;
 }
 
 
@@ -86,7 +98,8 @@ input,textarea{
 		width: 400px;
 		float: none;
 		border:none;
-		background-color: #424242;
+		background: #424242; /* For browsers that do not support gradients */
+		background: linear-gradient(to bottom right, #808080,#424242, #222222); /* Standard syntax */
 		padding: 20px;
 		color: white;
 		box-shadow: 3px 3px 10px 1px #222222;
@@ -104,7 +117,8 @@ input,textarea{
 		width: 400px;
 		float: none;
 		border:none;
-		background-color: #424242;
+		background: #424242; /* For browsers that do not support gradients */
+		background: linear-gradient(to bottom right, #808080,#424242, #222222); /* Standard syntax */
 		padding: 20px;
 		color: white;
 		box-shadow: 3px 3px 10px 1px #222222;
@@ -152,12 +166,8 @@ input,textarea{
 		input {
 			width:100%;
 			padding:10px;
-			box-shadow: 1px 1px 1px 1px #222222;
+			box-shadow: 1px 1px 5px 1px #222222;
 			border-radius: 5px;
-		}
-
-		input:focus {
-			outline: none;
 		}
 	}
 
@@ -170,11 +180,9 @@ input,textarea{
 
 
 .login-page-mobile {
-	height:100vh;
+	height:850px;
 	padding:5px;
 	padding-top: 20px;
-	background-color: #424242;
-	background-size: cover;
 	color:white;
 
 	a {
@@ -226,12 +234,8 @@ input,textarea{
 		input {
 			width:100%;
 			padding:7px;
-			box-shadow: 1px 1px 1px 1px #222222;
+			box-shadow: 1px 1px 5px 1px #222222;
 			border-radius: 5px;
-		}
-
-		input:focus {
-			outline: none;
 		}
 	}
 
@@ -273,8 +277,7 @@ input,textarea{
 
 
 .profile-page {
-	margin-top: 80px;
-	background-color: #424242;
+	padding-top: 80px;
 }
 
 .profile-img {
@@ -310,7 +313,7 @@ th,td {
 	width:100%;
 	margin: 0;
 	z-index: 1;
-	box-shadow: 0px 0px 10px 0px #222222;
+	box-shadow: 0px 0px 20px 0px #222222;
 }
 
 .logo {
@@ -346,10 +349,6 @@ th,td {
 	box-shadow: 0px 0px 10px 0px #222222;
 	border: none;
 	font-size:20px;
-}
-
-.messageComposer:focus {
-	outline: none;
 }
 
 .mess-name {
@@ -446,7 +445,7 @@ th,td {
 	cursor: pointer;
 
 	svg {
-		color: #b3b3b3;
+		color: white;
 		width: 40px !important;
 		height: 40px !important;
 	}
@@ -524,11 +523,13 @@ th,td {
 		height:100%;
 		z-index:400;
 		position:fixed;
-		transition: all 0.01s;
+		transition: all 0s;
+		transition: opacity 1s;
 	}
 
 	.screenHide.screenHide-entering {
 		opacity:0;
+		transition: opacity 50s;
 		transform:translateX(0%);
 	}
 
