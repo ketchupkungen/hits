@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getUsers } from '../../actions';
+import { getUsers } from '../../actions/user_actions.js';
 
 //import { ListGroup, ListGroupItem, Button } from 'mdbreact';
 //import ImgFallback from 'react-img-fallback'

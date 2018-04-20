@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getMessageWithSender, clearMessageWithSender } from '../../actions';
+import { getMessageWithSender, clearMessageWithSender } from '../../actions/message_actions.js';
 import { connect } from 'react-redux';
 import { Media,Button } from 'mdbreact';
 import moment from 'moment-js';

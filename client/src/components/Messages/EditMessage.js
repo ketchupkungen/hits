@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { getMessage, updateMessage, clearMessage, deleteMessage } from '../../actions'
+import { getMessage, updateMessage, clearMessage, deleteMessage } from '../../actions/message_actions.js'
 import { Button } from 'mdbreact'
 import { Link } from 'react-router-dom'
 import Sidebar from '../Sidebar'

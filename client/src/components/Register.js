@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getUsers, userRegister } from '../actions';
+import { getUsers } from '../actions/user_actions.js';
+import { userRegister } from '../actions/auth_actions.js';
 import { Card,CardBody,Button } from 'mdbreact';
 import logo from '../logo.svg';
 import FooterPart from './footer-part'

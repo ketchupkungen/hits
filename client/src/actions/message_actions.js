@@ -1,6 +1,19 @@
+/*========= MESSAGE ===========*/
+
 import axios from 'axios';
 
-export function getMessages(
+export function getMessages(){
+	const request = axios.get(`/api/messages`)
+		.then(response => response.data);
+
+	return {
+		type:'GET_MESSAGES',
+		payload:request
+	}
+}
+
+// Prototype for rendering more messages on scroll, ex 20 at a time
+/*export function getMessages(
 	limit = 20,
 	start = 0,
 	order = 'asc',
@@ -20,7 +33,7 @@ export function getMessages(
 		type:'GET_MESSAGES',
 		payload:request
 	}
-}
+}*/
 
 export function getMessagesWithSenders(){
 	const request = axios.get(`/api/getMessagesWithSenders`)
@@ -68,8 +81,6 @@ export function getMessageWithSender(id){
 	}
 }
 
-
-
 export function clearMessageWithSender(){
 	return {
 		type:'CLEAR_MESSAGE_W_SENDER',
@@ -79,17 +90,6 @@ export function clearMessageWithSender(){
 		}
 	}
 }
-
-/*export function addMessage(message){
-	const request = axios.post('/api/message',message)
-		.then(response => response.data);
-
-	return {
-		type:'ADD_MESSAGE',
-		payload:request
-	}
-}*/
-
 
 export function addMessage(message){
 
@@ -161,78 +161,5 @@ export function clearMessage(){
 			updateMessage:false,
 			postDeleted:false
 		}
-	}
-}
-
-
-/*========= USER ===========*/
-
-export function loginUser({username,password}){
-	const request = axios.post('/api/login',{username,password})
-		.then(response => response.data)
-
-	return {
-		type:'USER_LOGIN',
-		payload:request
-	}
-}
-
-export function auth(){
-	const request = axios.get('/api/auth')
-		.then(response => response.data);
-
-	return {
-		type:'USER_AUTH',
-		payload:request
-	}
-}
-
-
-export function getUser(id){
-	const request = axios.get(`/api/get_user?id=${id}`)
-		.then(response => response.data);
-	return {
-		type:'GET_USER',
-		payload:request
-	}
-}
-
-
-export function userRegister(user,userList){
-	const request = axios.post(`/api/register`,user)
-
-	return (dispatch) =>{
-		request.then(({data})=>{
-			let users = data.success ? [...userList,data.user]:userList;
-			let response = {
-				success:data.success,
-				users
-			}
-
-			dispatch({
-				type:'USER_REGISTER',
-				payload:response
-			})
-		})
-	}
-}
-
-export function getUsers(){
-	const request = axios.get(`/api/users`)
-		.then(response => response.data);
-
-	return {
-		type:'GET_USER',
-		payload:request
-	}
-}
-
-export function deleteUser(id){
-	const request = axios.delete(`/api/delete_user?id=${id}`)
-		.then(response => response.data)
-
-	return {
-		type:'DELETE_USER',
-		payload:request
 	}
 }

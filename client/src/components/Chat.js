@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-import { addMessage, clearNewMessage } from '../actions'
+import { addMessage, clearNewMessage } from '../actions/message_actions.js'
 //import { Button } from 'mdbreact';
 import MessageList from './Messages/MessageList'
 import Sidebar from './Sidebar'
