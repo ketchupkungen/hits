@@ -1,4 +1,4 @@
-/*========= AUTH ===========*/
+/*========= USER ===========*/
 
 import axios from 'axios';
 
@@ -21,6 +21,17 @@ export function auth(){
 		payload:request
 	}
 }
+
+
+export function getUser(id){
+	const request = axios.get(`/api/get_user?id=${id}`)
+		.then(response => response.data);
+	return {
+		type:'GET_USER',
+		payload:request
+	}
+}
+
 
 export function userRegister(user,userList){
 	const request = axios.post(`/api/register`,user)

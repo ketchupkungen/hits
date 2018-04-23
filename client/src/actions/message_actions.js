@@ -92,13 +92,12 @@ export function clearMessageWithSender(){
 }
 
 export function addMessage(message){
-
-	return function(dispatch){
+	return dispatch => {
 		axios.post('/api/message', message)
 		.then(response => {
 			dispatch({
 				type: 'ADD_MESSAGE',
-				payload: {message: message.text, sender: message.ownerId}
+				payload: {message: response.data.text, sender: response.data.ownerId}
 			})
 		})
 	}
