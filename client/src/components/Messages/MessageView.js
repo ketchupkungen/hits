@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Media,Button } from 'mdbreact';
 import moment from 'moment-js';
 import Sidebar from '../Sidebar'
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 import ImgFallback from 'react-img-fallback'
 
 class MessageView extends Component {

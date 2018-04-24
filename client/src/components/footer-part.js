@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Footer } from 'mdbreact';
-import logo from '../logo.svg';
+import logo from '../assets/images/logo.svg'
 
 class FooterPart extends Component {
 	render(){

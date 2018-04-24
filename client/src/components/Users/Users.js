@@ -1,7 +1,7 @@
 import React from 'react';
 import UserList from './UserList'
 import Sidebar from '../Sidebar'
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 
 const Users = () => {
   return (

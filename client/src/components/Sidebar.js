@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Transition from 'react-transition-group/Transition';
 import { Button } from 'mdbreact';
-import logo from '../logo.svg'
+import logo from '../assets/images/logo.svg'
 //import SidebarUser from './SidebarUser';
 
 

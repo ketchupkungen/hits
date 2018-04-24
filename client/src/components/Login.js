@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginUser } from '../actions/auth_actions.js'
-import logo from '../logo.svg';
+import logo from '../assets/images/logo.svg'
 import { Card, CardBody, Button } from 'mdbreact';
 
 import FooterPart from './footer-part'

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import logo from '../logo.svg'
+import logo from '../assets/images/logo.svg'
 
 const Logout = (props) => {
 	let user = props.user.login;

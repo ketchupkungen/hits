@@ -6,6 +6,8 @@ import { getMessages } from '../../actions/message_actions.js';
 import {Media,Button} from 'mdbreact';
 import moment from 'moment-js';
 import ImgFallback from 'react-img-fallback'
+import userImagePlaceHolder from '../../assets/images/profile-placeholder2.png'
+
 
 class MessageList extends Component {
 	/*constructor(props) {
@@ -47,35 +49,35 @@ class MessageList extends Component {
 						<Link className="mr-3" to={`/chat/${item._id}`}>
 							<ImgFallback
 								className="profile-img-chat"
-								src={item.image}
+								//src={item.image}
 								alt="user-img"
-								fallback='http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png'
+								fallback={userImagePlaceHolder}
 							>
 							</ImgFallback>
 						</Link>
 						<Media body>
-								{/*<Link className="mr-3" to={`/users/${item._id}`}>
-									{item.name} {item.lastname}
-								</Link>*/}
-								<Link to={`/chat/${item._id}`}>
-									<b className="mess-name">
-										Bob Bobssson
-									</b>
-								</Link>
+							{/*<Link className="mr-3" to={`/users/${item._id}`}>
+								{item.name} {item.lastname}
+							</Link>*/}
+							<Link to={`/chat/${item._id}`}>
+								<b className="mess-name">
+									Bob Bobssson
+								</b>
+							</Link>
 
-								<i className="mess-time">
-									{moment(item.createdAt).format("YYYY-MM-DD HH:mm")}
-								</i>
-								<Link to={`/chat/edit-message/${item._id}`}>
-									<Button color="grey" className="mess-edit">
-										<i className="fa fa-ellipsis-h"></i>
-									</Button>
-								</Link>
-								<div className='mess-text'>
-									<p className='mess-text'>
-										{item.text}
-									</p>
-								</div>
+							<i className="mess-time">
+								{moment(item.createdAt).format("YYYY-MM-DD HH:mm")}
+							</i>
+							<Link to={`/chat/edit-message/${item._id}`}>
+								<Button color="grey" className="mess-edit">
+									<i className="fa fa-ellipsis-h"></i>
+								</Button>
+							</Link>
+							<div className='mess-text'>
+								<p className='mess-text'>
+									{item.text}
+								</p>
+							</div>
 						</Media>
 					</Media>
 					<hr/>
@@ -89,14 +91,11 @@ class MessageList extends Component {
 			<div>
 				{/*<ScrollEvent handleScrollCallback={this.handleScrollCallback} />*/}
 				<div className="main">
-					<div className="messageArea">
-
-						{this.renderMessages(this.props.messages)}
-					</div>
+					{this.renderMessages(this.props.messages)}
 				</div>
 				<div style={{ float:"left", clear: "both" }}
-            ref={(el) => { this.messagesEnd = el; }}>
-        	</div>
+          ref={(el) => { this.messagesEnd = el; }}>
+      	</div>
 			</div>
 		);
 	}

@@ -4,7 +4,7 @@ import { getMessage, updateMessage, clearMessage, deleteMessage } from '../../ac
 import { Button } from 'mdbreact'
 import { Link } from 'react-router-dom'
 import Sidebar from '../Sidebar'
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 
 class EditMessage extends PureComponent {
 

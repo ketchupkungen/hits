@@ -1,7 +1,8 @@
 import React from 'react';
 import Sidebar from '../Sidebar';
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 import ImgFallback from 'react-img-fallback'
+import userImagePlaceHolder from '../../assets/images/profile-placeholder2.png'
 
 const Profile = (props) => {
 	let user = props.user.login;
@@ -23,7 +24,7 @@ const Profile = (props) => {
 								className="profile-img"
 								src={user.image}
 								alt="user-img"
-								fallback='http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png'
+								fallback={userImagePlaceHolder}
 							>
 							</ImgFallback>
 						</div>

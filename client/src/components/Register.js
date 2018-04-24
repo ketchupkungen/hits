@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getUsers } from '../actions/user_actions.js';
 import { userRegister } from '../actions/auth_actions.js';
 import { Card,CardBody,Button } from 'mdbreact';
-import logo from '../logo.svg';
+import logo from '../assets/images/logo.svg'
 import FooterPart from './footer-part'
 
 class Register extends PureComponent {

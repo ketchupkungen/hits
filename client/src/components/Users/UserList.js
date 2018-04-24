@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getUsers } from '../../actions/user_actions.js';
 import { Link } from 'react-router-dom';
 import ImgFallback from 'react-img-fallback'
+import userImagePlaceHolder from '../../assets/images/profile-placeholder2.png'
 import { Media } from 'mdbreact';
 
 class UserContainer extends Component {
@@ -21,7 +22,7 @@ class UserContainer extends Component {
 								className="profile-img-chat"
 								src={item.image}
 								alt="user-img"
-								fallback='http://s3-ap-southeast-1.amazonaws.com/hinrichfoundation-images/wp-content/uploads/2017/05/ds-placeholder-person.png'
+								fallback={userImagePlaceHolder}
 							>
 							</ImgFallback>
 						</Link>

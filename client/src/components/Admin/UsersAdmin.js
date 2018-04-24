@@ -1,7 +1,7 @@
 import React from 'react';
 import UserListAdmin from './UserListAdmin'
 import Sidebar from '../Sidebar'
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 
 const UsersAdmin = () => {
 	return (
