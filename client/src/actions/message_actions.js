@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-export function getMessages(){
+/*export function getMessages(){
 	const request = axios.get(`/api/messages`)
 		.then(response => response.data);
 
@@ -10,7 +10,31 @@ export function getMessages(){
 		type:'GET_MESSAGES',
 		payload:request
 	}
+}*/
+
+export function getMessages(){
+	return dispatch => {
+		axios.get('/api/messages')
+		.then(response => {
+			dispatch({
+				type: 'GET_MESSAGES',
+				payload: response.data
+			})
+		})
+	}
 }
+
+/*export function addMessage(message){
+	return dispatch => {
+		axios.post('/api/message', message)
+		.then(response => {
+			dispatch({
+				type: 'ADD_MESSAGE',
+				payload: {message: response.data.text, sender: response.data.ownerId}
+			})
+		})
+	}
+}*/
 
 // Prototype for rendering more messages on scroll, ex 20 at a time
 /*export function getMessages(
@@ -131,7 +155,7 @@ export function getMessage(id){
 }
 
 
-export function updateMessage(data){
+/*export function updateMessage(data){
 	const request = axios.post(`/api/edit_message`,data)
 		.then(response => response.data);
 
@@ -139,7 +163,29 @@ export function updateMessage(data){
 		type:'UPDATE_MESSAGE',
 		payload:request
 	}
+}*/
 
+/*export function updateMessage(data){
+	const request = axios.post(`/api/edit_message`,data)
+		.then(response => response.data);
+
+	return {
+		type:'UPDATE_MESSAGE',
+		payload:request
+	}
+}*/
+
+
+export function updateMessage(message){
+	return dispatch => {
+		axios.post('/api/edit_message', message)
+		.then(response => {
+			dispatch({
+				type: 'UPDATE_MESSAGE',
+				payload: {message: response.data.text, sender: response.data.ownerId}
+			})
+		})
+	}
 }
 
 export function deleteMessage(id){

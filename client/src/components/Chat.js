@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-import { addMessage, clearNewMessage } from '../actions/message_actions.js'
+import { addMessage, clearNewMessage, getMessages } from '../actions/message_actions.js'
 import MessageList from './Messages/MessageList'
 import Sidebar from './Sidebar'
 import logo from '../assets/images/logo.svg'
@@ -30,6 +30,16 @@ class Chat extends Component {
 			...this.state.formdata,
 			ownerId:this.props.user.login.id
 		}))
+	}
+
+	componentDidMount(){
+		this.startPolling();
+	}
+
+	startPolling = () => {
+	  setInterval(() => {
+	    this.props.dispatch(getMessages());
+	  }, 1500);
 	}
 
 	componentWillUnmount(){
