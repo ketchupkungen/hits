@@ -72,7 +72,7 @@ class EditMessage extends PureComponent {
 					</h5>
 				</div>
 				<Sidebar/>
-				<div className="main edit-message-screen">
+				<div className="edit-message-screen">
 					{
 						messages.updateMessage ?
 							<div>

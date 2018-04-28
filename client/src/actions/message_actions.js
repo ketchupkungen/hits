@@ -11,7 +11,6 @@ import axios from 'axios';
 		payload:request
 	}
 }*/
-
 export function getMessages(){
 	return dispatch => {
 		axios.get('/api/messages')
@@ -23,18 +22,6 @@ export function getMessages(){
 		})
 	}
 }
-
-/*export function addMessage(message){
-	return dispatch => {
-		axios.post('/api/message', message)
-		.then(response => {
-			dispatch({
-				type: 'ADD_MESSAGE',
-				payload: {message: response.data.text, sender: response.data.ownerId}
-			})
-		})
-	}
-}*/
 
 // Prototype for rendering more messages on scroll, ex 20 at a time
 /*export function getMessages(
@@ -135,46 +122,28 @@ export function clearNewMessage() {
 }
 
 export function getUserPosts(userId){
-	const request = axios.get(`/api/user_posts?user=${userId}`)
-		.then(response => response.data)
-
-	return {
-		type:'GET_USER_POSTS',
-		payload:request
+	return dispatch => {
+		axios.get(`/api/user_posts?user=${userId}`)
+		.then(response => {
+			dispatch({
+				type: 'GET_USER_POSTS',
+				payload: response.data
+			})
+		})
 	}
 }
 
 export function getMessage(id){
-	const request = axios.get(`/api/get_message?id=${id}`)
-		.then(response => response.data);
-
-	return {
-		type:'GET_MESSAGE',
-		payload:request
+	return dispatch => {
+		axios.get(`/api/get_message?id=${id}`)
+		.then(response => {
+			dispatch({
+				type:'GET_MESSAGE',
+				payload: response.data
+			})
+		}) 
 	}
 }
-
-
-/*export function updateMessage(data){
-	const request = axios.post(`/api/edit_message`,data)
-		.then(response => response.data);
-
-	return {
-		type:'UPDATE_MESSAGE',
-		payload:request
-	}
-}*/
-
-/*export function updateMessage(data){
-	const request = axios.post(`/api/edit_message`,data)
-		.then(response => response.data);
-
-	return {
-		type:'UPDATE_MESSAGE',
-		payload:request
-	}
-}*/
-
 
 export function updateMessage(message){
 	return dispatch => {
@@ -182,19 +151,21 @@ export function updateMessage(message){
 		.then(response => {
 			dispatch({
 				type: 'UPDATE_MESSAGE',
-				payload: {message: response.data.text, sender: response.data.ownerId}
+				payload: response.data
 			})
 		})
 	}
 }
 
 export function deleteMessage(id){
-	const request = axios.delete(`/api/delete_message?id=${id}`)
-		.then(response => response.data)
-
-	return {
-		type:'DELETE_MESSAGE',
-		payload:request
+	return dispatch => {
+		axios.delete(`/api/delete_message?id=${id}`)
+		.then(response => {
+			dispatch({
+				type: 'DELETE_MESSAGE',
+				payload: response.data
+			})
+		})	
 	}
 }
 
