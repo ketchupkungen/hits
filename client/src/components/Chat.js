@@ -39,7 +39,7 @@ class Chat extends Component {
 	startPolling = () => {
 	  setInterval(() => {
 	    this.props.dispatch(getMessages());
-	  }, 1500);
+	  }, 10000);
 	}
 
 	componentWillUnmount(){

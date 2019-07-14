@@ -11,7 +11,7 @@ process.env.PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// api routes
+// API routes
 require('./routes/auth_routes')(app);
 require('./routes/user_routes')(app);
 require('./routes/message_routes')(app);
