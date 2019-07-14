@@ -58,7 +58,7 @@ class Chat extends Component {
 				<form onSubmit={this.submitForm}>
 					<input
 						type="text"
-						placeholder="Enter message"
+						placeholder="Enter a message"
 						className="messageComposer"
 						ref="messageComposer"
 						name="message"
