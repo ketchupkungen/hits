@@ -32,7 +32,7 @@
     "history": "^4.7.2",
     "html-webpack-plugin": "2.29.0",
     "isomorphic-fetch": "^2.2.1",
-    "jest": "20.0.4",
+    "jest": "24.0.0",
     "moment": "^2.20.1",
     "mysql": "^2.15.0",
     "node-sass": "^4.7.2",
