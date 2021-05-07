@@ -114,7 +114,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-execute": "^0.2.2"
   }
