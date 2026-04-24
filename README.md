@@ -5,10 +5,6 @@
 ### Description
 This is a WIP chat application where you can register an account, login, see other users, send messages, see your own profile, edit or remove messages sent, logout etc.
 
-### Demo
-Here is the application in its current state, deployed on heroku.com
-
-https://ketchupkungen-chat.herokuapp.com/
 
 ### Guide to installing project 
 
